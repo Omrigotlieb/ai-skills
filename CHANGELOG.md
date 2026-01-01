@@ -13,6 +13,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.2.0] - 2026-01-02
+
+### Added
+
+**New Sections**
+- **Hooks Guide** - Complete documentation of Claude Code hooks
+  - 8 hook types (PreToolUse, PostToolUse, UserPromptSubmit, etc.)
+  - Exit code system and matcher patterns
+  - 8 practical examples with code
+- **Workflows Section** - Battle-tested automation patterns
+  - Feature development workflow (Planning-First)
+  - Code review workflow with checklists
+  - Debugging workflow (5-Why technique)
+  - Git operations and custom commands
+- **Prompts Section** - Effective prompting guide
+  - TCRO Framework (Task, Context, Requirements, Output)
+  - Templates for features, bugs, reviews, refactoring
+  - Anti-patterns to avoid
+
+**New CLAUDE.md Templates**
+- Go template - Web services, CLI tools, stdlib patterns
+- Rust template - Async, error handling, ownership patterns
+- React Native template - Mobile app development
+
+### Changed
+- Updated main README with new sections navigation
+- Reorganized templates into categories (Web, Backend, Mobile)
+
+---
+
 ## [1.1.0] - 2026-01-01
 
 ### Added

@@ -27,6 +27,9 @@ The Claude Code ecosystem is evolving rapidly. New skills, MCP servers, and plug
 - [Community Skills](#community-skills)
 - [MCP Servers](#mcp-servers)
 - [Plugins](#plugins)
+- [Hooks](#hooks)
+- [Workflows](#workflows)
+- [Prompts](#prompts)
 - [Tips & Tricks](#tips--tricks)
 - [CLAUDE.md Templates](#claudemd-templates)
 - [Resources](#resources)
@@ -146,6 +149,95 @@ Plugins bundle skills, commands, agents, and MCP servers into shareable packages
 
 ---
 
+## Hooks
+
+Hooks are shell commands that execute automatically at specific points in Claude Code's lifecycle.
+
+### Hook Types
+| Hook | When It Fires | Can Block? |
+|------|---------------|------------|
+| **PreToolUse** | Before a tool executes | Yes |
+| **PostToolUse** | After a tool completes | No |
+| **UserPromptSubmit** | Before processing user input | Yes |
+| **Notification** | When Claude sends alerts | No |
+| **Stop** | When Claude finishes responding | Yes |
+| **SessionStart** | On session initialization | No |
+
+### Common Use Cases
+- Block dangerous commands (rm -rf, etc.)
+- Auto-format code after edits
+- Inject project context
+- Auto-commit after changes
+- TTS notifications
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [{
+      "matcher": "Bash",
+      "command": "./hooks/validate-command.sh"
+    }]
+  }
+}
+```
+
+[View hooks guide with examples](hooks/README.md)
+
+---
+
+## Workflows
+
+Battle-tested workflows and automation patterns for Claude Code.
+
+### Featured Workflows
+| Workflow | Description |
+|----------|-------------|
+| **Planning-First** | Plan → Implement → Test → Review → Commit |
+| **Test-First (TDD)** | Write tests → Implement → Refactor |
+| **Safe Refactoring** | Tests → Incremental changes → Verify |
+| **PR Review** | Checklist-based review with specific feedback |
+| **Debugging** | 5-Why technique, systematic root cause analysis |
+
+### Custom Commands
+Store workflow templates in `.claude/commands/`:
+```
+.claude/commands/
+├── feature.md      # /project:feature
+├── review.md       # /project:review
+├── debug.md        # /project:debug
+└── ship.md         # /project:ship
+```
+
+[View all workflows](workflows/README.md)
+
+---
+
+## Prompts
+
+Effective prompting patterns for Claude Code.
+
+### The TCRO Framework
+1. **Task** - What's the job?
+2. **Context** - Why are we doing this?
+3. **Requirements** - Explicit list of must-haves
+4. **Output** - Expected format
+
+### Example
+```
+Task: Implement user authentication
+Context: Building MVP, need basic auth before launch
+Requirements:
+- JWT tokens with refresh
+- Password hashing (bcrypt)
+- Rate limiting
+- Unit tests
+Output: Ready-to-commit implementation
+```
+
+[View prompt templates](prompts/README.md)
+
+---
+
 ## Tips & Tricks
 
 Curated tips from 6+ months of community usage.
@@ -179,16 +271,28 @@ Curated tips from 6+ months of community usage.
 
 Ready-to-use CLAUDE.md templates for different project types.
 
+### Web & Frontend
 | Template | Best For |
 |----------|----------|
-| [React/Next.js](templates/react-nextjs.md) | Frontend web apps |
-| [Python/FastAPI](templates/python-fastapi.md) | Backend APIs |
-| [Full-Stack](templates/fullstack.md) | End-to-end projects |
-| [Monorepo](templates/monorepo.md) | Multi-package projects |
-| [Open Source](templates/opensource.md) | Community projects |
-| [Data Science](templates/data-science.md) | ML/AI projects |
+| [React/Next.js](templates/react-nextjs.md) | Frontend web apps, SSR |
+| [Full-Stack](templates/fullstack.md) | End-to-end applications |
 
-[View all templates](templates/README.md)
+### Backend
+| Template | Best For |
+|----------|----------|
+| [Python/FastAPI](templates/python-fastapi.md) | Python APIs |
+| [Go](templates/go.md) | Go services, CLI tools |
+| [Rust](templates/rust.md) | Rust applications |
+
+### Mobile & Other
+| Template | Best For |
+|----------|----------|
+| [React Native](templates/mobile-react-native.md) | iOS + Android apps |
+| [Monorepo](templates/monorepo.md) | Multi-package projects |
+| [Data Science](templates/data-science.md) | ML/AI projects |
+| [Open Source](templates/opensource.md) | Community projects |
+
+[View all 9 templates](templates/README.md)
 
 ---
 
