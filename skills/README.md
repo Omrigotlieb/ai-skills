@@ -1,8 +1,16 @@
 # Claude Code Skills Catalog
 
+<div align="center">
+
+[![Official Skills](https://img.shields.io/badge/Official-15%2B-blue)](https://github.com/anthropics/skills)
+[![Community Skills](https://img.shields.io/badge/Community-150%2B-green)](community/README.md)
+[![Scientific](https://img.shields.io/badge/Scientific-125%2B-purple)](https://github.com/K-Dense-AI/claude-scientific-skills)
+
+</div>
+
 Skills are model-invoked tools that Claude automatically uses when relevant to your task. Unlike slash commands which you explicitly trigger, skills enable intelligent, context-aware automation.
 
-> **Latest Update:** January 2026 - Added 50+ skills across all categories
+> **Latest Update:** January 2026 - Added 200+ skills across all categories
 
 ## How Skills Work
 
@@ -174,11 +182,15 @@ For research, bioinformatics, and data science. Source: [K-Dense-AI/claude-scien
 
 Detailed guides for specific skill domains:
 
-| Category | Description | Link |
-|----------|-------------|------|
-| **Security** | DevSecOps, vulnerability detection, secure coding | [View](security/README.md) |
-| **API Development** | REST design, OpenAPI, documentation | [View](api-development/README.md) |
-| **Community** | Community-contributed skills | [View](community/README.md) |
+| Category | Skills | Description | Link |
+|----------|--------|-------------|------|
+| **Security** | 10+ | DevSecOps, vulnerability detection, secure coding | [View](security/README.md) |
+| **API Development** | 8+ | REST design, OpenAPI, documentation | [View](api-development/README.md) |
+| **Testing** | 12+ | TDD, test generation, coverage, E2E | [View](testing/README.md) |
+| **DevOps** | 15+ | CI/CD, Docker, Kubernetes, Terraform | [View](devops/README.md) |
+| **Documentation** | 8+ | README, API docs, changelogs, ADRs | [View](documentation/README.md) |
+| **Database** | 10+ | SQL, ORM, migrations, optimization | [View](database/README.md) |
+| **Community** | 150+ | Community-contributed skills | [View](community/README.md) |
 
 ---
 

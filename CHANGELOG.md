@@ -13,6 +13,58 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.3.0] - 2026-01-02
+
+### Added
+
+**New Skill Categories**
+- **Testing Skills** (`skills/testing/`) - 12+ skills
+  - TDD workflow (RED-GREEN-REFACTOR)
+  - Test generation (Jest, pytest, Go)
+  - Coverage analysis
+  - Property-based testing
+  - Mutation testing
+  - Snapshot testing
+  - E2E testing (Playwright, Cypress)
+  - Contract testing (Pact)
+
+- **DevOps Skills** (`skills/devops/`) - 15+ skills
+  - GitHub Actions debugging
+  - Docker optimization
+  - Kubernetes manifests
+  - Terraform IaC
+  - CI/CD pipeline design
+  - Deployment strategies
+  - Monitoring & observability
+  - Incident response
+
+- **Documentation Skills** (`skills/documentation/`) - 8+ skills
+  - README generator
+  - JSDoc/TSDoc generator
+  - API documentation
+  - Changelog generator
+  - Architecture diagrams (C4)
+  - Code comments best practices
+  - ADR templates
+  - Runbook templates
+
+- **Database Skills** (`skills/database/`) - 10+ skills
+  - SQL query writing & optimization
+  - Database design
+  - Migration management
+  - Query optimization
+  - ORM skills (Prisma, SQLAlchemy)
+  - NoSQL skills (MongoDB, Redis)
+  - Repository pattern
+  - Unit of Work pattern
+
+### Changed
+- Enhanced main README with centered badges and quick navigation
+- Updated skills catalog with category counts
+- Improved formatting across all sections
+
+---
+
 ## [1.2.0] - 2026-01-02
 
 ### Added

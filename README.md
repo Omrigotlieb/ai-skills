@@ -1,11 +1,20 @@
 # AI Skills Hub
 
-> **The most comprehensive, actively-maintained collection of Claude Code skills, MCP servers, plugins, tips, and resources.**
+<div align="center">
+
+**The most comprehensive, actively-maintained collection of Claude Code skills, MCP servers, plugins, tips, and resources.**
 
 [![Daily Updates](https://img.shields.io/badge/updates-daily-brightgreen)](https://github.com/omrigotlieb/ai-skills/commits/main)
+[![Skills](https://img.shields.io/badge/skills-200%2B-blue)](skills/README.md)
+[![MCP Servers](https://img.shields.io/badge/MCP_servers-50%2B-purple)](mcp-servers/README.md)
+[![Templates](https://img.shields.io/badge/templates-9-orange)](templates/README.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/omrigotlieb/ai-skills?style=social)](https://github.com/omrigotlieb/ai-skills)
+
+[**Skills**](skills/README.md) | [**MCP Servers**](mcp-servers/README.md) | [**Plugins**](plugins/README.md) | [**Templates**](templates/README.md) | [**Tips**](tips/README.md)
+
+</div>
 
 ---
 
