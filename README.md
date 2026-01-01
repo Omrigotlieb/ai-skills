@@ -6,7 +6,7 @@
 
 [![Daily Updates](https://img.shields.io/badge/updates-daily-brightgreen)](https://github.com/omrigotlieb/ai-skills/commits/main)
 [![Skills](https://img.shields.io/badge/skills-250%2B-blue)](skills/README.md)
-[![MCP Servers](https://img.shields.io/badge/MCP_servers-50%2B-purple)](mcp-servers/README.md)
+[![MCP Servers](https://img.shields.io/badge/MCP_servers-100%2B-purple)](mcp-servers/README.md)
 [![Templates](https://img.shields.io/badge/templates-9-orange)](templates/README.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)

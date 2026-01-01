@@ -1,5 +1,15 @@
 # MCP Servers Catalog
 
+<div align="center">
+
+[![Total Servers](https://img.shields.io/badge/servers-7%2C260%2B-blue)](https://github.com/punkpeye/awesome-mcp-servers)
+[![Downloads](https://img.shields.io/badge/downloads-8M%2B-green)](https://npmjs.com)
+[![Official](https://img.shields.io/badge/official-25%2B-purple)](https://github.com/modelcontextprotocol/servers)
+
+[**Database**](database.md) | [**Development**](development.md) | [**Productivity**](productivity.md) | [**Search**](search.md) | [**Automation**](automation.md)
+
+</div>
+
 Model Context Protocol (MCP) servers extend Claude Code with external tools and data sources. They provide structured interfaces for Claude to interact with databases, APIs, file systems, and more.
 
 > **Stats:** 7,260+ MCP servers available as of 2025. Market grew from 100K downloads (Nov 2024) to 8M+ (Apr 2025).

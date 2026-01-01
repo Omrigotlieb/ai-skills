@@ -43,7 +43,43 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [1.3.0] - 2026-01-02
+## [1.5.0] - 2026-01-02
+
+### Added
+
+**MCP Server Category Pages**
+- **Database MCP Guide** (`mcp-servers/database.md`)
+  - PostgreSQL, MongoDB, Redis, SQLite, Neon
+  - Configuration examples with prompts
+  - Security best practices
+
+- **Development MCP Guide** (`mcp-servers/development.md`)
+  - GitHub, Linear, Sentry, Slack, NPM
+  - CI/CD integration patterns
+  - Combined workflow examples
+
+- **Productivity MCP Guide** (`mcp-servers/productivity.md`)
+  - Notion, Obsidian, Google Drive/Calendar
+  - Todoist, Raycast, Email
+  - Combined productivity stack
+
+- **Search MCP Guide** (`mcp-servers/search.md`)
+  - Brave Search, Perplexity, Exa
+  - Arxiv, Wikipedia, Context7
+  - Research workflow patterns
+
+- **Automation MCP Guide** (`mcp-servers/automation.md`)
+  - Puppeteer, Playwright, Browserbase
+  - Zapier, n8n, Make
+  - Docker, filesystem automation
+
+### Changed
+- Enhanced MCP servers README with badges and navigation
+- Updated MCP servers count to 100+
+
+---
+
+## [1.4.0] - 2026-01-02
 
 ### Added
 
