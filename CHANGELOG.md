@@ -13,6 +13,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.4.0] - 2026-01-02
+
+### Added
+
+**New Skill Categories**
+- **Performance Skills** (`skills/performance/`) - 10+ skills
+  - Performance profiling (Node.js, Python, Go, Rust)
+  - Frontend performance (Core Web Vitals)
+  - Backend optimization
+  - Memory optimization
+  - Algorithm complexity analysis
+  - Load testing (k6, Artillery, JMeter)
+  - Caching strategies
+
+- **AI/ML Skills** (`skills/ai-ml/`) - 12+ skills
+  - LLM integration (Anthropic, OpenAI, Cohere)
+  - Prompt engineering techniques
+  - RAG implementation (vector DBs, chunking)
+  - Model fine-tuning (LoRA, full fine-tune)
+  - Computer vision (YOLO, CLIP, multimodal)
+  - ML pipelines (MLflow, W&B, Feast)
+  - Data processing (pandas, polars, dask)
+  - AI safety guardrails
+
+### Changed
+- Updated skills count badge to 250+
+- Enhanced skills catalog with new categories
+
+---
+
 ## [1.3.0] - 2026-01-02
 
 ### Added

@@ -190,6 +190,8 @@ Detailed guides for specific skill domains:
 | **DevOps** | 15+ | CI/CD, Docker, Kubernetes, Terraform | [View](devops/README.md) |
 | **Documentation** | 8+ | README, API docs, changelogs, ADRs | [View](documentation/README.md) |
 | **Database** | 10+ | SQL, ORM, migrations, optimization | [View](database/README.md) |
+| **Performance** | 10+ | Profiling, caching, load testing, optimization | [View](performance/README.md) |
+| **AI/ML** | 12+ | LLM integration, RAG, fine-tuning, ML pipelines | [View](ai-ml/README.md) |
 | **Community** | 150+ | Community-contributed skills | [View](community/README.md) |
 
 ---
