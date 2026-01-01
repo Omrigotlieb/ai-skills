@@ -2,6 +2,8 @@
 
 Model Context Protocol (MCP) servers extend Claude Code with external tools and data sources. They provide structured interfaces for Claude to interact with databases, APIs, file systems, and more.
 
+> **Stats:** 7,260+ MCP servers available as of 2025. Market grew from 100K downloads (Nov 2024) to 8M+ (Apr 2025).
+
 ## Quick Start
 
 Add an MCP server to your `.mcp.json`:
@@ -30,7 +32,7 @@ Connect Claude to GitHub's REST API for repository management.
 - Read/manage issues and PRs
 - Trigger CI/CD workflows
 - Analyze commits and branches
-- Repository search
+- Repository search and stats
 
 ```json
 {
@@ -49,12 +51,12 @@ Connect Claude to GitHub's REST API for repository management.
 ### 2. Context7 MCP
 **Category:** Documentation | **Source:** [context7/mcp](https://github.com/context7/mcp)
 
-Real-time library documentation fetching.
+Real-time library documentation fetching - never get outdated API examples again.
 
 **Capabilities:**
-- Up-to-date API docs
-- Version-specific examples
-- Code snippet generation
+- Up-to-date API docs for any library
+- Version-specific code examples
+- Auto-detects library versions
 
 ```json
 {
@@ -70,12 +72,12 @@ Real-time library documentation fetching.
 ### 3. Filesystem MCP Server
 **Category:** Core | **Source:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
 
-Secure local file operations.
+Secure local file operations with granular permissions.
 
 **Capabilities:**
 - Read/write files
 - Directory management
-- File search
+- File search with patterns
 - Permission controls
 
 ```json
@@ -89,35 +91,23 @@ Secure local file operations.
 
 ---
 
-### 4. PostgreSQL MCP Server
-**Category:** Database | **Source:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
+### 4. Sequential Thinking MCP
+**Category:** Reasoning | **Source:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
 
-Natural language database queries.
+Structured problem-solving that mirrors human cognitive patterns.
 
 **Capabilities:**
-- SQL query generation
-- Schema exploration
-- Data analysis
-- Query optimization
-
-```json
-{
-  "postgres": {
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-postgres"],
-    "env": {
-      "DATABASE_URL": "postgresql://..."
-    }
-  }
-}
-```
+- Step-by-step reasoning
+- Problem decomposition
+- Reflection and revision
+- Complex analysis
 
 ---
 
 ### 5. Puppeteer MCP Server
 **Category:** Automation | **Source:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
 
-Browser automation and testing.
+Browser automation for testing and scraping.
 
 **Capabilities:**
 - Web scraping
@@ -136,27 +126,16 @@ Browser automation and testing.
 
 ---
 
-### 6. Sequential Thinking MCP
-**Category:** Reasoning | **Source:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
-
-Structured problem-solving process.
-
-**Capabilities:**
-- Step-by-step reasoning
-- Problem decomposition
-- Reflection and revision
-
----
-
-### 7. Brave Search MCP
+### 6. Brave Search MCP
 **Category:** Search | **Source:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
 
-Privacy-first web search.
+Privacy-first web search with high-quality results.
 
 **Capabilities:**
 - Web search
 - News search
 - Current information access
+- No tracking
 
 ```json
 {
@@ -169,6 +148,18 @@ Privacy-first web search.
   }
 }
 ```
+
+---
+
+### 7. Memory MCP Server
+**Category:** Context | **Source:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
+
+Persistent memory across conversations.
+
+**Capabilities:**
+- Store key information
+- Retrieve context
+- Build knowledge base
 
 ---
 
@@ -187,7 +178,7 @@ Notion workspace integration.
 ### 9. Figma MCP
 **Category:** Design | **Source:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
 
-Design-to-code workflow.
+Design-to-code workflow integration.
 
 **Capabilities:**
 - Read Figma designs
@@ -199,7 +190,7 @@ Design-to-code workflow.
 ### 10. Zapier MCP
 **Category:** Integration | **Source:** [zapier/mcp](https://github.com/zapier/mcp)
 
-Connect to 5000+ applications.
+Connect to 5000+ applications through a single MCP.
 
 **Capabilities:**
 - Cross-app automation
@@ -208,41 +199,141 @@ Connect to 5000+ applications.
 
 ---
 
-## By Category
+## Database Servers
 
-- [Database Servers](database.md) - PostgreSQL, MySQL, MongoDB, SQLite
-- [Search & Research](search.md) - Brave, Google, Perplexity
-- [Automation](automation.md) - Puppeteer, Playwright, Browser tools
-- [Productivity](productivity.md) - Notion, Slack, Linear, GitHub
-- [Development](development.md) - Sentry, Docker, Kubernetes
+### SQL Databases
+
+| Server | Database | Features | Link |
+|--------|----------|----------|------|
+| **PostgreSQL MCP** | PostgreSQL | Natural language queries, schema exploration, optimization | [Official](https://github.com/modelcontextprotocol/servers) |
+| **MySQL MCP** | MySQL | Query generation, data analysis | Community |
+| **SQLite MCP** | SQLite | Local database operations | [Official](https://github.com/modelcontextprotocol/servers) |
+| **Neon MCP** | Neon PostgreSQL | Serverless Postgres integration | [Neon](https://github.com/neondatabase/mcp-server-neon) |
+
+### NoSQL Databases
+
+| Server | Database | Features | Link |
+|--------|----------|----------|------|
+| **MongoDB MCP** | MongoDB | Atlas/Community/Enterprise support, aggregation pipelines | [Official](https://github.com/mongodb-js/mongodb-mcp-server) |
+| **Redis MCP** | Redis | Data store operations, search | Official |
+| **Elasticsearch MCP** | Elasticsearch | Natural language search, index management | [Elastic](https://github.com/elastic/mcp-server-elasticsearch) |
+
+### Multi-Database
+
+| Server | Description | Databases Supported |
+|--------|-------------|---------------------|
+| **Database MCP** | Unified interface via genai-toolbox | 40+ databases |
+| **Polyglot DB MCP** | Cross-database queries | PostgreSQL, MongoDB, Neo4j, Elasticsearch, Redis, 15+ more |
+
+---
+
+## DevOps & Cloud Servers
+
+| Server | Category | Description |
+|--------|----------|-------------|
+| **Docker MCP** | Containers | Container management and orchestration |
+| **Kubernetes MCP** | Orchestration | K8s cluster operations |
+| **Terraform MCP** | IaC | Infrastructure provisioning |
+| **AWS MCP** | Cloud | AWS service interactions |
+| **GCP MCP** | Cloud | Google Cloud operations |
+| **Cloudflare MCP** | Edge | Workers, KV, R2 management |
+
+---
+
+## Development Tools
+
+| Server | Category | Description |
+|--------|----------|-------------|
+| **Sentry MCP** | Error Tracking | Issue tracking, error analysis |
+| **Linear MCP** | Project Management | Issue and project management |
+| **Slack MCP** | Communication | Team messaging integration |
+| **Git MCP** | Version Control | Local git operations |
+| **NPM MCP** | Package Management | Package info and search |
+
+---
+
+## AI & Research
+
+| Server | Category | Description |
+|--------|----------|-------------|
+| **Perplexity MCP** | Search | AI-powered research |
+| **Exa MCP** | Search | Neural search engine |
+| **Arxiv MCP** | Research | Academic paper search |
+| **HuggingFace MCP** | ML | Model and dataset access |
+
+---
+
+## Productivity
+
+| Server | Category | Description |
+|--------|----------|-------------|
+| **Google Drive MCP** | Storage | File management |
+| **Google Calendar MCP** | Calendar | Event management |
+| **Todoist MCP** | Tasks | Task management |
+| **Obsidian MCP** | Notes | Knowledge base integration |
+| **Raycast MCP** | Launcher | Raycast integration |
 
 ---
 
 ## Best Practices
 
-### Performance
-- **Limit MCP count**: 2-3 servers for your primary tasks
-- **Monitor startup**: Too many MCPs slow down Claude Code
-
-### Security
-- **Token management**: Use environment variables, never commit tokens
-- **Path restrictions**: Limit filesystem access to specific directories
-- **Network boundaries**: Be cautious with servers that access external APIs
-
-### Debugging
+### Performance Tips
 ```bash
 # Check MCP status
 /mcp
 
-# View MCP details in context
+# View MCP context overhead
 /context
+```
+
+- **Limit to 2-3 MCPs** for primary tasks
+- **Too many MCPs** slow startup significantly
+- **Monitor overhead** with `/context`
+
+### Security
+- **Environment variables** for tokens (never commit)
+- **Path restrictions** for filesystem access
+- **Network boundaries** for external API servers
+
+### Configuration Example
+```json
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./src"]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@context7/mcp-server"]
+    }
+  }
+}
 ```
 
 ---
 
 ## Resources
 
+### Awesome Lists
+- [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) - Main curated list
+- [wong2/awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) - With official integrations
+- [TensorBlock/awesome-mcp-servers](https://github.com/TensorBlock/awesome-mcp-servers) - 7,260+ servers cataloged
+- [rohitg00/awesome-devops-mcp-servers](https://github.com/rohitg00/awesome-devops-mcp-servers) - DevOps focused
+
+### Directories
+- [MCPcat](https://mcpcat.io) - Searchable MCP directory
+- [Glama MCP](https://glama.ai/mcp/servers) - MCP server browser
+
+### Official
 - [MCP Specification](https://modelcontextprotocol.io)
 - [Official MCP Servers](https://github.com/modelcontextprotocol/servers)
-- [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
-- [MCPcat Directory](https://mcpcat.io)
+- [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+- [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)

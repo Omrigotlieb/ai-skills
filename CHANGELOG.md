@@ -13,6 +13,50 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.1.0] - 2026-01-01
+
+### Added
+
+**Skills Catalog Expansion**
+- Added Superpowers collection (obra) with 15+ professional skills
+  - TDD, debugging, collaboration, planning skills
+  - Commands: /superpowers:brainstorm, /superpowers:write-plan, /superpowers:execute-plan
+- Added Scientific Skills section (125+ skills)
+  - 26+ scientific database skills (PubMed, ChEMBL, UniProt, etc.)
+  - 54+ Python package skills (RDKit, Scanpy, BioPython, etc.)
+  - 15+ scientific integrations (Benchling, DNAnexus, etc.)
+- Added more community skills with proper attribution
+
+**MCP Servers Expansion**
+- Added database servers section (MongoDB, Redis, Elasticsearch, Neon)
+- Added DevOps & Cloud servers (Docker, Kubernetes, Terraform, AWS, GCP)
+- Added Development tools (Sentry, Linear, Slack, Git, NPM)
+- Added AI & Research servers (Perplexity, Exa, Arxiv, HuggingFace)
+- Added Productivity servers (Google Drive, Calendar, Todoist, Obsidian)
+- Added stats: 7,260+ MCP servers available, 8M+ downloads
+
+**Plugins Expansion**
+- Added Superpowers plugin with full documentation
+- Added dx plugin (ykdojo)
+- Added pr-review-toolkit with all 6 agents documented
+- Added feature-dev, code-refactoring, ralph-wiggum plugins
+- Added bmad (BMAD Method) project management plugin
+- Added plugin marketplaces section with install commands
+- Added hooks documentation with examples
+
+**CLAUDE.md Templates**
+- Added Full-Stack template (Next.js + API + Database)
+- Added Monorepo template (Turborepo/pnpm workspaces)
+- Added Data Science/ML template (notebooks, experiments, MLflow)
+- Added Open Source template (contribution, releases, docs)
+
+### Changed
+- Restructured skills README with clear categories
+- Enhanced MCP servers README with configuration examples
+- Improved plugins README with comprehensive install guides
+
+---
+
 ## [1.0.0] - 2026-01-01
 
 ### Added

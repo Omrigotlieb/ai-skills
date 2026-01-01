@@ -2,11 +2,14 @@
 
 Skills are model-invoked tools that Claude automatically uses when relevant to your task. Unlike slash commands which you explicitly trigger, skills enable intelligent, context-aware automation.
 
+> **Latest Update:** January 2026 - Added 50+ skills across all categories
+
 ## How Skills Work
 
 1. **Model-Invoked**: Claude decides when to use a skill based on context
 2. **Automatic Loading**: Skills are loaded only when relevant
-3. **Folder Structure**: Each skill contains instructions, scripts, and resources
+3. **Portable**: Same format works in Claude Code, Claude.ai, and API
+4. **Folder Structure**: Each skill contains SKILL.md + optional scripts and resources
 
 ## Installing Skills
 
@@ -16,101 +19,245 @@ claude skill install <skill-name>
 
 # From a GitHub repository
 claude skill install github:username/repo/skill-name
+
+# From superpowers marketplace
+/plugin marketplace add obra/superpowers-marketplace
+/plugin install superpowers@superpowers-marketplace
 ```
 
 ---
 
-## Official Skills
+## Official Skills (Anthropic)
 
 ### Document Processing
 
-| Skill | Description | Install |
+| Skill | Description | Use Case |
+|-------|-------------|----------|
+| **xlsx** | Excel manipulation: formulas, formatting, pivot tables, charts, data analysis | Financial reports, data processing |
+| **pdf** | PDF operations: text extraction, merging, splitting, form handling, OCR | Document processing, report generation |
+| **docx** | Word documents: creation, editing, tracked changes, templates, styles | Documentation, contracts, proposals |
+| **pptx** | PowerPoint: slides, layouts, templates, animations, speaker notes | Pitch decks, presentations |
+
+### Development & Technical
+
+| Skill | Description | Use Case |
+|-------|-------------|----------|
+| **frontend-design** | React & Tailwind components avoiding generic AI aesthetics | UI/UX implementation |
+| **artifacts-builder** | Complex interactive HTML artifacts with React/shadcn/ui | Interactive prototypes |
+| **mcp-builder** | Create MCP servers for external API integration | Tool building |
+| **webapp-testing** | Playwright-based E2E web application testing | QA automation |
+
+### Creative & Design
+
+| Skill | Description | Use Case |
+|-------|-------------|----------|
+| **algorithmic-art** | Generative art with p5.js, randomness, particle systems | Visual content |
+| **canvas-design** | Visual art creation in PNG and PDF formats | Design assets |
+| **slack-gif-creator** | Animated GIFs optimized for Slack display | Team communication |
+
+### Communication & Enterprise
+
+| Skill | Description | Use Case |
+|-------|-------------|----------|
+| **brand-guidelines** | Apply brand colors, typography, and style guidelines | Consistent branding |
+| **internal-comms** | Status reports, newsletters, FAQ writing | Team updates |
+
+### Meta Skills
+
+| Skill | Description | Use Case |
+|-------|-------------|----------|
+| **skill-creator** | Interactive Q&A tool for building new skills | Skill development |
+
+---
+
+## Superpowers Collection (obra)
+
+The most comprehensive skill library for professional development. Install via:
+```bash
+/plugin marketplace add obra/superpowers-marketplace
+/plugin install superpowers@superpowers-marketplace
+```
+
+### Testing Skills
+
+| Skill | Description | Trigger |
 |-------|-------------|---------|
-| **xlsx** | Excel manipulation: formulas, formatting, pivot tables, data analysis | `claude skill install xlsx` |
-| **pdf** | PDF operations: text extraction, merging, splitting, form handling | `claude skill install pdf` |
-| **docx** | Word documents: creation, editing, tracked changes, templates | `claude skill install docx` |
-| **pptx** | PowerPoint: slides, layouts, templates, speaker notes | `claude skill install pptx` |
+| **test-driven-development** | Enforces RED-GREEN-REFACTOR cycle with anti-patterns reference | Implementing features |
+| **verification-before-completion** | Confirms fixes are actually working before claiming done | Before task completion |
 
-### Development
+### Debugging Skills
 
-| Skill | Description | Install |
+| Skill | Description | Trigger |
 |-------|-------------|---------|
-| **frontend-design** | React & Tailwind components avoiding generic AI aesthetics | `claude skill install frontend-design` |
-| **artifacts-builder** | Complex interactive HTML artifacts with React/shadcn/ui | `claude skill install artifacts-builder` |
-| **mcp-builder** | Create MCP servers for external API integration | `claude skill install mcp-builder` |
-| **webapp-testing** | Playwright-based E2E web application testing | `claude skill install webapp-testing` |
+| **systematic-debugging** | Four-phase root cause analysis with tracing and defense | Debugging issues |
 
-### Creative
+### Collaboration Skills
 
-| Skill | Description | Install |
+| Skill | Description | Trigger |
 |-------|-------------|---------|
-| **algorithmic-art** | Generative art with p5.js, randomness, particle systems | `claude skill install algorithmic-art` |
-| **canvas-design** | Visual art creation in PNG and PDF formats | `claude skill install canvas-design` |
-| **slack-gif-creator** | Animated GIFs optimized for Slack display | `claude skill install slack-gif-creator` |
+| **brainstorm** | Socratic method for refining designs through questions | Design discussions |
+| **writing-plans** | Creates detailed implementation plans with bite-sized tasks | Planning features |
+| **executing-plans** | Batch execution with human checkpoints | Implementing plans |
+| **dispatching-parallel-agents** | Enables concurrent subagent workflows | Complex tasks |
+| **requesting-code-review** | Pre-review quality checklist | Before PR |
+| **receiving-code-review** | Handles feedback integration gracefully | After review |
+| **using-git-worktrees** | Manages isolated development branches | Parallel work |
+| **finishing-a-development-branch** | Handles merge/PR decisions and cleanup | Branch completion |
+| **subagent-driven-development** | Two-stage review: spec compliance, then code quality | Quality assurance |
 
-### Communication
+### Meta Skills
 
-| Skill | Description | Install |
+| Skill | Description | Trigger |
 |-------|-------------|---------|
-| **brand-guidelines** | Apply Anthropic brand colors and typography | `claude skill install brand-guidelines` |
-| **internal-comms** | Status reports, newsletters, FAQ writing | `claude skill install internal-comms` |
+| **writing-skills** | Framework for creating new skills with testing methodology | Creating skills |
+| **using-superpowers** | Introduction to the skills system | Getting started |
 
-### Meta
+### Superpowers Commands
 
-| Skill | Description | Install |
-|-------|-------------|---------|
-| **skill-creator** | Interactive Q&A tool for building new skills | `claude skill install skill-creator` |
+```bash
+/superpowers:brainstorm     # Interactive design refinement
+/superpowers:write-plan     # Create implementation plan
+/superpowers:execute-plan   # Execute plan in batches
+```
+
+---
+
+## Scientific Skills (125+)
+
+For research, bioinformatics, and data science. Source: [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills)
+
+### Scientific Databases (26+)
+
+| Skill | Description | Domain |
+|-------|-------------|--------|
+| **openalex** | Academic publication search and analysis | Research |
+| **pubmed** | Biomedical literature database | Life Sciences |
+| **chembl** | Bioactivity database for drug discovery | Chemistry |
+| **uniprot** | Protein sequence and function database | Bioinformatics |
+| **cosmic** | Cancer mutation database | Oncology |
+| **clinicaltrials** | Clinical trials registry | Medicine |
+| **ncbi-gene** | Gene information database | Genetics |
+
+### Python Packages (54+)
+
+| Skill | Description | Domain |
+|-------|-------------|--------|
+| **rdkit** | Molecular modeling and cheminformatics | Chemistry |
+| **scanpy** | Single-cell RNA-seq analysis | Genomics |
+| **biopython** | Biological computation tools | Bioinformatics |
+| **pytorch-lightning** | Deep learning framework | ML |
+| **scikit-learn** | Machine learning library | Data Science |
+| **pennylane** | Quantum machine learning | Quantum |
+| **qiskit** | Quantum computing | Quantum |
+
+### Scientific Integrations (15+)
+
+| Skill | Description | Platform |
+|-------|-------------|----------|
+| **benchling** | Life sciences R&D platform | Lab Management |
+| **dnanexus** | Genomics data analysis | Cloud |
+| **latchbio** | Bioinformatics workflows | Cloud |
+| **omero** | Image data management | Microscopy |
+| **protocols-io** | Protocol sharing | Methods |
+
+### Categories Covered
+- Bioinformatics & Genomics
+- Cheminformatics & Drug Discovery
+- Proteomics & Mass Spectrometry
+- Clinical Research & Precision Medicine
+- Machine Learning & AI
+- Quantum Computing
 
 ---
 
 ## Community Skills
 
-See [community/README.md](community/README.md) for community-contributed skills.
+See [community/README.md](community/README.md) for more community-contributed skills.
+
+### Featured Individual Skills
+
+| Skill | Description | Author |
+|-------|-------------|--------|
+| **ios-simulator-skill** | iOS app building and testing automation | Community |
+| **playwright-skill** | General browser automation | Community |
+| **claude-d3js-skill** | D3.js data visualizations | Community |
+| **web-asset-generator** | Favicons, app icons, social images | Community |
+| **ffuf-web-fuzzing** | Web fuzzing for pentesting | Community |
+| **prevent-confirmatory** | Prevents automatic agreeable responses | @brunoasm |
 
 ---
 
 ## Creating Your Own Skills
 
-### Skill Structure
+### Skill Structure (Agent Skills Spec)
 ```
 my-skill/
-├── skill.md          # Main instructions
+├── SKILL.md          # Main instructions (required)
 ├── examples/         # Example inputs/outputs
 ├── scripts/          # Helper scripts
 └── resources/        # Additional files
 ```
 
-### skill.md Format
+### SKILL.md Format
 ```markdown
-# My Skill Name
+---
+name: my-skill-name
+description: Brief description of what this skill does
+version: 1.0.0
+---
 
-## Description
-What this skill does...
+# My Skill Name
 
 ## When to Use
 - Trigger condition 1
 - Trigger condition 2
 
 ## Instructions
-Step-by-step guidance...
+Step-by-step guidance for Claude...
 
 ## Examples
-### Example 1
-Input: ...
-Output: ...
+
+### Example 1: Basic Usage
+**Input:** User asks for X
+**Output:** Claude does Y
+
+## Guidelines
+- Guideline 1
+- Guideline 2
 ```
 
 ### Best Practices
-1. Keep instructions focused and specific
-2. Include clear trigger conditions
-3. Provide multiple examples
-4. Test with various scenarios
-5. Document any dependencies
+1. **Keep instructions focused** - 150-200 instructions max
+2. **Clear trigger conditions** - When should this skill activate?
+3. **Multiple examples** - Show various use cases
+4. **Test thoroughly** - Verify with different scenarios
+5. **Document dependencies** - What else does this need?
+
+### Skill Locations
+```bash
+# Personal skills (all projects)
+~/.claude/skills/my-skill/
+
+# Project skills (this repo only)
+.claude/skills/my-skill/
+```
 
 ---
 
 ## Resources
 
-- [Official Skills Documentation](https://code.claude.com/docs/en/skills)
+### Official
+- [Skills Documentation](https://code.claude.com/docs/en/skills)
 - [Skills Announcement](https://www.anthropic.com/news/skills)
-- [Creating Skills Guide](https://code.claude.com/docs/en/plugins)
+- [Agent Skills Spec](https://agentskills.io)
+- [anthropics/skills](https://github.com/anthropics/skills)
+
+### Community
+- [obra/superpowers](https://github.com/obra/superpowers) - Professional skills library
+- [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) - 125+ scientific skills
+- [awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) - Curated list
+- [Skills Marketplace](https://skillsmp.com) - Skills directory
+
+### Tutorials
+- [Skills Explained](https://claude.com/blog/skills-explained) - Official comparison guide
+- [Writing Skills Blog](https://blog.fsck.com/2025/10/16/skills-for-claude/) - Practical guide

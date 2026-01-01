@@ -2,6 +2,8 @@
 
 Plugins bundle skills, commands, agents, hooks, and MCP servers into shareable packages.
 
+> **Latest:** 239+ Agent Skills available across marketplaces. Plugins are free and open-source.
+
 ## What Are Plugins?
 
 Plugins extend Claude Code with custom functionality that can be shared across projects and teams. A plugin can contain:
@@ -17,13 +19,16 @@ Plugins extend Claude Code with custom functionality that can be shared across p
 ## Installing Plugins
 
 ```bash
-# From a marketplace
-claude plugin install marketplace:plugin-name
+# Register a marketplace first
+/plugin marketplace add owner/repo
 
-# From GitHub
+# Install from marketplace
+/plugin install plugin-name@marketplace-name
+
+# Install from GitHub directly
 claude plugin install github:username/repo
 
-# From local path
+# Install from local path
 claude plugin install ./path/to/plugin
 ```
 
@@ -31,7 +36,31 @@ claude plugin install ./path/to/plugin
 
 ## Featured Plugins
 
-### [dx](https://github.com/ykdojo/claude-code-tips)
+### Superpowers (obra)
+**The most comprehensive development workflow suite**
+
+Professional skills that activate automatically based on context.
+
+**Features:**
+- 20+ battle-tested skills (TDD, debugging, code review)
+- Automatic skill activation
+- Git worktree management
+- Parallel agent workflows
+
+**Install:**
+```bash
+/plugin marketplace add obra/superpowers-marketplace
+/plugin install superpowers@superpowers-marketplace
+```
+
+**Commands:**
+- `/superpowers:brainstorm` - Interactive design refinement
+- `/superpowers:write-plan` - Create implementation plan
+- `/superpowers:execute-plan` - Execute plan in batches
+
+---
+
+### dx (ykdojo)
 **Developer Experience Bundle**
 
 Essential commands for daily development workflow.
@@ -41,13 +70,14 @@ Essential commands for daily development workflow.
 - `/handoff` - Create context handoff documents
 - `/clone` - Clone conversation branch
 
+**Install:**
 ```bash
 claude plugin install github:ykdojo/dx
 ```
 
 ---
 
-### [commit-commands](https://claude-plugins.dev)
+### commit-commands
 **Git Workflow Automation**
 
 Streamlined commit, push, and PR workflows.
@@ -57,91 +87,145 @@ Streamlined commit, push, and PR workflows.
 - `/commit-push-pr` - Full workflow in one command
 - `/clean_gone` - Clean up merged branches
 
+**Install:**
 ```bash
-claude plugin install marketplace:commit-commands
+/plugin marketplace add anthropics/claude-code
+/plugin install commit-commands@anthropics/claude-code
 ```
 
 ---
 
-### [pr-review-toolkit](https://claude-plugins.dev)
-**Code Review Agents**
+### pr-review-toolkit
+**Comprehensive PR Review Suite**
 
-Comprehensive PR review with specialized agents.
+Multiple specialized agents for thorough code review.
 
 **Agents:**
-- `code-reviewer` - Style and quality checks
-- `code-simplifier` - Simplification suggestions
-- `comment-analyzer` - Comment quality review
-- `silent-failure-hunter` - Error handling analysis
-- `type-design-analyzer` - Type system review
+| Agent | Purpose |
+|-------|---------|
+| `code-reviewer` | Style, quality, conventions |
+| `code-simplifier` | Simplification suggestions |
+| `comment-analyzer` | Comment quality review |
+| `silent-failure-hunter` | Error handling analysis |
+| `type-design-analyzer` | Type system review |
+| `pr-test-analyzer` | Test coverage analysis |
 
 **Commands:**
 - `/review-pr [aspects]` - Full PR review
 
+**Install:**
 ```bash
-claude plugin install marketplace:pr-review-toolkit
+/plugin install pr-review-toolkit
 ```
 
 ---
 
-### [frontend-design](https://claude-plugins.dev)
+### frontend-design
 **UI Development**
 
-Production-grade frontend interface generation.
+Production-grade frontend interface generation that avoids generic AI aesthetics.
 
 **Features:**
 - React component generation
 - Tailwind CSS styling
-- Avoids generic AI aesthetics
 - Responsive layouts
+- Distinctive design patterns
 
+**Install:**
 ```bash
-claude plugin install marketplace:frontend-design
+/plugin install frontend-design
 ```
 
 ---
 
-### [feature-dev](https://claude-plugins.dev)
-**Feature Development**
+### feature-dev
+**Guided Feature Development**
 
-Guided feature implementation with architecture focus.
+Architecture-focused feature implementation with specialized agents.
 
 **Agents:**
-- `code-architect` - Design feature architectures
-- `code-explorer` - Analyze existing patterns
-- `code-reviewer` - Review implementations
+| Agent | Purpose |
+|-------|---------|
+| `code-architect` | Design feature architectures |
+| `code-explorer` | Analyze existing patterns |
+| `code-reviewer` | Review implementations |
 
 **Commands:**
 - `/feature-dev [description]` - Start guided development
 
-```bash
-claude plugin install marketplace:feature-dev
-```
+---
+
+### code-refactoring
+**Code Modernization Suite**
+
+Refactoring and legacy modernization tools.
+
+**Agents:**
+| Agent | Purpose |
+|-------|---------|
+| `code-reviewer` | Modern code analysis, security, performance |
+| `legacy-modernizer` | Framework migration, tech debt reduction |
 
 ---
 
-### [code-refactoring](https://claude-plugins.dev)
-**Refactoring Tools**
+### ralph-wiggum
+**Iterative Problem Solving**
 
-Code modernization and quality improvement.
+Loop-based approach for complex problem solving.
+
+**Commands:**
+- `/ralph-loop PROMPT` - Start iterative loop
+- `/cancel-ralph` - Cancel active loop
+- `/help` - Explain technique
+
+---
+
+### bmad (BMAD Method)
+**Project Management Framework**
+
+Full project lifecycle management with specialized agents.
 
 **Agents:**
-- `code-reviewer` - Modern code analysis
-- `legacy-modernizer` - Framework migration
+- `analyst` - Requirements analysis
+- `architect` - System architecture
+- `pm` - Project management
+- `dev` - Development
+- `ux-designer` - UX design
+- `tech-writer` - Documentation
 
-```bash
-claude plugin install marketplace:code-refactoring
-```
+**Workflows:**
+- `/bmad:create-tech-spec` - Create technical specifications
+- `/bmad:create-epics-and-stories` - Break down requirements
+- `/bmad:dev-story` - Execute development stories
+- `/bmad:code-review` - Adversarial code review
 
 ---
 
 ## Plugin Marketplaces
 
-| Marketplace | Description | Link |
-|-------------|-------------|------|
-| **claude-plugins.dev** | Community plugin registry | [Visit](https://claude-plugins.dev) |
+| Marketplace | Description | Install |
+|-------------|-------------|---------|
+| **anthropics/claude-code** | Official Anthropic plugins | `/plugin marketplace add anthropics/claude-code` |
+| **obra/superpowers-marketplace** | Curated development tools | `/plugin marketplace add obra/superpowers-marketplace` |
+| **claude-plugins.dev** | Community registry | [Visit](https://claude-plugins.dev) |
 | **skillsmp.com** | Agent skills marketplace | [Visit](https://skillsmp.com) |
-| **anthropics/skills** | Official skills | [GitHub](https://github.com/anthropics/skills) |
+| **aitmpl.com** | 100+ templates and plugins | [Visit](https://www.aitmpl.com/plugins) |
+
+---
+
+## Notable Plugin Collections
+
+### Seth Hobson's Repository
+80+ specialized sub-agents available via plugins.
+
+### Dan Ávila's Marketplace
+- DevOps automation
+- Documentation generation
+- Project management
+- Testing suites
+
+### Claude Code Plugins Plus Skills
+239 Agent Skills with interactive Jupyter tutorials.
 
 ---
 
@@ -150,15 +234,17 @@ claude plugin install marketplace:code-refactoring
 ### Plugin Structure
 ```
 my-plugin/
-├── plugin.json         # Metadata
+├── plugin.json         # Metadata (required)
 ├── commands/           # Slash commands
 │   └── my-command.md
 ├── agents/             # Specialized agents
 │   └── my-agent.md
 ├── skills/             # Agent skills
 │   └── my-skill/
+│       └── SKILL.md
 ├── hooks/              # Event handlers
-│   └── pre-commit.sh
+│   ├── pre-commit.sh
+│   └── post-tool-use.sh
 └── .mcp.json           # MCP configuration
 ```
 
@@ -169,9 +255,13 @@ my-plugin/
   "version": "1.0.0",
   "description": "What my plugin does",
   "author": "Your Name",
+  "homepage": "https://github.com/you/my-plugin",
   "commands": ["commands/my-command.md"],
   "agents": ["agents/my-agent.md"],
-  "skills": ["skills/my-skill"]
+  "skills": ["skills/my-skill"],
+  "hooks": {
+    "pre-commit": "hooks/pre-commit.sh"
+  }
 }
 ```
 
@@ -184,9 +274,29 @@ Description of what this command does.
 ## Usage
 /project:my-command [args]
 
+## Arguments
+- `arg1` - Description
+
 ## Steps
 1. First step...
 2. Second step...
+```
+
+### Agent File (agents/my-agent.md)
+```markdown
+# My Agent
+
+You are a specialized agent for [purpose].
+
+## Capabilities
+- Capability 1
+- Capability 2
+
+## Instructions
+When invoked, you should...
+
+## Output Format
+Return results as...
 ```
 
 ---
@@ -195,19 +305,57 @@ Description of what this command does.
 
 ### For Users
 - **Start small**: Install 1-2 plugins that match your workflow
-- **Review before installing**: Check the plugin source
-- **Update regularly**: Keep plugins current
+- **Review source**: Check the plugin repository before installing
+- **Update regularly**: Keep plugins current for security/features
+- **Check overhead**: Too many plugins can slow Claude Code
 
 ### For Authors
 - **Single responsibility**: Each plugin should do one thing well
 - **Clear documentation**: Include usage examples
-- **Version properly**: Follow semver
+- **Version properly**: Follow semver for updates
 - **Test thoroughly**: Verify all commands and agents work
+- **Include examples**: Show real-world usage
+
+---
+
+## Hooks
+
+Plugins can include hooks that trigger on events:
+
+| Hook | Trigger |
+|------|---------|
+| `pre-commit` | Before git commit |
+| `post-commit` | After git commit |
+| `pre-tool-use` | Before tool execution |
+| `post-tool-use` | After tool execution |
+| `on-error` | When errors occur |
+
+### Hook Example
+```bash
+#!/bin/bash
+# hooks/pre-commit.sh
+
+# Run linting before commit
+npm run lint
+
+# Exit non-zero to block commit
+if [ $? -ne 0 ]; then
+  echo "Linting failed. Commit blocked."
+  exit 1
+fi
+```
 
 ---
 
 ## Resources
 
+### Official
 - [Plugin Documentation](https://code.claude.com/docs/en/plugins)
 - [Plugin Creation Guide](https://code.claude.com/docs/en/plugins/create)
-- [claude-plugins.dev](https://claude-plugins.dev)
+- [Marketplace Guide](https://code.claude.com/docs/en/plugin-marketplaces)
+- [Anthropic Plugins](https://www.anthropic.com/news/claude-code-plugins)
+
+### Community
+- [claude-plugins.dev](https://claude-plugins.dev) - Community registry
+- [awesome-claude-code-plugins](https://github.com/hekmon8/awesome-claude-code-plugins) - Curated list
+- [claude-code-plugins-plus-skills](https://github.com/jeremylongshore/claude-code-plugins-plus-skills) - 239+ skills
