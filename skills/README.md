@@ -170,6 +170,18 @@ For research, bioinformatics, and data science. Source: [K-Dense-AI/claude-scien
 
 ---
 
+## Skill Categories
+
+Detailed guides for specific skill domains:
+
+| Category | Description | Link |
+|----------|-------------|------|
+| **Security** | DevSecOps, vulnerability detection, secure coding | [View](security/README.md) |
+| **API Development** | REST design, OpenAPI, documentation | [View](api-development/README.md) |
+| **Community** | Community-contributed skills | [View](community/README.md) |
+
+---
+
 ## Community Skills
 
 See [community/README.md](community/README.md) for more community-contributed skills.
