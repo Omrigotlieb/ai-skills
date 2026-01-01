@@ -7,7 +7,7 @@
 [![Daily Updates](https://img.shields.io/badge/updates-daily-brightgreen)](https://github.com/omrigotlieb/ai-skills/commits/main)
 [![Skills](https://img.shields.io/badge/skills-250%2B-blue)](skills/README.md)
 [![MCP Servers](https://img.shields.io/badge/MCP_servers-100%2B-purple)](mcp-servers/README.md)
-[![Templates](https://img.shields.io/badge/templates-9-orange)](templates/README.md)
+[![Templates](https://img.shields.io/badge/templates-13-orange)](templates/README.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/omrigotlieb/ai-skills?style=social)](https://github.com/omrigotlieb/ai-skills)
@@ -285,11 +285,15 @@ Ready-to-use CLAUDE.md templates for different project types.
 |----------|----------|
 | [React/Next.js](templates/react-nextjs.md) | Frontend web apps, SSR |
 | [Full-Stack](templates/fullstack.md) | End-to-end applications |
+| [Vue.js](templates/vue.md) | Vue 3, Composition API |
+| [Angular](templates/angular.md) | Angular 17+, Standalone |
 
 ### Backend
 | Template | Best For |
 |----------|----------|
+| [TypeScript](templates/typescript.md) | Node.js, Bun, Deno |
 | [Python/FastAPI](templates/python-fastapi.md) | Python APIs |
+| [Python/Django](templates/django.md) | Django with DRF |
 | [Go](templates/go.md) | Go services, CLI tools |
 | [Rust](templates/rust.md) | Rust applications |
 
@@ -301,7 +305,7 @@ Ready-to-use CLAUDE.md templates for different project types.
 | [Data Science](templates/data-science.md) | ML/AI projects |
 | [Open Source](templates/opensource.md) | Community projects |
 
-[View all 9 templates](templates/README.md)
+[View all 13 templates](templates/README.md)
 
 ---
 

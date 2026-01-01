@@ -79,7 +79,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [1.4.0] - 2026-01-02
+## [1.6.0] - 2026-01-02
+
+### Added
+
+**New CLAUDE.md Templates**
+- **TypeScript** - Node.js/Bun/Deno projects with strict mode, branded types
+- **Django** - Python Django with DRF, services layer, pytest-django
+- **Vue.js** - Vue 3 Composition API, Pinia, Vite, script setup
+- **Angular** - Angular 17+ standalone, signals, functional interceptors
+
+### Changed
+- Templates count increased from 9 to 13
+- Updated main README and templates README with new templates
+
+---
+
+## [1.5.0] - 2026-01-02
 
 ### Added
 

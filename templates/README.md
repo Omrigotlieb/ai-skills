@@ -2,7 +2,7 @@
 
 Ready-to-use CLAUDE.md templates for different project types. Copy, customize, and use.
 
-> **9 templates** covering web, backend, mobile, and more
+> **13 templates** covering web, backend, mobile, and more
 
 ## What is CLAUDE.md?
 
@@ -23,11 +23,15 @@ CLAUDE.md is a special file that Claude automatically reads when starting a conv
 |----------|----------|------|
 | **React/Next.js** | Frontend web applications, SSR, App Router | [View](react-nextjs.md) |
 | **Full-Stack** | End-to-end Next.js applications with API & DB | [View](fullstack.md) |
+| **Vue.js** | Vue 3 applications with Composition API | [View](vue.md) |
+| **Angular** | Angular 17+ standalone applications | [View](angular.md) |
 
 ### Backend
 | Template | Best For | Link |
 |----------|----------|------|
+| **TypeScript** | TypeScript projects (Node.js, Bun, Deno) | [View](typescript.md) |
 | **Python/FastAPI** | Python REST APIs, microservices | [View](python-fastapi.md) |
+| **Python/Django** | Django web applications with DRF | [View](django.md) |
 | **Go** | Go web services, CLI tools, high-performance APIs | [View](go.md) |
 | **Rust** | Rust applications, systems programming, CLI tools | [View](rust.md) |
 
@@ -166,11 +170,13 @@ What to avoid
 Have a template for a specific stack or project type? Submit a PR!
 
 **Requested Templates:**
-- [ ] Django/Python
+- [x] Django/Python *(Added!)*
+- [x] Vue.js *(Added!)*
+- [x] Angular *(Added!)*
+- [x] TypeScript *(Added!)*
 - [ ] Spring Boot/Java
 - [ ] Laravel/PHP
 - [ ] Flutter/Dart
-- [ ] Vue.js/Nuxt
 - [ ] Svelte/SvelteKit
 - [ ] Elixir/Phoenix
 
