@@ -12,7 +12,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/omrigotlieb/ai-skills?style=social)](https://github.com/omrigotlieb/ai-skills)
 
-[**Skills**](skills/README.md) | [**MCP Servers**](mcp-servers/README.md) | [**Plugins**](plugins/README.md) | [**Templates**](templates/README.md) | [**Tips**](tips/README.md)
+[**Skills**](skills/README.md) | [**MCP Servers**](mcp-servers/README.md) | [**Plugins**](plugins/README.md) | [**Templates**](templates/README.md) | [**Cheatsheet**](cheatsheet/README.md) | [**Tips**](tips/README.md)
 
 </div>
 
@@ -39,6 +39,7 @@ The Claude Code ecosystem is evolving rapidly. New skills, MCP servers, and plug
 - [Hooks](#hooks)
 - [Workflows](#workflows)
 - [Prompts](#prompts)
+- [Cheatsheet](#cheatsheet)
 - [Tips & Tricks](#tips--tricks)
 - [CLAUDE.md Templates](#claudemd-templates)
 - [Resources](#resources)
@@ -244,6 +245,30 @@ Output: Ready-to-commit implementation
 ```
 
 [View prompt templates](prompts/README.md)
+
+---
+
+## Cheatsheet
+
+Quick reference for Claude Code commands and shortcuts.
+
+### Essential Commands
+| Command | Description |
+|---------|-------------|
+| `/help` | Show all commands |
+| `/clear` | Clear conversation |
+| `/compact` | Reduce context |
+| `/usage` | Token usage |
+| `/mcp` | List MCP servers |
+
+### Keyboard Shortcuts
+| Shortcut | Action |
+|----------|--------|
+| `Shift+Tab` | Plan mode |
+| `Ctrl+V` | Paste images |
+| `#` | Quick note to CLAUDE.md |
+
+[View full cheatsheet](cheatsheet/README.md)
 
 ---
 

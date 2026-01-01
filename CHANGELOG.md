@@ -95,7 +95,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [1.5.0] - 2026-01-02
+## [1.7.0] - 2026-01-02
+
+### Added
+
+**Cheatsheet Section** (`cheatsheet/README.md`)
+- Essential commands reference
+- Keyboard shortcuts guide
+- CLI flags documentation
+- File references syntax
+- Prompt patterns
+- CLAUDE.md quick reference
+- MCP configuration guide
+- Hooks configuration
+- Custom commands setup
+- Context management tips
+- Git operations patterns
+
+### Changed
+- Added cheatsheet link to main navigation
+- Updated table of contents
+
+---
+
+## [1.6.0] - 2026-01-02
 
 ### Added
 
