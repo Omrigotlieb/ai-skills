@@ -1,10 +1,10 @@
 # Community Skills
 
-Community-contributed skills that extend Claude's capabilities.
+Community-contributed skills can be excellent, but they vary a lot in quality. This page focuses on verified collections, curation standards, and how to submit a real skill without filling the catalog with placeholder entries.
 
 ---
 
-## Featured Collections
+## Strong Starting Points
 
 ### [obra/superpowers](https://github.com/obra/superpowers)
 20+ battle-tested skills for professional development workflows.
@@ -17,14 +17,13 @@ Community-contributed skills that extend Claude's capabilities.
 - Refactoring patterns
 
 ```bash
-# Install the collection
 claude skill install github:obra/superpowers
 ```
 
 ---
 
 ### [obra/superpowers-lab](https://github.com/obra/superpowers-lab)
-Experimental skills pushing the boundaries of what's possible.
+Experimental skills pushing the boundaries of what is possible.
 
 **Focus Areas:**
 - Advanced reasoning techniques
@@ -49,56 +48,46 @@ claude skill install github:obra/superpowers-lab
 
 ---
 
-## Individual Skills
+## How To Evaluate A Community Skill
 
-### Development
+Use this checklist before you install or recommend one:
 
-| Skill | Description | Link |
-|-------|-------------|------|
-| **ios-simulator-skill** | iOS app building and testing automation | [GitHub](https://github.com/example/ios-simulator-skill) |
-| **playwright-skill** | General-purpose browser automation | [GitHub](https://github.com/example/playwright-skill) |
-| **claude-d3js-skill** | D3.js data visualization generation | [GitHub](https://github.com/example/claude-d3js-skill) |
-
-### Security
-
-| Skill | Description | Link |
-|-------|-------------|------|
-| **ffuf-web-fuzzing** | Web fuzzing guidance for penetration testing | [GitHub](https://github.com/example/ffuf-web-fuzzing) |
-
-### Design
-
-| Skill | Description | Link |
-|-------|-------------|------|
-| **web-asset-generator** | Favicons, app icons, social media images | [GitHub](https://github.com/example/web-asset-generator) |
-
-### Data
-
-| Skill | Description | Link |
-|-------|-------------|------|
-| **csv-analyzer** | CSV file analysis and transformation | Community |
-| **json-transformer** | JSON manipulation and schema validation | Community |
+- The repository is real, public, and maintained.
+- The skill explains what triggers it and what problem it solves.
+- There are concrete examples, not just claims.
+- Setup steps are short enough that someone can reproduce them.
+- The skill adds specific leverage instead of wrapping generic advice.
 
 ---
 
 ## Submitting a Community Skill
 
-1. Create a GitHub repository with your skill
-2. Follow the [skill structure guidelines](../README.md#creating-your-own-skills)
-3. [Open an issue](../../../issues/new?template=new-skill.md) in this repo
-4. We'll review and add it to the list
+1. Create a GitHub repository with your skill.
+2. Follow the [skill structure guidelines](../README.md#creating-your-own-skills).
+3. Make sure the repository includes a real `SKILL.md` and usage guidance.
+4. [Open a submission issue](https://github.com/Omrigotlieb/ai-skills/issues/new?template=new-skill.md) in this repo.
+5. We will review it before adding it to the catalog.
 
-### Quality Requirements
+### Minimum Quality Requirements
+
 - Clear documentation
-- Working examples
+- Working examples or clear demonstrations
 - Active maintenance
 - No security concerns
+- No placeholder links or unverifiable claims
 
 ---
 
-## Tools for Skill Development
+## What We Do Not List
 
-### [Skill_Seekers](https://github.com/example/skill-seekers)
-Converts documentation to Claude skills automatically.
+- Placeholder repositories
+- Example links that do not resolve to real projects
+- Skills with vague descriptions and no usage guidance
+- Near-duplicates that do not materially differ from an existing entry
+
+---
+
+## Tools For Skill Development
 
 ### [skill-creator](https://github.com/anthropics/skills)
 Official interactive skill creation tool.

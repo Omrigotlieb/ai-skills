@@ -1,410 +1,76 @@
 # AI Skills Hub
 
-<div align="center">
+A curated field guide for Claude Code skills, MCP servers, plugins, workflows, and reusable `CLAUDE.md` templates.
 
-**The most comprehensive, actively-maintained collection of Claude Code skills, MCP servers, plugins, tips, and resources.**
-
-[![Daily Updates](https://img.shields.io/badge/updates-daily-brightgreen)](https://github.com/omrigotlieb/ai-skills/commits/main)
-[![Skills](https://img.shields.io/badge/skills-250%2B-blue)](skills/README.md)
-[![MCP Servers](https://img.shields.io/badge/MCP_servers-100%2B-purple)](mcp-servers/README.md)
-[![Templates](https://img.shields.io/badge/templates-13-orange)](templates/README.md)
+[![Docs Checks](https://github.com/Omrigotlieb/ai-skills/actions/workflows/docs-checks.yml/badge.svg)](https://github.com/Omrigotlieb/ai-skills/actions/workflows/docs-checks.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/omrigotlieb/ai-skills?style=social)](https://github.com/omrigotlieb/ai-skills)
-
-[**Skills**](skills/README.md) | [**MCP Servers**](mcp-servers/README.md) | [**Plugins**](plugins/README.md) | [**Templates**](templates/README.md) | [**Cheatsheet**](cheatsheet/README.md) | [**Tips**](tips/README.md)
-
-</div>
-
----
-
-## Why This Repository?
-
-The Claude Code ecosystem is evolving rapidly. New skills, MCP servers, and plugins emerge daily across Reddit, GitHub, LinkedIn, and Twitter. **This repository serves as your central hub** to discover, evaluate, and implement the best tools for your AI-powered development workflow.
-
-**What makes us different:**
-- **Daily updates** - We actively research Reddit, GitHub, LinkedIn, and Twitter for new tools
-- **Curated, not just collected** - Each entry includes use cases, setup guides, and real-world examples
-- **Community-driven** - Submit your discoveries via issues or PRs
-- **Organized for discovery** - Find exactly what you need with our category system
-
----
-
-## Table of Contents
-
-- [Official Skills](#official-skills)
-- [Community Skills](#community-skills)
-- [MCP Servers](#mcp-servers)
-- [Plugins](#plugins)
-- [Hooks](#hooks)
-- [Workflows](#workflows)
-- [Prompts](#prompts)
-- [Cheatsheet](#cheatsheet)
-- [Tips & Tricks](#tips--tricks)
-- [CLAUDE.md Templates](#claudemd-templates)
-- [Resources](#resources)
-- [Contributing](#contributing)
-- [Changelog](#changelog)
-
----
-
-## Official Skills
-
-Skills are model-invoked tools that Claude automatically uses when relevant. Unlike slash commands (user-invoked), skills enable intelligent, context-aware automation.
-
-### Document Skills
-| Skill | Description | Use Case |
-|-------|-------------|----------|
-| **xlsx** | Excel spreadsheet manipulation with formulas, formatting, data analysis | Financial reports, data processing |
-| **pdf** | PDF text extraction, merging, form handling | Document processing, report generation |
-| **docx** | Word document creation with tracked changes | Documentation, contracts |
-| **pptx** | PowerPoint presentations with layouts and templates | Pitch decks, presentations |
-
-### Development Skills
-| Skill | Description | Use Case |
-|-------|-------------|----------|
-| **frontend-design** | React & Tailwind design avoiding generic AI aesthetics | UI/UX implementation |
-| **artifacts-builder** | Complex HTML artifacts using React and shadcn/ui | Interactive prototypes |
-| **mcp-builder** | MCP server creation for external API integration | Tool building |
-| **webapp-testing** | Playwright-based web application testing | E2E testing |
-
-### Creative Skills
-| Skill | Description | Use Case |
-|-------|-------------|----------|
-| **algorithmic-art** | Generative art using p5.js with particle systems | Visual content creation |
-| **canvas-design** | Visual art creation in PNG/PDF formats | Design assets |
-| **slack-gif-creator** | Animated GIFs optimized for Slack | Team communication |
-
-### Meta Skills
-| Skill | Description | Use Case |
-|-------|-------------|----------|
-| **skill-creator** | Interactive tool for building new skills | Skill development |
-| **brand-guidelines** | Apply brand colors and typography | Consistent branding |
-
-[View full skills catalog](skills/README.md)
-
----
-
-## Community Skills
-
-Community-contributed skills that extend Claude's capabilities.
-
-### Featured Collections
-| Collection | Description | Stars |
-|------------|-------------|-------|
-| [obra/superpowers](https://github.com/obra/superpowers) | 20+ battle-tested skills including TDD, debugging, code review | - |
-| [obra/superpowers-lab](https://github.com/obra/superpowers-lab) | Experimental cutting-edge techniques | - |
-| [claude-scientific-skills](https://github.com/BehiSecc/awesome-claude-skills) | 125+ scientific skills for bioinformatics, ML | - |
-
-### Individual Skills
-| Skill | Description | Author |
-|-------|-------------|--------|
-| **ios-simulator-skill** | iOS app building and testing automation | Community |
-| **ffuf-web-fuzzing** | Web fuzzing for penetration testing | Community |
-| **playwright-skill** | General browser automation | Community |
-| **claude-d3js-skill** | D3.js data visualizations | Community |
-| **web-asset-generator** | Favicons, app icons, social media images | Community |
-
-[View full community skills](skills/community/README.md)
-
----
-
-## MCP Servers
-
-Model Context Protocol servers extend Claude's capabilities with external tools and data sources.
-
-### Essential MCP Servers (Top 10)
-| Server | Description | Category |
-|--------|-------------|----------|
-| **[GitHub MCP](https://github.com/modelcontextprotocol/servers)** | Repository management, PRs, issues, workflows | Git/VCS |
-| **[Context7](https://github.com/context7/mcp)** | Real-time library documentation | Documentation |
-| **[Filesystem MCP](https://github.com/modelcontextprotocol/servers)** | Secure local file operations | Core |
-| **[PostgreSQL MCP](https://github.com/modelcontextprotocol/servers)** | Natural language database queries | Database |
-| **[Puppeteer MCP](https://github.com/modelcontextprotocol/servers)** | Browser automation and testing | Automation |
-| **[Sequential Thinking](https://github.com/modelcontextprotocol/servers)** | Structured problem-solving | Reasoning |
-| **[Brave Search](https://github.com/modelcontextprotocol/servers)** | Privacy-first web search | Search |
-| **[Notion MCP](https://github.com/modelcontextprotocol/servers)** | Productivity integration | Productivity |
-| **[Figma MCP](https://github.com/modelcontextprotocol/servers)** | Design-to-code workflow | Design |
-| **[Zapier MCP](https://github.com/zapier/mcp)** | Connect to 5000+ apps | Integration |
-
-### By Category
-- [Database Servers](mcp-servers/database.md)
-- [Search & Research](mcp-servers/search.md)
-- [Automation](mcp-servers/automation.md)
-- [Productivity](mcp-servers/productivity.md)
-- [Development](mcp-servers/development.md)
-
-[View full MCP catalog](mcp-servers/README.md)
-
----
-
-## Plugins
-
-Plugins bundle skills, commands, agents, and MCP servers into shareable packages.
-
-### Featured Plugins
-| Plugin | Description | Features |
-|--------|-------------|----------|
-| **[dx](https://github.com/ykdojo/claude-code-tips)** | Developer experience bundle | /gha, /handoff, /clone commands |
-| **[commit-commands](https://claude-plugins.dev)** | Git workflow automation | Commit, push, PR creation |
-| **[pr-review-toolkit](https://claude-plugins.dev)** | Code review agents | Review, simplify, analyze |
-| **[frontend-design](https://claude-plugins.dev)** | UI development | React component generation |
-
-### Plugin Marketplaces
-- [claude-plugins.dev](https://claude-plugins.dev) - Community plugin registry
-- [skillsmp.com](https://skillsmp.com) - Agent skills marketplace
-- [anthropics/skills](https://github.com/anthropics/skills) - Official skills
-
-[View full plugin catalog](plugins/README.md)
-
----
-
-## Hooks
-
-Hooks are shell commands that execute automatically at specific points in Claude Code's lifecycle.
-
-### Hook Types
-| Hook | When It Fires | Can Block? |
-|------|---------------|------------|
-| **PreToolUse** | Before a tool executes | Yes |
-| **PostToolUse** | After a tool completes | No |
-| **UserPromptSubmit** | Before processing user input | Yes |
-| **Notification** | When Claude sends alerts | No |
-| **Stop** | When Claude finishes responding | Yes |
-| **SessionStart** | On session initialization | No |
-
-### Common Use Cases
-- Block dangerous commands (rm -rf, etc.)
-- Auto-format code after edits
-- Inject project context
-- Auto-commit after changes
-- TTS notifications
-
-```json
-{
-  "hooks": {
-    "PreToolUse": [{
-      "matcher": "Bash",
-      "command": "./hooks/validate-command.sh"
-    }]
-  }
-}
-```
-
-[View hooks guide with examples](hooks/README.md)
-
----
-
-## Workflows
-
-Battle-tested workflows and automation patterns for Claude Code.
-
-### Featured Workflows
-| Workflow | Description |
-|----------|-------------|
-| **Planning-First** | Plan → Implement → Test → Review → Commit |
-| **Test-First (TDD)** | Write tests → Implement → Refactor |
-| **Safe Refactoring** | Tests → Incremental changes → Verify |
-| **PR Review** | Checklist-based review with specific feedback |
-| **Debugging** | 5-Why technique, systematic root cause analysis |
-
-### Custom Commands
-Store workflow templates in `.claude/commands/`:
-```
-.claude/commands/
-├── feature.md      # /project:feature
-├── review.md       # /project:review
-├── debug.md        # /project:debug
-└── ship.md         # /project:ship
-```
-
-[View all workflows](workflows/README.md)
-
----
-
-## Prompts
-
-Effective prompting patterns for Claude Code.
-
-### The TCRO Framework
-1. **Task** - What's the job?
-2. **Context** - Why are we doing this?
-3. **Requirements** - Explicit list of must-haves
-4. **Output** - Expected format
-
-### Example
-```
-Task: Implement user authentication
-Context: Building MVP, need basic auth before launch
-Requirements:
-- JWT tokens with refresh
-- Password hashing (bcrypt)
-- Rate limiting
-- Unit tests
-Output: Ready-to-commit implementation
-```
-
-[View prompt templates](prompts/README.md)
-
----
-
-## Cheatsheet
-
-Quick reference for Claude Code commands and shortcuts.
-
-### Essential Commands
-| Command | Description |
-|---------|-------------|
-| `/help` | Show all commands |
-| `/clear` | Clear conversation |
-| `/compact` | Reduce context |
-| `/usage` | Token usage |
-| `/mcp` | List MCP servers |
-
-### Keyboard Shortcuts
-| Shortcut | Action |
-|----------|--------|
-| `Shift+Tab` | Plan mode |
-| `Ctrl+V` | Paste images |
-| `#` | Quick note to CLAUDE.md |
-
-[View full cheatsheet](cheatsheet/README.md)
-
----
-
-## Tips & Tricks
-
-Curated tips from 6+ months of community usage.
-
-### Quick Wins
-1. **Plan Mode First** - Press `Shift+Tab` to enter plan mode before coding
-2. **Voice Input** - Use voice for faster prompting
-3. **Custom Status Line** - Monitor usage and context in real-time
-4. **Git Worktrees** - Work on multiple branches simultaneously
-
-### Essential Commands
-```bash
-/usage        # Check token usage
-/clear        # Clear conversation
-/mcp          # List MCP servers
-/stats        # Session statistics
-/compact      # Reduce context size
-```
-
-### CLAUDE.md Best Practices
-- Keep under 150-200 instructions
-- Use WHAT/WHY/HOW framework
-- Prefer pointers over code snippets
-- Use subdirectory CLAUDE.md for specific contexts
-
-[View all 40+ tips](tips/README.md)
-
----
-
-## CLAUDE.md Templates
-
-Ready-to-use CLAUDE.md templates for different project types.
-
-### Web & Frontend
-| Template | Best For |
-|----------|----------|
-| [React/Next.js](templates/react-nextjs.md) | Frontend web apps, SSR |
-| [Full-Stack](templates/fullstack.md) | End-to-end applications |
-| [Vue.js](templates/vue.md) | Vue 3, Composition API |
-| [Angular](templates/angular.md) | Angular 17+, Standalone |
-
-### Backend
-| Template | Best For |
-|----------|----------|
-| [TypeScript](templates/typescript.md) | Node.js, Bun, Deno |
-| [Python/FastAPI](templates/python-fastapi.md) | Python APIs |
-| [Python/Django](templates/django.md) | Django with DRF |
-| [Go](templates/go.md) | Go services, CLI tools |
-| [Rust](templates/rust.md) | Rust applications |
-
-### Mobile & Other
-| Template | Best For |
-|----------|----------|
-| [React Native](templates/mobile-react-native.md) | iOS + Android apps |
-| [Monorepo](templates/monorepo.md) | Multi-package projects |
-| [Data Science](templates/data-science.md) | ML/AI projects |
-| [Open Source](templates/opensource.md) | Community projects |
-
-[View all 13 templates](templates/README.md)
-
----
-
-## Resources
-
-### Official Documentation
-- [Claude Code Docs](https://code.claude.com/docs)
-- [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
-- [Plugin Creation Guide](https://code.claude.com/docs/en/plugins)
-- [Skills Announcement](https://www.anthropic.com/news/skills)
-
-### Community Resources
-- [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) - 18k+ stars
-- [awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) - Curated skills list
-- [claude-code-tips](https://github.com/ykdojo/claude-code-tips) - 40+ practical tips
-- [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) - MCP server collection
-
-### Tutorials & Guides
-- [ClaudeLog](https://claudelog.com) - Docs, guides, tutorials
-- [Agentic Coding Substack](https://agenticcoding.substack.com) - Tips and workflows
-- [Dev.to Claude Code Tag](https://dev.to/t/claudecode) - Community articles
-
-### Community
-- [r/ClaudeAI](https://reddit.com/r/ClaudeAI) - Reddit community
-- [Claude Discord](https://discord.gg/anthropic) - Official Discord
-
----
+[![Stars](https://img.shields.io/github/stars/Omrigotlieb/ai-skills?style=social)](https://github.com/Omrigotlieb/ai-skills)
+
+[Skills](skills/README.md) | [MCP Servers](mcp-servers/README.md) | [Plugins](plugins/README.md) | [Templates](templates/README.md) | [Cheatsheet](cheatsheet/README.md) | [Tips](tips/README.md) | [Hooks](hooks/README.md) | [Workflows](workflows/README.md)
+
+## What This Repo Is
+
+AI tooling changes fast, and most discovery still happens through scattered GitHub repos, docs pages, Reddit posts, and social threads. This repository organizes the useful parts into a docs-first hub you can browse quickly and copy from immediately.
+
+The emphasis is on:
+- practical starting points instead of hype
+- reusable docs and templates you can adopt today
+- contributor-friendly structure that can keep improving over time
+
+## Start Here
+
+| If you want to... | Start here |
+|---|---|
+| Set up Claude Code on a new project | [CLAUDE.md templates](templates/README.md) |
+| Find useful skills by category | [Skills catalog](skills/README.md) |
+| Add external tools and integrations | [MCP servers guide](mcp-servers/README.md) |
+| Improve daily workflow | [Tips](tips/README.md) and [Workflows](workflows/README.md) |
+| Learn commands and shortcuts fast | [Cheatsheet](cheatsheet/README.md) |
+| Understand automation hooks | [Hooks guide](hooks/README.md) |
+
+## Recommended First 10 Minutes
+
+1. Copy a template from [templates/README.md](templates/README.md) into your project as `CLAUDE.md`.
+2. Add one or two high-value tools from [mcp-servers/README.md](mcp-servers/README.md).
+3. Skim the [cheatsheet](cheatsheet/README.md) for commands and shortcuts you will actually use.
+4. Pick one workflow from [workflows/README.md](workflows/README.md) and standardize on it.
+
+## Repository Map
+
+| Section | What you will find |
+|---|---|
+| [skills/README.md](skills/README.md) | Official skills, community collections, and focused category guides |
+| [mcp-servers/README.md](mcp-servers/README.md) | Curated MCP picks plus 5 category breakdowns |
+| [plugins/README.md](plugins/README.md) | Plugin concepts, marketplaces, and notable packages |
+| [templates/README.md](templates/README.md) | 13 copy-ready `CLAUDE.md` templates |
+| [cheatsheet/README.md](cheatsheet/README.md) | Commands, shortcuts, config snippets, and quick reference |
+| [tips/README.md](tips/README.md) | Practical usage advice and day-to-day patterns |
+| [hooks/README.md](hooks/README.md) | Hook types, behavior, and examples |
+| [workflows/README.md](workflows/README.md) | Repeatable delivery, review, and debugging workflows |
+| [prompts/README.md](prompts/README.md) | Prompt patterns for common development tasks |
+
+## Why This Structure Works
+
+- You can browse by job to be done, not just by raw link dump.
+- The reusable assets live in-repo, especially the templates.
+- The docs are organized so contributors can improve one section without touching everything else.
+- The repository includes automated docs validation to catch broken local links and placeholder URLs before they land.
 
 ## Contributing
 
-We welcome contributions! This repository thrives on community input.
+Contributions are most useful when they add verified resources, clearer explanations, or stronger examples.
 
-### How to Contribute
-1. **Found a new skill/tool?** [Open an issue](../../issues/new?template=new-skill.md)
-2. **Have a tip to share?** [Submit a PR](CONTRIBUTING.md)
-3. **Spotted an error?** [Report it](../../issues/new?template=bug.md)
+- Submit a new resource: [open a submission issue](https://github.com/Omrigotlieb/ai-skills/issues/new?template=new-skill.md)
+- Report a broken link or outdated doc: [open a fix issue](https://github.com/Omrigotlieb/ai-skills/issues/new?template=bug.md)
+- Improve a page directly: [read the contribution guide](CONTRIBUTING.md)
 
-### Research Sources We Monitor
-- Reddit (r/ClaudeAI, r/LocalLLaMA, r/MachineLearning)
-- GitHub trending & releases
-- LinkedIn AI/ML communities
-- Twitter/X AI developer accounts
-- Dev.to, Medium, Substack
+Before opening a PR, run:
 
-[Read contribution guidelines](CONTRIBUTING.md)
-
----
-
-## Changelog
-
-### 2026-01-01
-- Initial repository setup
-- Added official skills catalog
-- Added top 10 MCP servers
-- Added community skills collection
-- Created CLAUDE.md templates
-
-[View full changelog](CHANGELOG.md)
-
----
-
-## Star History
-
-If this repository helps you, please give it a star! It helps others discover these resources.
-
----
+```bash
+python3 scripts/validate_docs.py
+```
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
-
----
-
-<p align="center">
-  <b>Updated daily with the latest Claude Code skills and tools</b><br>
-  <a href="https://github.com/omrigotlieb/ai-skills/stargazers">Star this repo</a> to stay updated
-</p>
+MIT. See [LICENSE](LICENSE).
