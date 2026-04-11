@@ -4,18 +4,50 @@ MCP servers for personal productivity and team collaboration.
 
 ---
 
+## Verified 2026 Picks
+
+If you only add a couple of productivity integrations, start with the hosted OAuth-first servers that are actively maintained by the vendor:
+
+- **Notion MCP** - Prefer Notion's hosted server at `https://mcp.notion.com/mcp`. Notion's docs now recommend the remote server for most users, and the older open-source package is no longer actively maintained.
+- **Todoist AI / MCP** - Prefer Doist's `todoist-ai` project and hosted endpoint at `https://ai.todoist.net/mcp`. The older `Doist/todoist-mcp` repository was archived in September 2025.
+
+These hosted options reduce setup friction, stay current automatically, and use OAuth instead of long-lived API tokens in supported clients.
+
+---
+
 ## Notion MCP Server
 
-**All-in-one workspace integration.**
+**Workspace docs, project specs, and structured knowledge retrieval.**
+
+### Recommended Setup
+
+Use Notion's hosted MCP server when your client supports HTTP MCP connectors and OAuth.
+
+#### Claude Code
+```bash
+claude mcp add --transport http notion https://mcp.notion.com/mcp
+```
+
+Then run `/mcp` inside Claude Code and complete the browser auth flow.
+
+### Why This Is the Default
+
+- OAuth-based setup instead of manually managing a token
+- Hosted and maintained by Notion
+- Better fit for common doc-writing, search, and workspace navigation workflows
+
+### Self-Hosted / Local Fallback
+
+Use the open-source package only when you specifically need local hosting or token-based automation.
 
 ### Configuration
 ```json
 {
   "notion": {
     "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-notion"],
+    "args": ["-y", "@notionhq/notion-mcp-server"],
     "env": {
-      "NOTION_API_KEY": "${NOTION_API_KEY}"
+      "NOTION_TOKEN": "${NOTION_TOKEN}"
     }
   }
 }
@@ -128,17 +160,25 @@ MCP servers for personal productivity and team collaboration.
 
 ## Todoist MCP Server
 
-**Task management.**
+**Task capture, planning, and execution workflows.**
+
+### Recommended Setup
+
+Use Doist's maintained `todoist-ai` MCP instead of the archived `todoist-mcp` repository.
+
+#### Claude Code
+```bash
+claude mcp add --transport http todoist https://ai.todoist.net/mcp
+```
+
+Then run `/mcp` and finish the Todoist OAuth flow in your browser.
 
 ### Configuration
 ```json
 {
   "todoist": {
     "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-todoist"],
-    "env": {
-      "TODOIST_API_TOKEN": "${TODOIST_API_TOKEN}"
-    }
+    "args": ["-y", "mcp-remote", "https://ai.todoist.net/mcp"]
   }
 }
 ```
@@ -148,6 +188,7 @@ MCP servers for personal productivity and team collaboration.
 - Manage projects
 - Set due dates and priorities
 - Organize with labels
+- Support OpenAI-style `search` and `fetch` MCP tools in addition to Todoist-specific workflows
 
 ---
 
@@ -228,8 +269,7 @@ Example configuration for a complete productivity workflow:
   "mcpServers": {
     "notion": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-notion"],
-      "env": { "NOTION_API_KEY": "${NOTION_API_KEY}" }
+      "args": ["-y", "mcp-remote", "https://mcp.notion.com/mcp"]
     },
     "calendar": {
       "command": "npx",
@@ -238,8 +278,7 @@ Example configuration for a complete productivity workflow:
     },
     "todoist": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-todoist"],
-      "env": { "TODOIST_API_TOKEN": "${TODOIST_API_TOKEN}" }
+      "args": ["-y", "mcp-remote", "https://ai.todoist.net/mcp"]
     }
   }
 }
@@ -256,7 +295,11 @@ Example configuration for a complete productivity workflow:
 
 ## Resources
 
-- [Notion MCP](https://github.com/modelcontextprotocol/servers)
+- [Notion MCP docs](https://developers.notion.com/docs/mcp)
+- [Connecting to Notion MCP](https://developers.notion.com/docs/get-started-with-mcp)
+- [Hosting a local Notion MCP server](https://developers.notion.com/guides/mcp/hosting-open-source-mcp)
+- [Notion open-source MCP server](https://github.com/makenotion/notion-mcp-server)
 - [Obsidian MCP](https://github.com/obsidianmd/mcp-server)
-- [Todoist API](https://developer.todoist.com/)
+- [Todoist AI / MCP SDK](https://github.com/Doist/todoist-ai)
+- [Archived Todoist MCP repo](https://github.com/Doist/todoist-mcp)
 - [Google Workspace APIs](https://developers.google.com/workspace)

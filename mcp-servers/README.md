@@ -174,9 +174,9 @@ Persistent memory across conversations.
 ---
 
 ### 8. Notion MCP
-**Category:** Productivity | **Source:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
+**Category:** Productivity | **Source:** [Notion MCP docs](https://developers.notion.com/docs/mcp)
 
-Notion workspace integration.
+Notion workspace integration with a hosted OAuth flow for most users.
 
 **Capabilities:**
 - Page creation/editing
@@ -279,7 +279,7 @@ Connect to 5000+ applications through a single MCP.
 |--------|----------|-------------|
 | **Google Drive MCP** | Storage | File management |
 | **Google Calendar MCP** | Calendar | Event management |
-| **Todoist MCP** | Tasks | Task management |
+| **Todoist AI / MCP** | Tasks | Task management with a maintained hosted endpoint |
 | **Obsidian MCP** | Notes | Knowledge base integration |
 | **Raycast MCP** | Launcher | Raycast integration |
 
