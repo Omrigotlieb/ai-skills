@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Reworked the top-level README to improve positioning, navigation, and contributor guidance
 - Rewrote the community skills page to remove placeholder repositories and raise the quality bar
 - Fixed GitHub issue links in contributor-facing docs
+- Updated MCP discovery guidance to prefer the official registry and GitHub's maintained MCP server install docs
 
 ### Removed
 - Placeholder community skill links that pointed to non-existent example repositories

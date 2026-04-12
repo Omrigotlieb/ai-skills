@@ -8,14 +8,16 @@ MCP servers for software development workflows.
 
 **Essential for repository and workflow management.**
 
+Prefer GitHub's maintained server entry and install guide rather than older reference-server examples.
+
 ### Configuration
 ```json
 {
   "github": {
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-github"],
+    "command": "docker",
+    "args": ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "ghcr.io/github/github-mcp-server"],
     "env": {
-      "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PAT}"
     }
   }
 }
@@ -26,12 +28,17 @@ MCP servers for software development workflows.
 - **Issues & PRs** - Create, update, review, merge
 - **Actions** - View workflows, trigger runs
 - **Releases** - Create and manage releases
+- **Toolsets** - Limit access to repos, issues, pull requests, actions, and more to keep context focused
 
-### Required Scopes
+### Remote Option
+
+If your MCP host supports remote HTTP servers, GitHub also hosts a remote MCP endpoint and publishes host-specific install guides for Claude and other clients.
+
+### Typical PAT Scopes
 ```
-repo        - Full repository access
-workflow    - GitHub Actions access
-read:org    - Organization info (optional)
+repo            - Repository operations
+read:packages   - Pull the Docker image when needed
+read:org        - Organization and team access
 ```
 
 ### Example Prompts
@@ -231,9 +238,9 @@ Combine multiple MCP servers for a complete workflow:
 {
   "mcpServers": {
     "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": { "GITHUB_TOKEN": "${GITHUB_TOKEN}" }
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "ghcr.io/github/github-mcp-server"],
+      "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PAT}" }
     },
     "linear": {
       "command": "npx",
@@ -260,7 +267,8 @@ Combine multiple MCP servers for a complete workflow:
 
 ## Resources
 
-- [GitHub MCP](https://github.com/modelcontextprotocol/servers/tree/main/src/github)
+- [GitHub MCP Server](https://github.com/mcp/io.github.github/github-mcp-server)
+- [MCP Registry](https://github.com/modelcontextprotocol/registry)
 - [Linear MCP](https://github.com/modelcontextprotocol/servers)
 - [Sentry MCP](https://github.com/getsentry/mcp-server)
 - [Official MCP Servers](https://github.com/modelcontextprotocol/servers)

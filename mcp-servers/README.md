@@ -2,8 +2,8 @@
 
 <div align="center">
 
-[![Total Servers](https://img.shields.io/badge/servers-7%2C260%2B-blue)](https://github.com/punkpeye/awesome-mcp-servers)
-[![Downloads](https://img.shields.io/badge/downloads-8M%2B-green)](https://npmjs.com)
+[![Official Registry](https://img.shields.io/badge/registry-official-green)](https://github.com/modelcontextprotocol/registry)
+[![GitHub MCP](https://img.shields.io/badge/github-mcp%20by%20GitHub-black)](https://github.com/mcp/io.github.github/github-mcp-server)
 [![Official](https://img.shields.io/badge/official-25%2B-purple)](https://github.com/modelcontextprotocol/servers)
 
 [**Database**](database.md) | [**Development**](development.md) | [**Productivity**](productivity.md) | [**Search**](search.md) | [**Automation**](automation.md)
@@ -12,7 +12,13 @@
 
 Model Context Protocol (MCP) servers extend Claude Code with external tools and data sources. They provide structured interfaces for Claude to interact with databases, APIs, file systems, and more.
 
-> **Stats:** 7,260+ MCP servers available as of 2025. Market grew from 100K downloads (Nov 2024) to 8M+ (Apr 2025).
+> **Use the registry first:** start with the [official MCP Registry](https://github.com/modelcontextprotocol/registry), then verify the source repo and install docs before adding a server to your setup.
+
+## Discovery Workflow
+
+1. Search the [official MCP Registry](https://github.com/modelcontextprotocol/registry) for maintained servers and current install metadata.
+2. Prefer official vendor-published servers when they exist, especially for GitHub, Notion, Sentry, and other sensitive integrations.
+3. Use community awesome lists to discover options, then confirm the canonical repo before documenting or installing anything.
 
 ## Quick Start
 
@@ -34,7 +40,7 @@ Add an MCP server to your `.mcp.json`:
 ## Essential MCP Servers (Top 10)
 
 ### 1. GitHub MCP Server
-**Category:** Git/VCS | **Source:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
+**Category:** Git/VCS | **Source:** [GitHub MCP Server](https://github.com/mcp/io.github.github/github-mcp-server)
 
 Connect Claude to GitHub's REST API for repository management.
 
@@ -43,18 +49,21 @@ Connect Claude to GitHub's REST API for repository management.
 - Trigger CI/CD workflows
 - Analyze commits and branches
 - Repository search and stats
+- Limit available tools with toolsets to reduce noise and token usage
 
 ```json
 {
   "github": {
-    "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-github"],
+    "command": "docker",
+    "args": ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "ghcr.io/github/github-mcp-server"],
     "env": {
-      "GITHUB_TOKEN": "your-token"
+      "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PAT}"
     }
   }
 }
 ```
+
+If your MCP host supports remote HTTP servers, GitHub also publishes a hosted MCP endpoint and host-specific install guides.
 
 ---
 
@@ -310,10 +319,10 @@ Connect to 5000+ applications through a single MCP.
 {
   "mcpServers": {
     "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "ghcr.io/github/github-mcp-server"],
       "env": {
-        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PAT}"
       }
     },
     "filesystem": {
@@ -332,6 +341,11 @@ Connect to 5000+ applications through a single MCP.
 
 ## Resources
 
+### Official Discovery
+- [MCP Registry](https://github.com/modelcontextprotocol/registry) - Official registry service for MCP servers
+- [GitHub MCP Server](https://github.com/mcp/io.github.github/github-mcp-server) - GitHub-maintained server entry with install guides
+- [Official MCP Servers](https://github.com/modelcontextprotocol/servers) - Reference servers from the MCP organization
+
 ### Awesome Lists
 - [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) - Main curated list
 - [wong2/awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) - With official integrations
@@ -344,6 +358,5 @@ Connect to 5000+ applications through a single MCP.
 
 ### Official
 - [MCP Specification](https://modelcontextprotocol.io)
-- [Official MCP Servers](https://github.com/modelcontextprotocol/servers)
 - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
 - [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)
