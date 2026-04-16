@@ -9,6 +9,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- `routines/README.md`: new top-level section covering Claude Code Routines (shipped 2026-04-14). Includes 14 production-ready routine prompts organized by daily schedule (morning, mid-day, end-of-day, nightly, weekly), plus GitHub event and API-triggered examples, a prompt quality checklist, and a Routines vs. `/loop` vs. Desktop tasks comparison.
+- Cross-links from top-level README, `workflows/README.md`, and `prompts/README.md` into the new routines section.
 - `scripts/validate_docs.py` to catch broken local Markdown links, bad anchors, and placeholder URLs
 - GitHub Actions docs checks workflow for automatic validation on push and pull request
 

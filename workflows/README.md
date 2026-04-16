@@ -414,9 +414,23 @@ Prepare changes for shipping:
 
 ---
 
+## Automating Recurring Workflows
+
+The workflows above are for interactive sessions. For the ones you run on a cadence — morning standup digests, nightly bug fixes, PR review, docs drift sweeps — graduate them into a **routine** so they run on Anthropic's cloud infrastructure whether your laptop is open or not.
+
+See [routines/README.md](../routines/README.md) for production-ready prompts covering:
+
+- Morning / mid-day / end-of-day / nightly / weekly schedules
+- GitHub event triggers (`pull_request.opened`, `release.published`)
+- API triggers for alerts, deploys, and webhooks
+- A prompt quality checklist for autonomous runs
+
+---
+
 ## Resources
 
 - [Official Common Workflows](https://code.claude.com/docs/en/common-workflows)
 - [Anthropic Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
+- [Automate work with routines](https://code.claude.com/docs/en/routines)
 - [claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows)
 - [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)

@@ -377,9 +377,24 @@ Recommend one with justification.
 
 ---
 
+## Autonomous Prompts (for Routines)
+
+The patterns above assume you are in an interactive session and can correct course. Prompts that power [routines](../routines/README.md) run **without approval prompts** — they need tighter scope, explicit success criteria, and hard boundaries. Checklist:
+
+- [ ] Scope (what data sources, files, or services the prompt reads)
+- [ ] Numbered steps (no "as appropriate" language)
+- [ ] Exact output destination and format
+- [ ] Hard boundaries (what the routine must never do)
+- [ ] Failure mode (how to surface partial success)
+
+See [routines/README.md](../routines/README.md) for production-quality prompt examples covering daily, nightly, and event-triggered automation.
+
+---
+
 ## Resources
 
 - [Getting Good Results](https://www.dzombak.com/blog/2025/10/getting-good-results-from-claude-code-writing-good-prompts/)
 - [Claude Best Practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-4-best-practices)
 - [Anthropic Engineering Guide](https://www.anthropic.com/engineering/claude-code-best-practices)
+- [Automate work with routines](https://code.claude.com/docs/en/routines)
 - [awesome-claude-prompts](https://github.com/langgptai/awesome-claude-prompts)
