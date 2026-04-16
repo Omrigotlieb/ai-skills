@@ -18,7 +18,9 @@ A **routine** is a saved Claude Code configuration (prompt + repositories + conn
 - [GitHub Event Routines](#github-event-routines)
 - [API-Triggered Routines](#api-triggered-routines)
 - [Prompt Quality Checklist](#prompt-quality-checklist)
+  - [Anti-Patterns](#anti-patterns)
 - [Usage Limits](#usage-limits)
+- [Routines vs. /loop vs. Desktop Scheduled Tasks](#routines-vs-loop-vs-desktop-scheduled-tasks)
 
 ---
 
@@ -229,7 +231,7 @@ Output:
 - Post a markdown table to #perf: rank, query (redacted of PII), p95, classification.
 
 Boundaries:
-- Never execute any query against production.
+- Never execute any query against the production database. APM read-only access only.
 - Redact all literal values in queries (replace with "?") before posting.
 - Do not include any row-level data, even in issue bodies.
 ```
@@ -434,7 +436,7 @@ Measure the following for the last 7 days:
 Output:
 - Post a markdown report to #eng-weekly with one H3 per metric.
 - For each metric, include a trend arrow vs the previous week (store previous values in a claude/health-history.json file in the repo on a claude/health-report branch).
-- Commit the updated history file on the same branch and open a non-draft PR titled "chore: weekly health history <date>".
+- Commit the updated history file on the same branch and open a draft PR titled "chore: weekly health history <date>".
 
 Boundaries:
 - This is observational. Do not open issues or propose fixes.
@@ -501,7 +503,7 @@ Scope:
 - This PR's changed files.
 
 Steps:
-1. Check if any changed file is under src/auth/, src/billing/, or src/payments/.
+1. Check if any changed file is under src/auth/, src/billing/, or src/payments/. Adjust these paths for your repo layout.
 2. If not, exit silently.
 3. If yes:
    - Summarize what changed: files touched, functions added or removed, new external calls.
@@ -629,14 +631,7 @@ Before saving a routine, verify the prompt answers all five:
 
 ## Usage Limits
 
-| Plan | Routine runs per day |
-|------|---------------------|
-| Pro | 5 |
-| Max | 15 |
-| Team | 25 |
-| Enterprise | 25 |
-
-Routines also count against standard subscription token usage. Organizations with extra usage enabled can continue on metered overage when the daily cap is hit.
+Each account has a daily cap on how many routine runs can start, and routines also count against standard subscription token usage. The per-plan numbers are not published in the docs and can change during the research preview — check your current allowance at [claude.ai/code/routines](https://claude.ai/code/routines) or [claude.ai/settings/usage](https://claude.ai/settings/usage). Organizations with extra usage enabled can continue on metered overage when the daily cap is hit.
 
 Minimum schedule interval: **1 hour**. For sub-hour polling, use `/loop` inside an active session instead.
 
