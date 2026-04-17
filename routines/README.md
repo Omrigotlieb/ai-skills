@@ -2,7 +2,7 @@
 
 Automate your daily developer workflow with Claude Code's three scheduling tiers. This guide covers practical routine templates, daily schedule patterns, and prompt-writing best practices drawn from official docs, community patterns, and real-world usage.
 
-> **Latest Update:** April 2026 - Added routines guide with 12+ ready-to-use templates
+> **Latest Update:** April 2026 - Added routines guide with 10 routine templates, 3 loop.md templates, and event-driven examples
 
 ## Quick Navigation
 
@@ -42,7 +42,7 @@ Claude Code offers three ways to schedule recurring work, each with different tr
 
 ### The Developer Daily (Recommended Starting Point)
 
-A battle-tested daily schedule combining the highest-value automations:
+A battle-tested daily schedule combining the highest-value automations. Most routines require **GitHub** and **Slack** connectors; see the [MCP Servers guide](../mcp-servers/README.md) for setup.
 
 | Time | Routine | Type | Purpose |
 |---|---|---|---|
@@ -416,7 +416,18 @@ Or create at [claude.ai/code/routines](https://claude.ai/code/routines) with ful
 
 ### Desktop Scheduled Tasks
 
-Desktop tasks run locally on your machine with full access to local files and MCP servers. Create them from the Claude Code desktop app under Schedule > New Task > New Local Task.
+Desktop tasks run locally on your machine with full access to local files, MCP servers, and tools configured in your project.
+
+**Setup:**
+1. Open the Claude Code desktop app
+2. Go to the **Schedule** page
+3. Click **New Task** > **New Local Task**
+4. Configure the task name, prompt, interval, and permission mode
+5. Tasks persist across app restarts and run even when no session is open
+
+Desktop tasks are ideal for routines that need local file access (running tests, scanning local repos, interacting with local databases) or that use MCP servers not available as cloud connectors.
+
+See the [official Desktop Scheduled Tasks docs](https://code.claude.com/docs/en/desktop-scheduled-tasks) for the full configuration guide.
 
 ### `/loop` for In-Session Polling
 

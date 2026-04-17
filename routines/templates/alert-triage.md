@@ -57,15 +57,17 @@ RESTRICTIONS:
 
 ## Integration
 
+After creating the routine at [claude.ai/code/routines](https://claude.ai/code/routines), add an API trigger and copy the endpoint URL and bearer token. Then wire it into your monitoring tool:
+
 ```bash
-# From Datadog webhook
-curl -X POST https://api.anthropic.com/v1/claude_code/routines/trig_XXXXX/fire \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "anthropic-beta: experimental-cc-routine-2026-04-01" \
-  -H "anthropic-version: 2023-06-01" \
+# Replace URL and token with values from your routine's API trigger configuration
+curl -X POST "$ROUTINE_ENDPOINT_URL" \
+  -H "Authorization: Bearer $ROUTINE_TOKEN" \
   -H "Content-Type: application/json" \
   -d "{\"text\": \"$ALERT_BODY\"}"
 ```
+
+See the [official API trigger docs](https://code.claude.com/docs/en/routines#add-an-api-trigger) for the current endpoint format and required headers.
 
 ## Customization
 

@@ -49,7 +49,7 @@ The emphasis is on:
 | [tips/README.md](tips/README.md) | Practical usage advice and day-to-day patterns |
 | [hooks/README.md](hooks/README.md) | Hook types, behavior, and examples |
 | [workflows/README.md](workflows/README.md) | Repeatable delivery, review, and debugging workflows |
-| [routines/README.md](routines/README.md) | Scheduled automation: daily digests, PR review, triage, and 9 ready-to-use templates |
+| [routines/README.md](routines/README.md) | Scheduled automation: daily digests, PR review, triage, and 10 ready-to-use routine templates |
 | [prompts/README.md](prompts/README.md) | Prompt patterns for common development tasks |
 
 ## Why This Structure Works
