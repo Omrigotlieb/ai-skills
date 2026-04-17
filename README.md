@@ -7,7 +7,7 @@ A curated field guide for Claude Code skills, MCP servers, plugins, workflows, a
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/Omrigotlieb/ai-skills?style=social)](https://github.com/Omrigotlieb/ai-skills)
 
-[Skills](skills/README.md) | [MCP Servers](mcp-servers/README.md) | [Plugins](plugins/README.md) | [Templates](templates/README.md) | [Cheatsheet](cheatsheet/README.md) | [Tips](tips/README.md) | [Hooks](hooks/README.md) | [Workflows](workflows/README.md)
+[Skills](skills/README.md) | [MCP Servers](mcp-servers/README.md) | [Plugins](plugins/README.md) | [Templates](templates/README.md) | [Routines](routines/README.md) | [Cheatsheet](cheatsheet/README.md) | [Tips](tips/README.md) | [Hooks](hooks/README.md) | [Workflows](workflows/README.md)
 
 ## What This Repo Is
 
@@ -26,6 +26,7 @@ The emphasis is on:
 | Find useful skills by category | [Skills catalog](skills/README.md) |
 | Add external tools and integrations | [MCP servers guide](mcp-servers/README.md) |
 | Improve daily workflow | [Tips](tips/README.md) and [Workflows](workflows/README.md) |
+| Automate recurring tasks | [Routines guide](routines/README.md) |
 | Learn commands and shortcuts fast | [Cheatsheet](cheatsheet/README.md) |
 | Understand automation hooks | [Hooks guide](hooks/README.md) |
 
@@ -48,6 +49,7 @@ The emphasis is on:
 | [tips/README.md](tips/README.md) | Practical usage advice and day-to-day patterns |
 | [hooks/README.md](hooks/README.md) | Hook types, behavior, and examples |
 | [workflows/README.md](workflows/README.md) | Repeatable delivery, review, and debugging workflows |
+| [routines/README.md](routines/README.md) | Scheduled automation: daily digests, PR review, triage, and 9 ready-to-use templates |
 | [prompts/README.md](prompts/README.md) | Prompt patterns for common development tasks |
 
 ## Why This Structure Works
