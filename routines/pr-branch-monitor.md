@@ -1,6 +1,6 @@
 # PR Branch Monitor
 
-**Trigger:** Loop | **Frequency:** Dynamic (checks frequently during CI, backs off when idle) | **Category:** CI/CD
+**Trigger:** Loop | **Frequency:** Dynamic (checks frequently during CI, backs off when idle) | **Category:** Operations
 
 Continuously monitors the current PR: fixes failing CI, addresses review comments, and reports status. Uses Claude Code's built-in dynamic pacing to check frequently when active and wait longer when idle.
 
@@ -64,5 +64,6 @@ Claude adjusts the check interval based on what it finds:
 
 ## Related
 
+- [PR Auto-Review](pr-auto-review.md) for initial automated review when PRs are opened
 - [Morning Briefing](morning-briefing.md) for daily PR status summaries
 - [Weekly Quality Dashboard](weekly-quality-dashboard.md) for longer-term trends

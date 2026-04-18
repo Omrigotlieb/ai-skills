@@ -17,8 +17,8 @@ You are running a weekly architecture review.
 1. Module Boundaries:
    - Map the dependency graph between top-level modules/packages
    - Identify cross-module imports that violate intended boundaries
-   - Flag modules that import from more than 5 other modules (high afferent coupling)
-   - Flag modules imported by more than 8 others (high efferent coupling)
+   - Flag modules that import from more than 5 other modules (high efferent coupling)
+   - Flag modules imported by more than 8 others (high afferent coupling)
 
 2. Abstraction Quality:
    - Identify wrapper functions/classes that add no value (pass-through abstractions)

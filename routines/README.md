@@ -49,7 +49,7 @@ claude /loop
 | Routine | Trigger | Frequency | Guide |
 |---|---|---|---|
 | [Deploy Verification](deploy-verification.md) | API trigger | Per deploy | Smoke tests, error log scan, go/no-go |
-| [Nightly Bug Hunter](nightly-bug-hunter.md) | Schedule | Nightly 2am | Pull top bug from tracker, attempt fix, open draft PR |
+| [Nightly Bug Hunter](nightly-bug-hunter.md) | Schedule | Nightly 2:30am | Pull top bug from tracker, attempt fix, open draft PR |
 | [PR Branch Monitor](pr-branch-monitor.md) | Loop | Dynamic | Fix CI, address comments, report status |
 
 ### Documentation & Knowledge
@@ -79,17 +79,21 @@ claude /loop
 A practical daily schedule combining the routines above:
 
 ```
- 2:00 AM  Dependency Audit       - scan for vulnerabilities overnight
- 2:30 AM  Nightly Bug Hunter     - attempt top-priority bug fix
- 3:00 AM  Rotating Health Scan   - deep scan one module
- 5:00 AM  Memory Consolidation   - prune and merge memory files
- 8:00 AM  Morning Briefing       - deliver daily status report
- 8:15 AM  Standup Summary        - generate per-developer summaries
- 9:00 AM  (Monday) Quality Dashboard - weekly code health report
- 9:00 AM  (Monday) Architecture Review - weekly structure review
-         (continuous) PR Branch Monitor - loop during active PRs
-         (per event) Deploy Verification - after each production deploy
-         (per event) Security Diff Review - on every new PR
+ 2:00 AM  Dependency Audit        - scan for vulnerabilities overnight
+ 2:30 AM  Nightly Bug Hunter      - attempt top-priority bug fix
+ 3:00 AM  Rotating Health Scan    - deep scan one module
+ 5:00 AM  Memory Consolidation    - prune and merge memory files
+ 6:00 AM  Tech Debt Tracker       - scan and prioritize tech debt (weekdays)
+ 8:00 AM  Morning Briefing        - deliver daily status report (weekdays)
+ 8:15 AM  Standup Summary         - generate per-developer summaries (weekdays)
+ 9:00 AM  (Monday) Quality Dashboard    - weekly code health report
+ 9:15 AM  (Monday) Architecture Review  - weekly structure review
+ 9:30 AM  (Monday) Docs Drift Detector  - find stale documentation
+ 6:00 PM  Knowledge Base Updater  - capture daily learnings to CLAUDE.md (weekdays)
+          (continuous) PR Branch Monitor - loop during active PRs
+          (per event) Deploy Verification - after each production deploy
+          (per event) Security Diff Review - on every new PR
+          (per event) PR Auto-Review - multi-dimensional review on new PRs
 ```
 
 ## Writing Your Own Routines

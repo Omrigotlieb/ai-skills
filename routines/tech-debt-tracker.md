@@ -82,5 +82,6 @@ Priority = (Impact + Spread Risk) / Fix Cost
 
 ## Related
 
+- [Nightly Bug Hunter](nightly-bug-hunter.md) for automated bug fixing
 - [Architecture Review](architecture-review.md) for structural analysis
 - [Weekly Quality Dashboard](weekly-quality-dashboard.md) for aggregate metrics
