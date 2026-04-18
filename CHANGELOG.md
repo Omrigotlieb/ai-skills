@@ -9,10 +9,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- **Routines & Scheduled Tasks** (`routines/`) - 15 ready-to-use automation patterns
+  - Dependency Audit - nightly CVE and outdated package scanning
+  - Security Diff Review - per-PR security analysis
+  - Rotating Health Scan - nightly module-by-module deep analysis
+  - PR Auto-Review - multi-dimensional parallel code review
+  - Weekly Quality Dashboard - code health trends and metrics
+  - Deploy Verification - post-deploy smoke checks and go/no-go
+  - Nightly Bug Hunter - automated bug fix with draft PR
+  - PR Branch Monitor - continuous CI and review comment handling
+  - Docs Drift Detector - weekly stale documentation finder
+  - Memory Consolidation - nightly agent memory cleanup
+  - Knowledge Base Updater - daily CLAUDE.md learning capture
+  - Morning Briefing - daily status report for the team
+  - Standup Summary - per-developer activity aggregation
+  - Architecture Review - weekly structural health check
+  - Tech Debt Tracker - daily debt scanning and prioritization
+- Comprehensive routines guide with daily schedule template and prompt-writing tips
 - `scripts/validate_docs.py` to catch broken local Markdown links, bad anchors, and placeholder URLs
 - GitHub Actions docs checks workflow for automatic validation on push and pull request
 
 ### Changed
+- Updated top-level README with routines section in navigation, repository map, and quick start
 - Reworked the top-level README to improve positioning, navigation, and contributor guidance
 - Rewrote the community skills page to remove placeholder repositories and raise the quality bar
 - Fixed GitHub issue links in contributor-facing docs
