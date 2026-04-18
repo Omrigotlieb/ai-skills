@@ -7,7 +7,7 @@ A curated field guide for Claude Code skills, MCP servers, plugins, workflows, a
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/Omrigotlieb/ai-skills?style=social)](https://github.com/Omrigotlieb/ai-skills)
 
-[Skills](skills/README.md) | [MCP Servers](mcp-servers/README.md) | [Plugins](plugins/README.md) | [Templates](templates/README.md) | [Cheatsheet](cheatsheet/README.md) | [Tips](tips/README.md) | [Hooks](hooks/README.md) | [Workflows](workflows/README.md)
+[Skills](skills/README.md) | [Routines](routines/README.md) | [MCP Servers](mcp-servers/README.md) | [Plugins](plugins/README.md) | [Templates](templates/README.md) | [Cheatsheet](cheatsheet/README.md) | [Tips](tips/README.md) | [Hooks](hooks/README.md) | [Workflows](workflows/README.md)
 
 ## What This Repo Is
 
@@ -25,6 +25,7 @@ The emphasis is on:
 | Set up Claude Code on a new project | [CLAUDE.md templates](templates/README.md) |
 | Find useful skills by category | [Skills catalog](skills/README.md) |
 | Add external tools and integrations | [MCP servers guide](mcp-servers/README.md) |
+| Automate recurring tasks | [Routines](routines/README.md) |
 | Improve daily workflow | [Tips](tips/README.md) and [Workflows](workflows/README.md) |
 | Learn commands and shortcuts fast | [Cheatsheet](cheatsheet/README.md) |
 | Understand automation hooks | [Hooks guide](hooks/README.md) |
@@ -34,13 +35,15 @@ The emphasis is on:
 1. Copy a template from [templates/README.md](templates/README.md) into your project as `CLAUDE.md`.
 2. Add one or two high-value tools from [mcp-servers/README.md](mcp-servers/README.md).
 3. Skim the [cheatsheet](cheatsheet/README.md) for commands and shortcuts you will actually use.
-4. Pick one workflow from [workflows/README.md](workflows/README.md) and standardize on it.
+4. Set up a daily routine from [routines/README.md](routines/README.md) to automate repetitive work.
+5. Pick one workflow from [workflows/README.md](workflows/README.md) and standardize on it.
 
 ## Repository Map
 
 | Section | What you will find |
 |---|---|
 | [skills/README.md](skills/README.md) | Official skills, community collections, and focused category guides |
+| [routines/README.md](routines/README.md) | 15 ready-to-use scheduled routines and daily automation patterns |
 | [mcp-servers/README.md](mcp-servers/README.md) | Curated MCP picks plus 5 category breakdowns |
 | [plugins/README.md](plugins/README.md) | Plugin concepts, marketplaces, and notable packages |
 | [templates/README.md](templates/README.md) | 13 copy-ready `CLAUDE.md` templates |
