@@ -74,6 +74,50 @@ jobs:
 
 ---
 
+## Verified Security Skill Marketplaces
+
+### Trail of Bits Skills
+
+[trailofbits/skills](https://github.com/trailofbits/skills) is a Claude Code plugin marketplace for security research, vulnerability detection, and audit workflows.
+
+**Useful for:**
+- smart contract security review
+- static analysis workflows with CodeQL, Semgrep, and SARIF
+- supply-chain risk audits
+- property-based testing and mutation testing
+- reverse engineering and malware-analysis helpers
+
+**Install:**
+```bash
+/plugin marketplace add trailofbits/skills
+/plugin menu
+```
+
+For Codex users, the repository also includes a `.codex/skills/` tree and an install script:
+
+```bash
+git clone https://github.com/trailofbits/skills.git ~/.codex/trailofbits-skills
+~/.codex/trailofbits-skills/.codex/scripts/install-for-codex.sh
+```
+
+### Trail of Bits Curated Skills
+
+[trailofbits/skills-curated](https://github.com/trailofbits/skills-curated) is the safer starting point when you want community skills that have been reviewed before use. It includes development, security, research, writing, and converted OpenAI skills, with Trail of Bits review as the quality gate.
+
+**Install:**
+```bash
+/plugin marketplace add trailofbits/skills-curated
+/plugin menu
+```
+
+### Security-First Claude Code Configuration
+
+[trailofbits/claude-code-config](https://github.com/trailofbits/claude-code-config) documents a hardened Claude Code setup covering sandboxing, permission rules, hooks, MCP server policy, and project-level workflows.
+
+Start there before installing powerful security plugins if you plan to run agents in high-throughput or bypass-permissions modes.
+
+---
+
 ## Security Skills from Community
 
 ### Secure Code Review Skill
