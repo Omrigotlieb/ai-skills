@@ -2,7 +2,7 @@
 
 Plugins bundle skills, commands, agents, hooks, and MCP servers into shareable packages.
 
-> **Latest:** 239+ Agent Skills available across marketplaces. Plugins are free and open-source.
+> **Latest:** Use the [official Claude Code Plugins Directory](https://github.com/anthropics/claude-plugins-official) as the first stop for reviewed plugins, then inspect each plugin source before installing.
 
 ## What Are Plugins?
 
@@ -24,6 +24,10 @@ Plugins extend Claude Code with custom functionality that can be shared across p
 
 # Install from marketplace
 /plugin install plugin-name@marketplace-name
+
+# Official Anthropic-managed marketplace
+/plugin marketplace add anthropics/claude-plugins-official
+/plugin install plugin-dev@claude-plugins-official
 
 # Install from GitHub directly
 claude plugin install github:username/repo
@@ -57,6 +61,26 @@ Professional skills that activate automatically based on context.
 - `/superpowers:brainstorm` - Interactive design refinement
 - `/superpowers:write-plan` - Create implementation plan
 - `/superpowers:execute-plan` - Execute plan in batches
+
+---
+
+### Plugin Developer Toolkit (Anthropic)
+**Official toolkit for building and validating Claude Code plugins**
+
+Use this when you are creating plugins, adding hooks, wiring MCP servers, or checking whether a plugin follows current Claude Code conventions.
+
+**Features:**
+- 7 focused skills for hooks, MCP integration, commands, agents, plugin structure, settings, and skill authoring
+- Guided `/plugin-dev:create-plugin` workflow for discovery, design, implementation, validation, testing, and docs
+- Working examples and validation scripts for plugin authors
+
+**Install:**
+```bash
+/plugin marketplace add anthropics/claude-plugins-official
+/plugin install plugin-dev@claude-plugins-official
+```
+
+**Source:** [Plugin Developer Toolkit](https://claude.com/plugins/plugin-dev)
 
 ---
 
@@ -205,7 +229,7 @@ Full project lifecycle management with specialized agents.
 
 | Marketplace | Description | Install |
 |-------------|-------------|---------|
-| **anthropics/claude-code** | Official Anthropic plugins | `/plugin marketplace add anthropics/claude-code` |
+| **anthropics/claude-plugins-official** | Official Anthropic-managed Claude Code plugin directory | `/plugin marketplace add anthropics/claude-plugins-official` |
 | **obra/superpowers-marketplace** | Curated development tools | `/plugin marketplace add obra/superpowers-marketplace` |
 | **claude-plugins.dev** | Community registry | [Visit](https://claude-plugins.dev) |
 | **skillsmp.com** | Agent skills marketplace | [Visit](https://skillsmp.com) |
@@ -234,7 +258,8 @@ Full project lifecycle management with specialized agents.
 ### Plugin Structure
 ```
 my-plugin/
-├── plugin.json         # Metadata (required)
+├── .claude-plugin/
+│   └── plugin.json     # Metadata (required)
 ├── commands/           # Slash commands
 │   └── my-command.md
 ├── agents/             # Specialized agents
@@ -248,7 +273,7 @@ my-plugin/
 └── .mcp.json           # MCP configuration
 ```
 
-### plugin.json
+### .claude-plugin/plugin.json
 ```json
 {
   "name": "my-plugin",
@@ -353,6 +378,8 @@ fi
 - [Plugin Documentation](https://code.claude.com/docs/en/plugins)
 - [Plugin Creation Guide](https://code.claude.com/docs/en/plugins/create)
 - [Marketplace Guide](https://code.claude.com/docs/en/plugin-marketplaces)
+- [Official Claude Code Plugins Directory](https://github.com/anthropics/claude-plugins-official)
+- [Plugin Developer Toolkit](https://claude.com/plugins/plugin-dev)
 - [Anthropic Plugins](https://www.anthropic.com/news/claude-code-plugins)
 
 ### Community
