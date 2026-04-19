@@ -26,6 +26,7 @@ The emphasis is on:
 | Find useful skills by category | [Skills catalog](skills/README.md) |
 | Add external tools and integrations | [MCP servers guide](mcp-servers/README.md) |
 | Improve daily workflow | [Tips](tips/README.md) and [Workflows](workflows/README.md) |
+| Automate daily routines and schedules | [Daily Routines](workflows/daily-routines.md) and [Agent Prompts](prompts/agent-routines.md) |
 | Learn commands and shortcuts fast | [Cheatsheet](cheatsheet/README.md) |
 | Understand automation hooks | [Hooks guide](hooks/README.md) |
 

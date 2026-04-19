@@ -2,6 +2,12 @@
 
 A collection of battle-tested prompts and prompting patterns for Claude Code.
 
+## Agent Routine Prompts
+
+Looking for copy-ready prompts for automated routines and scheduled agents? See the dedicated [Agent Routine Prompt Templates](agent-routines.md) — includes daily standups, code review bots, dependency audits, deploy verification, and more.
+
+---
+
 ## Prompting Principles
 
 ### The TCRO Framework
