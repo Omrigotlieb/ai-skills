@@ -4,6 +4,7 @@ Battle-tested workflows and automation patterns for Claude Code. These patterns 
 
 ## Quick Navigation
 
+- [Daily Routines & Scheduled Automation](daily-routines.md) ⭐ NEW
 - [Feature Development](#feature-development)
 - [Code Review](#code-review)
 - [Debugging](#debugging)
