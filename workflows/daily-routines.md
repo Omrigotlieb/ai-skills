@@ -1,8 +1,8 @@
 # Daily Routines and Scheduled Automation
 
-Practical patterns for automating recurring development work with Claude Code. These routines run unattended on a schedule, via API triggers, or in response to GitHub events.
+Practical patterns for automating recurring development work with Claude Code. These routines run unattended on a schedule, via API triggers, or in response to GitHub events. For copy-ready prompt templates, see [Agent Routine Prompt Templates](../prompts/agent-routines.md).
 
-> **April 2026**: Claude Code Routines are now in research preview. Routines run on Anthropic's cloud infrastructure and survive machine shutdowns.
+> **As of April 2026**: Claude Code Routines are in research preview. Routines run on Anthropic's cloud infrastructure and survive machine shutdowns. Behavior, limits, and API surface may change.
 
 ## Quick Navigation
 
@@ -417,6 +417,8 @@ Schedule page > New task > New remote task
 
 ### Usage Limits
 
+As of April 2026 (check the link below for current limits):
+
 | Plan | Daily Routine Runs |
 |------|-------------------|
 | Pro | 5 |
@@ -424,7 +426,7 @@ Schedule page > New task > New remote task
 | Team | 25 |
 | Enterprise | 25 |
 
-Check usage at [claude.ai/settings/usage](https://claude.ai/settings/usage).
+Check current usage at [claude.ai/settings/usage](https://claude.ai/settings/usage).
 
 ---
 

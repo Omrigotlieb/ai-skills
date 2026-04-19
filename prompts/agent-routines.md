@@ -2,7 +2,7 @@
 
 Copy-ready prompt templates for Claude Code routines and scheduled agents. Each template is tested for autonomous execution — no human in the loop.
 
-> See [workflows/daily-routines.md](../workflows/daily-routines.md) for the full daily schedule guide and setup instructions.
+> See [Daily Routines Guide](../workflows/daily-routines.md) for the daily schedule overview, setup guide, and trigger configuration. This file focuses on copy-ready prompts; the guide covers strategy and scheduling context.
 
 ## Quick Navigation
 
