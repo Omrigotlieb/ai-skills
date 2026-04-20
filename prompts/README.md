@@ -377,6 +377,19 @@ Recommend one with justification.
 
 ---
 
+## Agent Prompt Templates
+
+For autonomous and semi-autonomous agent prompts (scheduled tasks, routines, loops), see the dedicated [Agent Prompts](agent-prompts.md) guide covering:
+
+- Daily maintenance agents
+- PR review and CI fix agents
+- Security audit agents
+- Deploy verification agents
+- Dependency upgrade agents
+- Documentation sync agents
+
+---
+
 ## Resources
 
 - [Getting Good Results](https://www.dzombak.com/blog/2025/10/getting-good-results-from-claude-code-writing-good-prompts/)
