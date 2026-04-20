@@ -2,6 +2,8 @@
 
 Skills for scheduled tasks, routine maintenance, PR management, and autonomous agent workflows.
 
+> **Related:** For scheduling configuration and daily routine structure, see [Routines](../../routines/README.md). For bare agent prompt templates, see [Agent Prompts](../../prompts/agent-prompts.md). This page contains installable skill definitions with full SKILL.md format.
+
 ---
 
 ## PR Babysitter Skill

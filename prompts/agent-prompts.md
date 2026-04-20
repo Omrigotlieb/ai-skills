@@ -2,6 +2,8 @@
 
 Ready-to-use prompt templates for autonomous and semi-autonomous Claude Code agents. These prompts are designed for scheduled tasks, routines, and loop-based workflows.
 
+> **Related:** For installable skill definitions with full SKILL.md format, see [Automation Skills](../skills/automation/README.md). For scheduling configuration and daily routine structure, see [Routines](../routines/README.md). This page contains bare prompt text ready for copy-paste.
+
 ## Prompt Design Principles
 
 1. **Be explicit about success criteria** - define what "done" looks like

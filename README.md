@@ -7,7 +7,7 @@ A curated field guide for Claude Code skills, MCP servers, plugins, workflows, a
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/Omrigotlieb/ai-skills?style=social)](https://github.com/Omrigotlieb/ai-skills)
 
-[Skills](skills/README.md) | [MCP Servers](mcp-servers/README.md) | [Plugins](plugins/README.md) | [Templates](templates/README.md) | [Cheatsheet](cheatsheet/README.md) | [Tips](tips/README.md) | [Hooks](hooks/README.md) | [Workflows](workflows/README.md) | [Routines](routines/README.md)
+[Skills](skills/README.md) | [MCP Servers](mcp-servers/README.md) | [Plugins](plugins/README.md) | [Templates](templates/README.md) | [Cheatsheet](cheatsheet/README.md) | [Tips](tips/README.md) | [Hooks](hooks/README.md) | [Workflows](workflows/README.md) | [Routines](routines/README.md) | [Prompts](prompts/README.md)
 
 ## What This Repo Is
 

@@ -2,6 +2,8 @@
 
 Production-ready routines, loop templates, and scheduled task patterns for automating your daily developer workflow with Claude Code.
 
+> **Related:** For installable skill definitions, see [Automation Skills](../skills/automation/README.md). For copy-paste agent prompts, see [Agent Prompts](../prompts/agent-prompts.md). This page focuses on scheduling, loop configuration, and the recommended daily routine structure.
+
 ## Quick Navigation
 
 - [Daily Routines](#daily-routines)
@@ -118,12 +120,12 @@ Check the current branch's open PR:
 Maximum 3 fix iterations before stopping and reporting status.
 ```
 
-### Merge Conflict Resolver
+### Merge Conflict Detector
 
 ```markdown
 ---
-name: resolve-conflicts
-description: Detect and resolve merge conflicts with the base branch
+name: conflict-detector
+description: Detect merge conflicts on open PRs and report complexity
 schedule: "0 12 * * 1-5"
 ---
 
@@ -326,31 +328,15 @@ If the deploy failed, pull the deployment log and diagnose.
 
 ### Cloud Routines (survive laptop closure)
 
-```bash
-# Create a cloud routine via Claude Code CLI
-claude routine create \
-  --name "morning-pr-digest" \
-  --schedule "0 8 * * 1-5" \
-  --prompt "$(cat .claude/routines/morning-pr-digest.md)"
+> **Note:** Cloud routines are available in Claude Code desktop and web apps. The exact CLI interface may vary by version. See [Claude Code Routines Documentation](https://code.claude.com/docs/en/routines) for current syntax.
 
-# List active routines
-claude routine list
-
-# View routine logs
-claude routine logs morning-pr-digest
-```
+Routines run on Anthropic's infrastructure and persist even when your machine is off. Minimum interval is 1 hour.
 
 ### Desktop Scheduled Tasks
 
-```bash
-# Create a local scheduled task (requires Claude desktop app)
-claude task create \
-  --name "nightly-tests" \
-  --interval 1440 \
-  --prompt "Run the full test suite and report failures"
+> **Note:** Desktop scheduled tasks require the Claude desktop app. See [Scheduled Tasks Documentation](https://code.claude.com/docs/en/scheduled-tasks) for setup instructions.
 
-# Tasks auto-expire after 7 days of inactivity
-```
+Desktop tasks have access to local files and tools. Minimum interval is 1 minute. Tasks auto-expire after 7 days of inactivity.
 
 ### In-Session Loops
 
