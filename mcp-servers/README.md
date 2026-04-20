@@ -114,25 +114,27 @@ Structured problem-solving that mirrors human cognitive patterns.
 
 ---
 
-### 5. Puppeteer MCP Server
-**Category:** Automation | **Source:** [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
+### 5. Playwright MCP Server
+**Category:** Automation | **Source:** [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)
 
-Browser automation for testing and scraping.
+Maintained browser automation for testing, scraping, and UI debugging through structured accessibility snapshots.
 
 **Capabilities:**
-- Web scraping
-- Screenshot capture
-- Form automation
-- E2E testing support
+- Navigate pages, click elements, fill forms, and manage tabs
+- Inspect console messages and network requests
+- Capture screenshots and PDFs when visual evidence is needed
+- Run against persistent or isolated browser profiles
 
 ```json
 {
-  "puppeteer": {
+  "playwright": {
     "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
+    "args": ["-y", "@playwright/mcp@latest"]
   }
 }
 ```
+
+For high-volume coding-agent loops, first consider the Playwright CLI plus a skill or project command. The MCP server is best when the agent needs persistent browser state, iterative page inspection, or rich debugging context.
 
 ---
 

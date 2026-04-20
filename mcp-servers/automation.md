@@ -36,29 +36,35 @@ MCP servers for browser automation, testing, and workflow orchestration.
 
 ## Playwright MCP Server
 
-**Cross-browser automation.**
+**Maintained browser automation for testing, scraping, and UI debugging.**
+
+Use Microsoft's [Playwright MCP server](https://github.com/microsoft/playwright-mcp) when an agent needs persistent browser state, iterative page inspection, console/network debugging, or structured page interaction through accessibility snapshots. For high-volume coding-agent loops, prefer the Playwright CLI plus a skill or project command when concise command output is enough.
 
 ### Configuration
 ```json
 {
   "playwright": {
     "command": "npx",
-    "args": ["-y", "@modelcontextprotocol/server-playwright"]
+    "args": ["-y", "@playwright/mcp@latest"]
   }
 }
 ```
 
 ### Capabilities
-- Chrome, Firefox, Safari, Edge support
-- Mobile device emulation
-- Network interception
-- Visual comparisons
+- Navigate pages, click elements, fill forms, upload files, and manage dialogs
+- Inspect console messages, network requests, tabs, and page state
+- Capture screenshots and PDFs for visual evidence
+- Run with persistent profiles for logged-in workflows or isolated profiles for tests
 
-### Advantages over Puppeteer
-- Multi-browser support
-- Better reliability (auto-waiting)
-- Built-in test assertions
-- Trace viewer for debugging
+### Useful Options
+- `--isolated` starts each session with a fresh profile.
+- `--storage-state path/to/storage.json` loads a prepared login/session state.
+- `--allowed-origins` and `--blocked-origins` narrow what the browser can request, but they are not a security boundary.
+
+### Claude Code Install
+```bash
+claude mcp add playwright npx @playwright/mcp@latest
+```
 
 ---
 
@@ -309,6 +315,8 @@ MCP servers for browser automation, testing, and workflow orchestration.
 ## Resources
 
 - [Puppeteer Docs](https://pptr.dev/)
+- [Playwright MCP](https://github.com/microsoft/playwright-mcp)
+- [Playwright plugin for Claude](https://claude.com/plugins/playwright)
 - [Playwright Docs](https://playwright.dev/)
 - [Zapier Developer](https://developer.zapier.com/)
 - [n8n Docs](https://docs.n8n.io/)
