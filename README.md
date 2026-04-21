@@ -26,6 +26,7 @@ The emphasis is on:
 | Find useful skills by category | [Skills catalog](skills/README.md) |
 | Add external tools and integrations | [MCP servers guide](mcp-servers/README.md) |
 | Improve daily workflow | [Tips](tips/README.md) and [Workflows](workflows/README.md) |
+| Automate recurring tasks | [Routines & Scheduled Tasks](skills/routines/README.md) |
 | Learn commands and shortcuts fast | [Cheatsheet](cheatsheet/README.md) |
 | Understand automation hooks | [Hooks guide](hooks/README.md) |
 
@@ -47,6 +48,7 @@ The emphasis is on:
 | [cheatsheet/README.md](cheatsheet/README.md) | Commands, shortcuts, config snippets, and quick reference |
 | [tips/README.md](tips/README.md) | Practical usage advice and day-to-day patterns |
 | [hooks/README.md](hooks/README.md) | Hook types, behavior, and examples |
+| [skills/routines/README.md](skills/routines/README.md) | Scheduled routines: morning briefings, PR reviews, health checks |
 | [workflows/README.md](workflows/README.md) | Repeatable delivery, review, and debugging workflows |
 | [prompts/README.md](prompts/README.md) | Prompt patterns for common development tasks |
 
