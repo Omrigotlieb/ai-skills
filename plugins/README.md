@@ -36,6 +36,18 @@ claude plugin install ./path/to/plugin
 
 ## Featured Plugins
 
+### Official Anthropic workflow plugins
+
+Use these first when you want current Claude Code guidance from Anthropic rather than a community bundle.
+
+| Plugin | Best for | Notes |
+|--------|----------|-------|
+| [Claude Code Setup](https://claude.com/plugins/claude-code-setup) | Auditing a repository and recommending hooks, skills, MCP servers, subagents, and slash commands | Read-only analysis that returns tailored setup recommendations by project type. |
+| [Plugin Developer Toolkit](https://claude.com/plugins/plugin-dev) | Building or validating Claude Code plugins | Covers hooks, MCP integration, commands, agents, skills, structure, settings, and validation workflows. |
+| [MCP Server Dev](https://claude.com/plugins/mcp-server-dev) | Designing and shipping MCP servers for Claude | Guides deployment model choices, tool design, auth, interactive MCP apps, and MCPB packaging. |
+
+---
+
 ### Superpowers (obra)
 **The most comprehensive development workflow suite**
 
