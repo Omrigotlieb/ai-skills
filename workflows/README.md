@@ -12,6 +12,7 @@ Battle-tested workflows and automation patterns for Claude Code. These patterns 
 - [Testing](#testing)
 - [Git Operations](#git-operations)
 - [Project Exploration](#project-exploration)
+- [Scheduled Routines](#scheduled-routines)
 
 ---
 
@@ -386,6 +387,18 @@ Prepare changes for shipping:
 3. Create commit with conventional message
 4. Summarize what's being shipped
 ```
+
+---
+
+## Scheduled Routines
+
+For recurring automated workflows (morning briefings, PR reviews, health checks, end-of-day summaries), see the dedicated **[Routines & Scheduled Tasks](../skills/routines/README.md)** guide.
+
+Key routines to start with:
+- **[Morning Briefing](../skills/routines/morning-briefing.md)** -- daily aggregated summary from email, GitHub, Slack, calendar
+- **[Automated PR Review](../skills/routines/pr-review-automation.md)** -- event-triggered code review with structured triage
+- **[End-of-Day Wrap-Up](../skills/routines/end-of-day-wrapup.md)** -- daily summary with tomorrow's priorities
+- **[Weekly Health Check](../skills/routines/weekly-health-check.md)** -- dependency audit, stale PRs, coverage trends
 
 ---
 

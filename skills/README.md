@@ -192,6 +192,7 @@ Detailed guides for specific skill domains:
 | **Database** | 10+ | SQL, ORM, migrations, optimization | [View](database/README.md) |
 | **Performance** | 10+ | Profiling, caching, load testing, optimization | [View](performance/README.md) |
 | **AI/ML** | 12+ | LLM integration, RAG, fine-tuning, ML pipelines | [View](ai-ml/README.md) |
+| **Routines** | 16+ | Scheduled tasks, morning briefings, automated reviews, health checks | [View](routines/README.md) |
 | **Community** | 150+ | Community-contributed skills | [View](community/README.md) |
 
 ---
