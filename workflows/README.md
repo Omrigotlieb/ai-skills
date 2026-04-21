@@ -12,6 +12,7 @@ Battle-tested workflows and automation patterns for Claude Code. These patterns 
 - [Testing](#testing)
 - [Git Operations](#git-operations)
 - [Project Exploration](#project-exploration)
+- [Scheduled Routines](#scheduled-routines)
 
 ---
 

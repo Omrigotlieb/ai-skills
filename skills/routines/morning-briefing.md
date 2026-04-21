@@ -49,22 +49,24 @@ EOF
 
 Requires MCP servers for Gmail, Google Calendar, and Slack:
 
+Configure MCP servers for your email, calendar, and Slack providers. The exact package names depend on your setup -- check the [MCP servers guide](../../mcp-servers/README.md) and the [MCP Registry](https://github.com/modelcontextprotocol) for available servers.
+
 ```json
 {
   "mcpServers": {
     "gmail": {
       "command": "npx",
-      "args": ["-y", "@anthropic/mcp-gmail"],
+      "args": ["-y", "your-gmail-mcp-server"],
       "env": { "GMAIL_CREDENTIALS": "${GMAIL_CREDENTIALS}" }
     },
     "google-calendar": {
       "command": "npx",
-      "args": ["-y", "@anthropic/mcp-google-calendar"],
+      "args": ["-y", "your-gcal-mcp-server"],
       "env": { "GCAL_CREDENTIALS": "${GCAL_CREDENTIALS}" }
     },
     "slack": {
       "command": "npx",
-      "args": ["-y", "@anthropic/mcp-slack"],
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
       "env": { "SLACK_TOKEN": "${SLACK_TOKEN}" }
     }
   }

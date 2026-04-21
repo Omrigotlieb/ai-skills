@@ -17,11 +17,13 @@ A guide to setting up automated pull request reviews that catch real issues with
 
 ### Basic: Single-Pass Review
 
+Configure as a GitHub-triggered routine via [Claude Code Routines](https://code.claude.com/docs/en/routines). GitHub triggers are set up through routine configuration files, not the CLI `--cron` flag.
+
 ```bash
-# Configure as a GitHub-triggered routine
+# For cron-based reviews (e.g., review all open PRs every morning):
 claude schedule create \
   --name "pr-review" \
-  --trigger "github:pull_request.opened" \
+  --cron "0 8 * * 1-5" \
   --prompt "$(cat <<'EOF'
 Review this pull request. Focus on issues that matter:
 

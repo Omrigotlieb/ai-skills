@@ -231,7 +231,7 @@ After generating the report, append this week's metrics to
 ## Example Output
 
 ```
-### Repository Health Report -- Week of 2026-04-20
+### Repository Health Report -- Week of [YYYY-MM-DD]
 
 **Health Score: B**
 

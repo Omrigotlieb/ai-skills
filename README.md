@@ -48,7 +48,6 @@ The emphasis is on:
 | [cheatsheet/README.md](cheatsheet/README.md) | Commands, shortcuts, config snippets, and quick reference |
 | [tips/README.md](tips/README.md) | Practical usage advice and day-to-day patterns |
 | [hooks/README.md](hooks/README.md) | Hook types, behavior, and examples |
-| [skills/routines/README.md](skills/routines/README.md) | Scheduled routines: morning briefings, PR reviews, health checks |
 | [workflows/README.md](workflows/README.md) | Repeatable delivery, review, and debugging workflows |
 | [prompts/README.md](prompts/README.md) | Prompt patterns for common development tasks |
 
