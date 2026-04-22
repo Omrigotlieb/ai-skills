@@ -397,13 +397,18 @@ Prepare changes for shipping:
 Set up a suite of routines that handle recurring work throughout the day:
 
 ```
-Morning (8 AM)     → Morning Brief: overnight activity digest
-Mid-morning (10 AM) → Backlog Triage: new issues labeled and assigned
-Afternoon (2 PM)    → PR Review: automated first-pass on open PRs
-Evening (6 PM)      → Deploy Verify: post-deploy smoke check
-Weekly (Monday)     → Docs Drift: catch stale documentation
-Weekly (Wednesday)  → Dependency Audit: security and freshness check
-Weekly (Friday)     → Stale Branches: clean up merged/abandoned branches
+Scheduled:
+  7:00 AM daily     → Research Digest: tech news relevant to your stack
+  8:00 AM weekdays  → Morning Brief: overnight activity digest
+  10:00 PM weekdays → Backlog Triage: new issues labeled and assigned
+  Monday 9 AM       → Docs Drift: catch stale documentation
+  Wednesday 6 AM    → Dependency Audit: security and freshness check
+  Friday 5 PM       → Stale Branches: clean up merged/abandoned branches
+
+Event-triggered:
+  On PR open        → PR Review: automated first-pass code review
+  On deploy (API)   → Deploy Verify: post-deploy smoke check
+  On release        → Release Notes: auto-generated changelog
 ```
 
 ### Setting Up Routines

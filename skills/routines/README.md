@@ -462,12 +462,9 @@ A complete daily automation setup combining multiple routines:
 |------|-------------|------|
 | **claude-code-scheduler** | Cross-platform scheduler (macOS/Linux/Windows) | [GitHub](https://github.com/jshchnz/claude-code-scheduler) |
 | **claude-mcp-scheduler** | Cron-based remote agent prompting with local MCP tools | [GitHub](https://github.com/tonybentley/claude-mcp-scheduler) |
-| **jarvis** | 24/7 AI ops system with Discord bot and 76 scheduled tasks | Community plugin |
-| **discoclaw** | Discord-integrated orchestrator with cron-based automation | Community plugin |
-| **AgentSys** | Workflow automation with PR management and drift detection | Community plugin |
-| **ORCH** | State machine orchestration (todo > review > done) | Community plugin |
-| **Ralph Orchestrator** | Autonomous task completion against a prompt file | Community plugin |
-| **background-timer** | Background timer with task notifications | Community plugin |
+| **comfy-claude-prompt-library** | Collection of Claude Code commands and memories for agentic coding | [GitHub](https://github.com/Comfy-Org/comfy-claude-prompt-library) |
+
+For more scheduling-related plugins (jarvis, discoclaw, AgentSys, ORCH, background-timer, and others), browse the [awesome-claude-code-toolkit](https://github.com/rohitg00/awesome-claude-code-toolkit) plugin catalog.
 
 ---
 
