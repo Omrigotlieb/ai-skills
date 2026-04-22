@@ -12,6 +12,7 @@ Battle-tested workflows and automation patterns for Claude Code. These patterns 
 - [Testing](#testing)
 - [Git Operations](#git-operations)
 - [Project Exploration](#project-exploration)
+- [Daily Scheduling & Routines](#daily-scheduling--routines)
 
 ---
 
@@ -386,6 +387,52 @@ Prepare changes for shipping:
 3. Create commit with conventional message
 4. Summarize what's being shipped
 ```
+
+---
+
+## Daily Scheduling & Routines
+
+### The Automated Day Workflow
+
+Set up a suite of routines that handle recurring work throughout the day:
+
+```
+Scheduled:
+  7:00 AM daily     → Research Digest: tech news relevant to your stack
+  8:00 AM weekdays  → Morning Brief: overnight activity digest
+  10:00 PM weekdays → Backlog Triage: new issues labeled and assigned
+  Monday 9 AM       → Docs Drift: catch stale documentation
+  Wednesday 6 AM    → Dependency Audit: security and freshness check
+  Friday 5 PM       → Stale Branches: clean up merged/abandoned branches
+
+Event-triggered:
+  On PR open        → PR Review: automated first-pass code review
+  On deploy (API)   → Deploy Verify: post-deploy smoke check
+  On release        → Release Notes: auto-generated changelog
+```
+
+### Setting Up Routines
+
+Routines run on Anthropic's cloud infrastructure — no local machine required.
+
+**From the CLI:**
+```bash
+/schedule daily PR review at 9am
+/schedule list                    # See all routines
+/schedule run                     # Trigger immediately
+```
+
+**From the web:** [claude.ai/code/routines](https://claude.ai/code/routines)
+
+### Routine Prompt Principles
+
+1. **Explicit outcomes**: "Post to #team-standup on Slack" not "share the results"
+2. **Handle empty state**: Always define what happens when there's nothing to report
+3. **Concrete thresholds**: "Flag if error rate > 20%" not "flag if errors increase"
+4. **Self-contained**: Each run starts fresh with no memory of previous runs
+5. **Test first**: Use "Run now" to verify behavior before relying on the schedule
+
+See [skills/routines/README.md](../skills/routines/README.md) for ready-to-use routine templates.
 
 ---
 
