@@ -22,11 +22,17 @@ Skills are model-invoked tools that Claude automatically uses when relevant to y
 ## Installing Skills
 
 ```bash
-# Via the anthropics/skills marketplace
-claude skill install <skill-name>
+# Via the official anthropics/skills plugin marketplace
+/plugin marketplace add anthropics/skills
+/plugin install document-skills@anthropic-agent-skills
+/plugin install example-skills@anthropic-agent-skills
+/plugin install claude-api@anthropic-agent-skills
 
-# From a GitHub repository
-claude skill install github:username/repo/skill-name
+# For a personal standalone skill, create:
+~/.claude/skills/<skill-name>/SKILL.md
+
+# For a project-local standalone skill, create:
+.claude/skills/<skill-name>/SKILL.md
 
 # From superpowers marketplace
 /plugin marketplace add obra/superpowers-marketplace
@@ -36,6 +42,14 @@ claude skill install github:username/repo/skill-name
 ---
 
 ## Official Skills (Anthropic)
+
+Anthropic publishes the [anthropics/skills](https://github.com/anthropics/skills) repository as both a reference implementation of the Agent Skills format and a Claude Code plugin marketplace.
+
+| Plugin | Included skills | Best for |
+|--------|-----------------|----------|
+| **document-skills** | `xlsx`, `docx`, `pptx`, `pdf` | Inspecting and generating office documents with production-style examples |
+| **example-skills** | `frontend-design`, `mcp-builder`, `skill-creator`, `webapp-testing`, creative and communication examples | Learning strong skill structure and installing practical examples |
+| **claude-api** | Claude API and SDK documentation skill | Building LLM-powered apps with API-specific guidance |
 
 ### Document Processing
 

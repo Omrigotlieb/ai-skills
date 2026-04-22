@@ -36,6 +36,28 @@ claude plugin install ./path/to/plugin
 
 ## Featured Plugins
 
+### Anthropic Agent Skills
+**Official skill examples and document workflows**
+
+Anthropic's public skills repository is also a Claude Code plugin marketplace. It is the best starting point for learning the Agent Skills format because the same repository includes the examples, template, spec, and marketplace manifest.
+
+**Plugins:**
+- `document-skills` - PDF, DOCX, PPTX, and XLSX document workflows
+- `example-skills` - Skill creation, MCP building, frontend design, web app testing, artifacts, and creative examples
+- `claude-api` - Claude API and SDK documentation skill
+
+**Install:**
+```bash
+/plugin marketplace add anthropics/skills
+/plugin install document-skills@anthropic-agent-skills
+/plugin install example-skills@anthropic-agent-skills
+/plugin install claude-api@anthropic-agent-skills
+```
+
+**Source:** [anthropics/skills](https://github.com/anthropics/skills)
+
+---
+
 ### Superpowers (obra)
 **The most comprehensive development workflow suite**
 
@@ -205,6 +227,7 @@ Full project lifecycle management with specialized agents.
 
 | Marketplace | Description | Install |
 |-------------|-------------|---------|
+| **anthropics/skills** | Official Anthropic Agent Skills examples and document workflows | `/plugin marketplace add anthropics/skills` |
 | **anthropics/claude-code** | Official Anthropic plugins | `/plugin marketplace add anthropics/claude-code` |
 | **obra/superpowers-marketplace** | Curated development tools | `/plugin marketplace add obra/superpowers-marketplace` |
 | **claude-plugins.dev** | Community registry | [Visit](https://claude-plugins.dev) |
