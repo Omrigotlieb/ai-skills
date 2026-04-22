@@ -208,7 +208,6 @@ Full project lifecycle management with specialized agents.
 | **anthropics/claude-code** | Official Anthropic plugins | `/plugin marketplace add anthropics/claude-code` |
 | **obra/superpowers-marketplace** | Curated development tools | `/plugin marketplace add obra/superpowers-marketplace` |
 | **claude-plugins.dev** | Community registry | [Visit](https://claude-plugins.dev) |
-| **skillsmp.com** | Agent skills marketplace | [Visit](https://skillsmp.com) |
 | **aitmpl.com** | 100+ templates and plugins | [Visit](https://www.aitmpl.com/plugins) |
 
 ---

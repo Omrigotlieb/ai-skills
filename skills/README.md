@@ -1,16 +1,10 @@
 # Claude Code Skills Catalog
 
-<div align="center">
+A curated index of Claude Code skills. Most entries point to upstream collections — [anthropics/skills](https://github.com/anthropics/skills), [obra/superpowers](https://github.com/obra/superpowers), [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) — which we don't rehost. In-repo category pages (below) carry short descriptions and usage triggers for skills we've found worth highlighting.
 
-[![Official Skills](https://img.shields.io/badge/Official-15%2B-blue)](https://github.com/anthropics/skills)
-[![Community Skills](https://img.shields.io/badge/Community-150%2B-green)](community/README.md)
-[![Scientific](https://img.shields.io/badge/Scientific-125%2B-purple)](https://github.com/K-Dense-AI/claude-scientific-skills)
+Skills are model-invoked: Claude decides when to use one based on context. Unlike slash commands, which you trigger explicitly, skills fire automatically when their description matches the task at hand.
 
-</div>
-
-Skills are model-invoked tools that Claude automatically uses when relevant to your task. Unlike slash commands which you explicitly trigger, skills enable intelligent, context-aware automation.
-
-> **Latest Update:** January 2026 - Added 200+ skills across all categories
+> Links last verified: 2026-04-22
 
 ## How Skills Work
 
@@ -182,17 +176,17 @@ For research, bioinformatics, and data science. Source: [K-Dense-AI/claude-scien
 
 Detailed guides for specific skill domains:
 
-| Category | Skills | Description | Link |
-|----------|--------|-------------|------|
-| **Security** | 10+ | DevSecOps, vulnerability detection, secure coding | [View](security/README.md) |
-| **API Development** | 8+ | REST design, OpenAPI, documentation | [View](api-development/README.md) |
-| **Testing** | 12+ | TDD, test generation, coverage, E2E | [View](testing/README.md) |
-| **DevOps** | 15+ | CI/CD, Docker, Kubernetes, Terraform | [View](devops/README.md) |
-| **Documentation** | 8+ | README, API docs, changelogs, ADRs | [View](documentation/README.md) |
-| **Database** | 10+ | SQL, ORM, migrations, optimization | [View](database/README.md) |
-| **Performance** | 10+ | Profiling, caching, load testing, optimization | [View](performance/README.md) |
-| **AI/ML** | 12+ | LLM integration, RAG, fine-tuning, ML pipelines | [View](ai-ml/README.md) |
-| **Community** | 150+ | Community-contributed skills | [View](community/README.md) |
+| Category | Entries | Description | Link |
+|----------|---------|-------------|------|
+| **Security** | 3 | DevSecOps, vulnerability detection, secure coding | [View](security/README.md) |
+| **API Development** | 5 | REST design, OpenAPI, documentation | [View](api-development/README.md) |
+| **Testing** | 8 | TDD, test generation, coverage, E2E | [View](testing/README.md) |
+| **DevOps** | 8 | CI/CD, Docker, Kubernetes, Terraform | [View](devops/README.md) |
+| **Documentation** | 6 | README, API docs, changelogs, ADRs | [View](documentation/README.md) |
+| **Database** | 8 | SQL, ORM, migrations, optimization | [View](database/README.md) |
+| **Performance** | 7 | Profiling, caching, load testing, optimization | [View](performance/README.md) |
+| **AI/ML** | 8 | LLM integration, RAG, fine-tuning, ML pipelines | [View](ai-ml/README.md) |
+| **Community** | External | Pointers to upstream collections — see Resources | [View](community/README.md) |
 
 ---
 
@@ -282,7 +276,6 @@ Step-by-step guidance for Claude...
 - [obra/superpowers](https://github.com/obra/superpowers) - Professional skills library
 - [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) - 125+ scientific skills
 - [awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) - Curated list
-- [Skills Marketplace](https://skillsmp.com) - Skills directory
 
 ### Tutorials
 - [Skills Explained](https://claude.com/blog/skills-explained) - Official comparison guide
