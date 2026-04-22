@@ -7,7 +7,7 @@ Community-contributed skills can be excellent, but they vary a lot in quality. T
 ## Strong Starting Points
 
 ### [obra/superpowers](https://github.com/obra/superpowers)
-20+ battle-tested skills for professional development workflows.
+Battle-tested skills for professional development workflows.
 
 **Included Skills:**
 - Test-Driven Development (TDD)
@@ -37,14 +37,7 @@ claude skill install github:obra/superpowers-lab
 ---
 
 ### [BehiSecc/awesome-claude-skills](https://github.com/BehiSecc/awesome-claude-skills)
-125+ scientific skills for research and analysis.
-
-**Categories:**
-- Bioinformatics
-- Cheminformatics
-- Clinical research
-- Machine learning
-- Data analysis
+Curated awesome-list of Claude skills from the community. Check the repo for current scope and categories.
 
 ---
 

@@ -1,6 +1,6 @@
 # Claude Code Tips & Tricks
 
-50+ curated tips from power users and 6+ months of community usage, organized by skill level.
+Curated tips from power users and community discussions, organized by skill level.
 
 > **Sources:** [ykdojo/claude-code-tips](https://github.com/ykdojo/claude-code-tips), r/ClaudeAI, community discoveries
 

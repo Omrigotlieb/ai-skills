@@ -2,7 +2,7 @@
 
 Plugins bundle skills, commands, agents, hooks, and MCP servers into shareable packages.
 
-> **Latest:** 239+ Agent Skills available across marketplaces. Plugins are free and open-source.
+> Plugins and marketplaces listed below are open-source projects maintained by their respective authors. Verify install commands against each project's current docs before adopting.
 
 ## What Are Plugins?
 
@@ -37,12 +37,10 @@ claude plugin install ./path/to/plugin
 ## Featured Plugins
 
 ### Superpowers (obra)
-**The most comprehensive development workflow suite**
-
-Professional skills that activate automatically based on context.
+Professional development workflow skills that activate automatically based on context.
 
 **Features:**
-- 20+ battle-tested skills (TDD, debugging, code review)
+- Battle-tested skills (TDD, debugging, code review)
 - Automatic skill activation
 - Git worktree management
 - Parallel agent workflows
@@ -215,7 +213,7 @@ Full project lifecycle management with specialized agents.
 ## Notable Plugin Collections
 
 ### Seth Hobson's Repository
-80+ specialized sub-agents available via plugins.
+Collection of specialized sub-agents available via plugins.
 
 ### Dan Ávila's Marketplace
 - DevOps automation
@@ -224,7 +222,7 @@ Full project lifecycle management with specialized agents.
 - Testing suites
 
 ### Claude Code Plugins Plus Skills
-239 Agent Skills with interactive Jupyter tutorials.
+Agent Skills with interactive Jupyter tutorials.
 
 ---
 

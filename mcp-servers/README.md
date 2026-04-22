@@ -4,7 +4,6 @@
 
 [![Official Registry](https://img.shields.io/badge/registry-official-green)](https://github.com/modelcontextprotocol/registry)
 [![GitHub MCP](https://img.shields.io/badge/github-mcp%20by%20GitHub-black)](https://github.com/mcp/io.github.github/github-mcp-server)
-[![Official](https://img.shields.io/badge/official-25%2B-purple)](https://github.com/modelcontextprotocol/servers)
 
 [**Database**](database.md) | [**Development**](development.md) | [**Productivity**](productivity.md) | [**Search**](search.md) | [**Automation**](automation.md)
 
@@ -37,7 +36,7 @@ Add an MCP server to your `.mcp.json`:
 
 ---
 
-## Essential MCP Servers (Top 10)
+## Popular MCP Servers
 
 ### 1. GitHub MCP Server
 **Category:** Git/VCS | **Source:** [GitHub MCP Server](https://github.com/mcp/io.github.github/github-mcp-server)
@@ -349,7 +348,7 @@ Connect to 5000+ applications through a single MCP.
 ### Awesome Lists
 - [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) - Main curated list
 - [wong2/awesome-mcp-servers](https://github.com/wong2/awesome-mcp-servers) - With official integrations
-- [TensorBlock/awesome-mcp-servers](https://github.com/TensorBlock/awesome-mcp-servers) - 7,260+ servers cataloged
+- [TensorBlock/awesome-mcp-servers](https://github.com/TensorBlock/awesome-mcp-servers) - Large community catalog
 - [rohitg00/awesome-devops-mcp-servers](https://github.com/rohitg00/awesome-devops-mcp-servers) - DevOps focused
 
 ### Directories

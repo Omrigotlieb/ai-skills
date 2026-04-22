@@ -11,15 +11,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Added
 - `scripts/validate_docs.py` to catch broken local Markdown links, bad anchors, and placeholder URLs
 - GitHub Actions docs checks workflow for automatic validation on push and pull request
+- README hero artwork for a stronger GitHub landing page
+- `docs/skills-vs-mcp-vs-commands-vs-hooks.md` — flagship comparison explaining the recent slash-command/skill merge, with decision matrix and honest trade-offs (facts verified against `code.claude.com/docs`)
+- "Links last verified" timestamp on the top README and `skills/README.md`
 
 ### Changed
 - Reworked the top-level README to improve positioning, navigation, and contributor guidance
+- Redesigned the README top section with stronger calls to action and better visual hierarchy
 - Rewrote the community skills page to remove placeholder repositories and raise the quality bar
 - Fixed GitHub issue links in contributor-facing docs
 - Updated MCP discovery guidance to prefer the official registry and GitHub's maintained MCP server install docs
+- Tightened the README lede and cut the "Why This Repo Is Worth Starring", "Get Useful In 5 Minutes", and "Better Than A Link Dump" sections in favor of a shorter landing that leads with the flagship comparison
+- `skills/README.md` counts now reflect the actual catalog (e.g., Security 3, DevOps 8, Testing 8) rather than aspirational "+N" badges; community and scientific collections are labeled as external pointers
+- `mcp-servers/README.md`: renamed "Essential MCP Servers (Top 10)" to "Popular MCP Servers" and dropped the "25+" badge that duplicated the official-registry link
+- `plugins/README.md`: dropped the "239+ Agent Skills" header line, the "most comprehensive" superlative on Superpowers, and unverified external counts ("80+", "239") on notable collections
+- `skills/community/README.md`: removed unverified external counts on upstream repos and softened the BehiSecc description (the "125+ scientific skills" claim conflated it with K-Dense-AI's scientific-skills collection)
+- `tips/README.md`: dropped "50+ curated tips" and the vague "6+ months of community usage" time claim
 
 ### Removed
 - Placeholder community skill links that pointed to non-existent example repositories
+- Inflated "Added 200+ skills across all categories" claim from `skills/README.md`
+- Dead `skillsmp.com` reference from `skills/README.md` and `plugins/README.md` (domain does not resolve to a real marketplace)
 
 ---
 
