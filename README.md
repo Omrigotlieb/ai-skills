@@ -26,6 +26,7 @@ The emphasis is on:
 | Find useful skills by category | [Skills catalog](skills/README.md) |
 | Add external tools and integrations | [MCP servers guide](mcp-servers/README.md) |
 | Improve daily workflow | [Tips](tips/README.md) and [Workflows](workflows/README.md) |
+| Automate recurring tasks | [Routines & Scheduled Agents](skills/routines/README.md) |
 | Learn commands and shortcuts fast | [Cheatsheet](cheatsheet/README.md) |
 | Understand automation hooks | [Hooks guide](hooks/README.md) |
 
@@ -40,7 +41,7 @@ The emphasis is on:
 
 | Section | What you will find |
 |---|---|
-| [skills/README.md](skills/README.md) | Official skills, community collections, and focused category guides |
+| [skills/README.md](skills/README.md) | Official skills, community collections, routines, and focused category guides |
 | [mcp-servers/README.md](mcp-servers/README.md) | Curated MCP picks plus 5 category breakdowns |
 | [plugins/README.md](plugins/README.md) | Plugin concepts, marketplaces, and notable packages |
 | [templates/README.md](templates/README.md) | 13 copy-ready `CLAUDE.md` templates |

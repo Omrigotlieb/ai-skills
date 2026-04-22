@@ -12,6 +12,7 @@ Battle-tested workflows and automation patterns for Claude Code. These patterns 
 - [Testing](#testing)
 - [Git Operations](#git-operations)
 - [Project Exploration](#project-exploration)
+- [Daily Scheduling & Routines](#daily-scheduling--routines)
 
 ---
 
@@ -386,6 +387,47 @@ Prepare changes for shipping:
 3. Create commit with conventional message
 4. Summarize what's being shipped
 ```
+
+---
+
+## Daily Scheduling & Routines
+
+### The Automated Day Workflow
+
+Set up a suite of routines that handle recurring work throughout the day:
+
+```
+Morning (8 AM)     → Morning Brief: overnight activity digest
+Mid-morning (10 AM) → Backlog Triage: new issues labeled and assigned
+Afternoon (2 PM)    → PR Review: automated first-pass on open PRs
+Evening (6 PM)      → Deploy Verify: post-deploy smoke check
+Weekly (Monday)     → Docs Drift: catch stale documentation
+Weekly (Wednesday)  → Dependency Audit: security and freshness check
+Weekly (Friday)     → Stale Branches: clean up merged/abandoned branches
+```
+
+### Setting Up Routines
+
+Routines run on Anthropic's cloud infrastructure — no local machine required.
+
+**From the CLI:**
+```bash
+/schedule daily PR review at 9am
+/schedule list                    # See all routines
+/schedule run                     # Trigger immediately
+```
+
+**From the web:** [claude.ai/code/routines](https://claude.ai/code/routines)
+
+### Routine Prompt Principles
+
+1. **Explicit outcomes**: "Post to #team-standup on Slack" not "share the results"
+2. **Handle empty state**: Always define what happens when there's nothing to report
+3. **Concrete thresholds**: "Flag if error rate > 20%" not "flag if errors increase"
+4. **Self-contained**: Each run starts fresh with no memory of previous runs
+5. **Test first**: Use "Run now" to verify behavior before relying on the schedule
+
+See [skills/routines/README.md](../skills/routines/README.md) for ready-to-use routine templates.
 
 ---
 
