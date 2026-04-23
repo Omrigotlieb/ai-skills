@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+---
+
+## [1.6.0] - 2026-04-23
+
 ### Added
 - `scripts/validate_docs.py` to catch broken local Markdown links, bad anchors, and placeholder URLs
 - GitHub Actions docs checks workflow for automatic validation on push and pull request
