@@ -31,7 +31,7 @@ Available on Team and Enterprise plans. Create them from the Claude Code web das
 Schedule  -->  Claude reads your repo  -->  Takes action  -->  Reports results
 ```
 
-Plan limits:
+Plan limits (as of 2026-04-23 -- check the [official docs](https://code.claude.com/docs/en/routines) for current values):
 | Plan | Daily runs |
 |------|-----------|
 | Pro | 5 |
@@ -41,7 +41,9 @@ Plan limits:
 
 ### Desktop Scheduled Tasks
 
-Local scheduled tasks run on your machine with full access to your filesystem, MCP servers, and skills:
+Local scheduled tasks run on your machine with full access to your filesystem, MCP servers, and skills.
+
+> CLI syntax below reflects the documented API as of 2026-04-23. See [Scheduled Tasks Docs](https://code.claude.com/docs/en/scheduled-tasks) for current usage.
 
 ```bash
 # Create a scheduled task
@@ -111,6 +113,12 @@ Routines read your project's `CLAUDE.md` for context. Add a section for routine-
 ```
 
 ---
+
+## See Also
+
+- [Hooks guide](../hooks/README.md) -- lifecycle automation that complements routines (hooks fire on events like tool calls; routines run on schedules)
+- [Workflows](../workflows/README.md) -- manual workflow patterns that routines can automate
+- [Tips](../tips/README.md) -- setup habits that improve routine effectiveness
 
 ## Key Resources
 

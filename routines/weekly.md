@@ -247,4 +247,4 @@ Write to: reports/tech-debt-YYYY-MM-DD.md
 - **Stagger schedules**: Don't run all weekly routines on Monday. Spread them across the week to avoid notification overload and stay within daily run limits.
 - **Reports directory**: Create a `reports/` directory and add it to `.gitignore` for local routine output, or commit it for team visibility.
 - **Progressive rollout**: Start with one or two routines. Add more once you've tuned the prompts to your codebase.
-- **Combine with hooks**: Use a `SessionStart` hook to surface the latest weekly report when you open Claude Code on Monday morning.
+- **Combine with hooks**: Use a `SessionStart` hook to surface the latest weekly report when you open Claude Code on Monday morning. See the [Hooks guide](../hooks/README.md) for examples.

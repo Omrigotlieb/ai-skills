@@ -84,17 +84,14 @@ jobs:
         id: check
         run: |
           npm ci
-          echo "outdated=$(npm outdated --json 2>/dev/null || echo '{}')" >> "$GITHUB_OUTPUT"
-          echo "audit=$(npm audit --json 2>/dev/null || echo '{}')" >> "$GITHUB_OUTPUT"
+          OUTDATED=$(npm outdated --json 2>/dev/null || echo '{}')
+          AUDIT=$(npm audit --json 2>/dev/null || echo '{}')
           HAS_ISSUES=$(node -e "
-            const o = JSON.parse(process.env.OUTDATED || '{}');
-            const a = JSON.parse(process.env.AUDIT || '{}');
+            const o = JSON.parse(process.argv[1]);
+            const a = JSON.parse(process.argv[2]);
             console.log(Object.keys(o).length > 0 || (a.vulnerabilities && Object.keys(a.vulnerabilities).length > 0) ? 'true' : 'false');
-          ")
+          " "$OUTDATED" "$AUDIT")
           echo "has_issues=$HAS_ISSUES" >> "$GITHUB_OUTPUT"
-        env:
-          OUTDATED: ${{ steps.check.outputs.outdated }}
-          AUDIT: ${{ steps.check.outputs.audit }}
 
       - name: Run Claude analysis
         if: steps.check.outputs.has_issues == 'true'
@@ -286,7 +283,7 @@ jobs:
 
 ## Cost Estimates
 
-Approximate costs per run using `claude-sonnet-4-6`:
+Approximate costs per run using `claude-sonnet-4-6`. Estimates assume a ~50k-line codebase; costs scale with repository size and number of files analyzed:
 
 | Routine | Frequency | Est. cost/run | Monthly cost |
 |---------|-----------|--------------|--------------|
