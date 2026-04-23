@@ -1,0 +1,28 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AI Skills Hub</title>
+  <desc id="desc">A banner for a curated directory of Claude Code skills, MCP servers, templates, hooks, plugins, and workflows.</desc>
+  <rect width="1200" height="360" rx="28" fill="#101820"/>
+  <path d="M0 265C134 229 226 228 346 264C465 300 574 304 706 259C844 211 974 210 1200 263V360H0V265Z" fill="#2F7C67"/>
+  <path d="M0 299C152 270 265 281 394 307C536 336 668 340 802 305C931 272 1054 271 1200 300V360H0V299Z" fill="#F2C14E"/>
+  <g opacity="0.22">
+    <circle cx="170" cy="88" r="54" stroke="#F7F3E8" stroke-width="2"/>
+    <circle cx="1035" cy="101" r="72" stroke="#F7F3E8" stroke-width="2"/>
+    <path d="M226 86H340M860 118H982" stroke="#F7F3E8" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(110 94)">
+    <rect x="0" y="0" width="120" height="120" rx="18" fill="#F7F3E8"/>
+    <path d="M34 43H86M34 61H72M34 79H91" stroke="#101820" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="270" y="143" fill="#F7F3E8" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="56" font-weight="800">AI Skills Hub</text>
+  <text x="274" y="196" fill="#DCE7E2" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="26" font-weight="500">Claude Code skills, MCP servers, templates, hooks, plugins, and workflows</text>
+  <g transform="translate(274 228)" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="18" font-weight="700">
+    <rect x="0" y="0" width="118" height="38" rx="19" fill="#F7F3E8"/>
+    <text x="24" y="25" fill="#101820">Skills</text>
+    <rect x="132" y="0" width="148" height="38" rx="19" fill="#F7F3E8"/>
+    <text x="156" y="25" fill="#101820">MCP Servers</text>
+    <rect x="294" y="0" width="138" height="38" rx="19" fill="#F7F3E8"/>
+    <text x="318" y="25" fill="#101820">Templates</text>
+    <rect x="446" y="0" width="128" height="38" rx="19" fill="#F7F3E8"/>
+    <text x="470" y="25" fill="#101820">Workflows</text>
+  </g>
+</svg>

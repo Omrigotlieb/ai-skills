@@ -2,6 +2,8 @@
 
 Community-contributed skills can be excellent, but they vary a lot in quality. This page focuses on verified collections, curation standards, and how to submit a real skill without filling the catalog with placeholder entries.
 
+> Links last verified: 2026-04-23
+
 ---
 
 ## Strong Starting Points
@@ -38,6 +40,17 @@ claude skill install github:obra/superpowers-lab
 
 ### [BehiSecc/awesome-claude-skills](https://github.com/BehiSecc/awesome-claude-skills)
 Curated awesome-list of Claude skills from the community. Check the repo for current scope and categories.
+
+---
+
+### [netresearch/claude-code-marketplace](https://github.com/netresearch/claude-code-marketplace)
+Maintained Agent Skills marketplace with source-referenced skill repos for TYPO3, PHP modernization, Go, Docker, Jira, security, data tooling, and repository workflow automation.
+
+Good fit when you want a practical marketplace to browse by concrete engineering workflow instead of a long generic awesome-list. The marketplace manifest points to individual source repositories, so inspect the specific skill repo before installing it.
+
+```bash
+/plugin marketplace add netresearch/claude-code-marketplace
+```
 
 ---
 
