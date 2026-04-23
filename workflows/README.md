@@ -414,9 +414,16 @@ Prepare changes for shipping:
 
 ---
 
+## Scheduled & Recurring Workflows
+
+For routines that run automatically on a schedule (daily code review, weekly dependency audits, security scans) or in response to events (PR opened, deploy completed), see the **[Routines catalog](../routines/README.md)**.
+
+---
+
 ## Resources
 
 - [Official Common Workflows](https://code.claude.com/docs/en/common-workflows)
+- [Official Routines Docs](https://code.claude.com/docs/en/routines)
 - [Anthropic Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
 - [claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows)
 - [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)

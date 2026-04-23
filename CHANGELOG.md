@@ -9,6 +9,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- **Routines catalog** (`routines/`) — new top-level section with copy-paste routine templates
+  - `routines/README.md` — overview of Cloud Routines, Desktop Scheduled Tasks, and `/loop` session tasks with prompt-writing guidance
+  - `routines/daily.md` — morning briefing, daily code review, activity summary, nightly backlog grooming
+  - `routines/weekly.md` — code quality review, dependency audit, docs drift detection, security scan, Friday wrap-up, Monday setup, tech debt tracker
+  - `routines/event-driven.md` — PR review automation, deploy verification, alert triage, issue-to-PR, changelog generation
+  - `routines/github-actions.md` — ready-to-use GitHub Actions workflows for code quality, dependency audit, docs sync, PR review, and security scanning with cost estimates
+- Cross-links from `workflows/README.md` to the new routines catalog
 - `scripts/validate_docs.py` to catch broken local Markdown links, bad anchors, and placeholder URLs
 - GitHub Actions docs checks workflow for automatic validation on push and pull request
 - README hero artwork for a stronger GitHub landing page
