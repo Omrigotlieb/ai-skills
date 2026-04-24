@@ -17,6 +17,7 @@
 <p align="center">
   <a href="skills/README.md">Skills</a> ·
   <a href="mcp-servers/README.md">MCP Servers</a> ·
+  <a href="routines/README.md">Routines</a> ·
   <a href="templates/README.md">Templates</a> ·
   <a href="cheatsheet/README.md">Cheatsheet</a> ·
   <a href="CONTRIBUTING.md">Contribute</a>
@@ -39,6 +40,7 @@
 | Set up Claude Code on a new project | [CLAUDE.md templates](templates/README.md) |
 | Find useful skills by category | [Skills catalog](skills/README.md) |
 | Add external tools and integrations | [MCP server guides](mcp-servers/README.md) |
+| Automate daily routines and schedules | [Routines](routines/README.md) |
 | Improve day-to-day workflow | [Tips](tips/README.md) and [Workflows](workflows/README.md) |
 | Learn commands and shortcuts fast | [Cheatsheet](cheatsheet/README.md) |
 | Understand automation hooks | [Hooks guide](hooks/README.md) |
@@ -49,6 +51,7 @@
 |---|---|
 | [Skills](skills/README.md) | Curated index of Claude Code skills with descriptions and triggers |
 | [MCP Servers](mcp-servers/README.md) | Comparison of tools and integrations to cut guessing time |
+| [Routines](routines/README.md) | Scheduled automations: daily briefings, email triage, PR monitoring, nightly maintenance |
 | [Templates](templates/README.md) | Copy-ready `CLAUDE.md` scaffolds for common stacks and project types |
 | [Cheatsheet](cheatsheet/README.md) | Commands, shortcuts, config, and prompt reference |
 | [Tips](tips/README.md) | Practical habits and setup wins that improve daily usage |
