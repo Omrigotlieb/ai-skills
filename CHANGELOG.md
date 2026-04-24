@@ -8,6 +8,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- New `routines/` directory with 6 ready-to-use daily schedule automations:
+  - **Morning Briefing** (`routines/morning-briefing.md`) — structured daily brief covering priorities, calendar, urgent items, and quick wins
+  - **Email Triage** (`routines/email-triage.md`) — automated inbox classification, reply drafting, and labeling via Gmail MCP
+  - **PR Monitor** (`routines/pr-monitor.md`) — continuous PR lifecycle monitoring with automated fix implementation
+  - **Nightly Maintenance** (`routines/nightly-maintenance.md`) — issue triage, test coverage, dependency audit, and docs drift detection
+  - **Evening Review** (`routines/evening-review.md`) — structured 6-question daily reflection framework
+  - **Weekly Retrospective** (`routines/weekly-retro.md`) — 5-phase weekly synthesis with trend analysis
+- Routines index page (`routines/README.md`) with recommended daily schedule, progression path, and guide for building custom routines
+- Added Routines to the main README navigation, "Pick Your Path" table, and "What You Get" table
+
 ---
 
 ## [1.6.0] - 2026-04-23
