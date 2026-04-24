@@ -1,6 +1,6 @@
 # Morning Briefing Routine
 
-**Schedule:** Daily, 7–8 AM · **Duration:** Produces a 3-minute read · **Requires:** Google Calendar MCP (optional), task tracker MCP (optional)
+**Schedule:** Daily, 7:30 AM (after email triage) · **Duration:** Produces a 3-minute read · **Requires:** Google Calendar MCP (optional), task tracker MCP (optional)
 
 ## What It Does
 

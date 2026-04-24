@@ -10,18 +10,7 @@ Processes your inbox automatically — classifies messages, drafts replies for u
 
 ### Prerequisites
 
-Install and configure the Gmail MCP server:
-
-```json
-{
-  "mcpServers": {
-    "gmail": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/gmail-mcp"]
-    }
-  }
-}
-```
+Set up a Gmail MCP server. See [MCP Server guides — Productivity](../mcp-servers/README.md) for current installation options and verified package names.
 
 ### As a Scheduled Task
 

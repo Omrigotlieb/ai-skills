@@ -189,8 +189,8 @@ See [MCP Server guides](../mcp-servers/README.md) for setup instructions.
 
 ## Resources
 
-- [Claude Code Routines Documentation](https://code.claude.com/docs/en/routines)
-- [Introducing Routines](https://claude.com/blog/introducing-routines-in-claude-code)
-- [Claude Code Life OS](https://cc.deeptoai.com/docs/en/community-tips/claude-code-life-os)
-- [Build Your AI Executive Daily Briefing](https://www.leadwithai.co/article/build-your-ai-executive-daily-briefing)
-- [AI Second Brain with Claude Code](https://www.mindstudio.ai/blog/build-ai-second-brain-claude-code-obsidian)
+- [Claude Code Documentation](https://code.claude.com/docs) — official docs, including scheduled tasks and automation
+- [Anthropic Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) — engineering guidance for Claude Code workflows
+- [Workflows](../workflows/README.md) — related one-off patterns for development tasks
+- [Hooks Guide](../hooks/README.md) — lifecycle automation for event-driven workflows
+- [MCP Server Guides](../mcp-servers/README.md) — set up the integrations routines depend on
