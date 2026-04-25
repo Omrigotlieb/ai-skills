@@ -2,6 +2,8 @@
 
 Automated routines that run on a schedule to keep your codebase, team, and workflow healthy. Each routine includes a copy-ready prompt, recommended schedule, and required connectors.
 
+> Links last verified: 2026-04-25
+
 > **Scheduling surfaces:** Cloud Routines (runs on Anthropic's cloud, no machine needed), Desktop Scheduled Tasks (local, requires app open), and `/loop` (in-session polling). See [official docs](https://code.claude.com/docs/en/routines) for setup.
 
 ## Quick Navigation
@@ -40,7 +42,7 @@ Automated routines that run on a schedule to keep your codebase, team, and workf
 **Schedule:** Weekdays at 7:00 AM
 **Connectors:** Gmail, Google Calendar, Slack, Notion (optional)
 
-The single most impactful routine to start with. Pulls from multiple sources into one structured overview so you start the day with full context.
+A good routine to start with — pulls from multiple sources into one structured overview so you start the day with full context.
 
 ```
 I need my morning briefing. Pull from Slack and email, check my calendar,
@@ -90,7 +92,7 @@ Use bullet points. If zero issues were filed, post a single line saying so.
 **Trigger:** GitHub event — `pull_request.opened`
 **Connectors:** GitHub (Claude GitHub App)
 
-The highest-ROI event-driven routine. Shifts human reviewers from mechanical checks to design decisions.
+Frees human reviewers to focus on design decisions instead of mechanical checks.
 
 ```
 Review this pull request against our team standards.
@@ -142,15 +144,7 @@ If failures found, open GitHub issues tagged @oncall with:
 If everything is clean, post a single green-status message.
 ```
 
-Fire via API:
-```bash
-curl -X POST https://api.anthropic.com/v1/claude_code/routines/{trigger_id}/fire \
-  -H "Authorization: Bearer $ANTHROPIC_API_KEY" \
-  -H "anthropic-beta: experimental-cc-routine-2026-04-01" \
-  -H "anthropic-version: 2023-06-01" \
-  -H "Content-Type: application/json" \
-  -d '{"text": "Deploy v2.4.1 completed. Environment: production."}'
-```
+Fire via API: see the [official routines docs](https://code.claude.com/docs/en/routines) for the current API trigger endpoint and authentication headers.
 
 ---
 

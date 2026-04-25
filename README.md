@@ -54,9 +54,7 @@
 | [Cheatsheet](cheatsheet/README.md) | Commands, shortcuts, config, and prompt reference |
 | [Tips](tips/README.md) | Practical habits and setup wins that improve daily usage |
 | [Hooks](hooks/README.md) | Lifecycle automation and safety patterns |
-| [Workflows](workflows/README.md) | Repeatable patterns for planning, shipping, debugging, and review |
-| [Daily Routines](workflows/daily-routines.md) | Scheduled automations: morning briefing, code review, dependency audit |
-| [Agent Prompts](workflows/agent-prompts.md) | Copy-ready prompt templates for development, ops, and research agents |
+| [Workflows](workflows/README.md) | Repeatable patterns for planning, shipping, debugging, review, and [scheduled routines](workflows/daily-routines.md) |
 | [Prompts](prompts/README.md) | Reusable prompt structures for common engineering tasks |
 
 ## Contributing

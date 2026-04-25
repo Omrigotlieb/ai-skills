@@ -2,6 +2,8 @@
 
 Copy-ready prompt templates for common agent patterns. Each prompt is designed to be used as a scheduled routine, slash command, or direct instruction.
 
+> Links last verified: 2026-04-25
+
 ## Quick Navigation
 
 - [Development Agents](#development-agents)
@@ -380,7 +382,7 @@ Structure prompts with four components:
 |-----------|---------|---------|
 | **T**ask | What to do | "Review this PR for security issues" |
 | **C**ontext | Background info | "This is a payments service handling PII" |
-| **R**ules | Constraints | "Do not approve or merge. Only comment." |
+| **R**equirements | Constraints and boundaries | "Do not approve or merge. Only comment." |
 | **O**utput | Expected format | "List issues with severity, location, and fix" |
 
 ### Negative Constraints Matter
@@ -434,6 +436,6 @@ Check for issues opened in the last 24 hours.
 - [Anthropic — Routines Docs](https://code.claude.com/docs/en/routines)
 - [Anthropic — Scheduled Tasks](https://code.claude.com/docs/en/scheduled-tasks)
 - [Prompts Guide](../prompts/README.md) — general prompt templates and the TCRO framework
-- [levnikolaevich/claude-code-skills](https://github.com/levnikolaevich/claude-code-skills) — 135+ community skills
-- [glebis/claude-skills](https://github.com/glebis/claude-skills) — 50+ skills including workflow helpers
+- [levnikolaevich/claude-code-skills](https://github.com/levnikolaevich/claude-code-skills) — community skills collection
+- [glebis/claude-skills](https://github.com/glebis/claude-skills) — skills including workflow helpers
 - [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) — curated skill catalog
