@@ -40,6 +40,7 @@
 | Find useful skills by category | [Skills catalog](skills/README.md) |
 | Add external tools and integrations | [MCP server guides](mcp-servers/README.md) |
 | Improve day-to-day workflow | [Tips](tips/README.md) and [Workflows](workflows/README.md) |
+| Automate daily routines | [Daily Routines](workflows/daily-routines.md) and [Agent Prompts](workflows/agent-prompts.md) |
 | Learn commands and shortcuts fast | [Cheatsheet](cheatsheet/README.md) |
 | Understand automation hooks | [Hooks guide](hooks/README.md) |
 
@@ -53,7 +54,7 @@
 | [Cheatsheet](cheatsheet/README.md) | Commands, shortcuts, config, and prompt reference |
 | [Tips](tips/README.md) | Practical habits and setup wins that improve daily usage |
 | [Hooks](hooks/README.md) | Lifecycle automation and safety patterns |
-| [Workflows](workflows/README.md) | Repeatable patterns for planning, shipping, debugging, and review |
+| [Workflows](workflows/README.md) | Repeatable patterns for planning, shipping, debugging, review, and [scheduled routines](workflows/daily-routines.md) |
 | [Prompts](prompts/README.md) | Reusable prompt structures for common engineering tasks |
 
 ## Contributing

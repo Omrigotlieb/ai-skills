@@ -4,6 +4,8 @@ Battle-tested workflows and automation patterns for Claude Code. These patterns 
 
 ## Quick Navigation
 
+- [Daily Routines](daily-routines.md) — scheduled automations (morning briefing, code review, dependency audit, and more)
+- [Agent Prompts](agent-prompts.md) — copy-ready prompt templates for development, operations, and research agents
 - [Feature Development](#feature-development)
 - [Code Review](#code-review)
 - [Debugging](#debugging)
@@ -416,7 +418,10 @@ Prepare changes for shipping:
 
 ## Resources
 
+- [Daily Routines](daily-routines.md) — automated scheduled routines with copy-ready prompts
+- [Agent Prompts](agent-prompts.md) — reusable prompt templates for common agent patterns
 - [Official Common Workflows](https://code.claude.com/docs/en/common-workflows)
+- [Anthropic — Routines Docs](https://code.claude.com/docs/en/routines)
 - [Anthropic Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
 - [claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows)
 - [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)
