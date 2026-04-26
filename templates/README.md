@@ -77,47 +77,40 @@ Add to your CLAUDE.md as you work:
 
 ## Best Practices
 
-### Keep It Concise
-- Aim for 150-200 instructions max
-- Claude follows fewer instructions more reliably
-- Move details to per-folder CLAUDE.md files
+The advice below maps to current Anthropic guidance ([memory docs](https://code.claude.com/docs/en/memory), [best practices](https://code.claude.com/docs/en/best-practices), verified April 2026) and to practitioner experience reports.
 
-### Use the WHAT/WHY/HOW Framework
-```markdown
-## WHAT
-Tech stack, project structure, key files
+### Keep it short
+Anthropic's memory docs explicitly recommend **under ~200 lines per CLAUDE.md file**. Longer files consume context and reduce adherence. Diagnostic: if Claude keeps ignoring a rule despite repeated emphasis, the file is usually too long, not the rule too weak.
 
-## WHY
-Project purpose, design decisions, constraints
+### Be specific, not aspirational
+Vague rules underperform concrete ones. From Anthropic's own example:
 
-## HOW
-Commands, workflows, conventions
-```
+- Avoid: *"Format code properly"*
+- Prefer: *"Use 2-space indentation"*
 
-### Prefer Pointers Over Code
-```markdown
-# Good - Points to authoritative source
-See `src/utils/auth.ts:45` for authentication pattern
+Use **MUST**, **MUST NOT**, **IMPORTANT**, or **YOU MUST** for the rules you actually need followed — Anthropic explicitly endorses this emphasis.
 
-# Avoid - Will become outdated
-```typescript
-function authenticate() { ... }
-```
-```
+### Don't duplicate the linter
+ESLint, Prettier, Black, gofmt already enforce style. Mentioning the same rules in CLAUDE.md wastes context Claude could spend on things only humans can encode.
 
-### Use Subdirectory Files
-```
-project/
-├── CLAUDE.md           # Main project context
-├── tests/
-│   └── CLAUDE.md       # Testing-specific context
-└── src/
-    └── api/
-        └── CLAUDE.md   # API-specific patterns
-```
+### Short snippets OK, real implementations no
+A 5-10 line illustrative example is fine (Anthropic's own examples include them). Pasting real implementation code is not — it rots, then misleads. Reference the source by path: *"See `src/auth/login.ts:45` for the canonical pattern."*
 
-### Don't Duplicate Linter Work
-Let tools like ESLint, Prettier, and Black handle formatting. CLAUDE.md should focus on higher-level guidance.
+---
+
+## CLAUDE.md vs Skills vs `.claude/rules/`
+
+Three primitives, three jobs. Picking the wrong one is the most common bloat source. This is the single biggest architectural shift in Claude Code since this directory was first written, and it changes how templates should be used.
+
+| Primitive | Loaded when | Right for |
+|---|---|---|
+| **CLAUDE.md** | Every session, always | Project-wide facts and rules that always apply |
+| **`.claude/rules/<name>.md`** with `paths:` frontmatter | When Claude touches matching files | Path-scoped rules (e.g., "in `tests/`, use vitest") |
+| **Skill** at `.claude/skills/<name>/SKILL.md` | On demand — model or user invokes | Workflows and playbooks that only sometimes apply |
+
+If your CLAUDE.md has grown into "if you're doing X, do Y" sections, those are skills waiting to happen. Move them and the always-on file gets shorter and more reliable.
+
+For the deeper comparison (skills vs MCP vs hooks too), see the [primitives flagship](../docs/skills-vs-mcp-vs-commands-vs-hooks.md).
 
 ---
 
@@ -190,6 +183,12 @@ Have a template for a specific stack or project type? Submit a PR!
 
 ## Resources
 
-- [Using CLAUDE.md Files](https://claude.com/blog/using-claude-md-files)
-- [Writing a Good CLAUDE.md](https://www.humanlayer.dev/blog/writing-a-good-claude-md)
-- [CLAUDE.md Best Practices](https://arize.com/blog/claude-md-best-practices-learned-from-optimizing-claude-code-with-prompt-learning/)
+**Official (canonical, current April 2026):**
+- [Memory: How Claude remembers your project](https://code.claude.com/docs/en/memory)
+- [Best Practices for Claude Code](https://code.claude.com/docs/en/best-practices)
+- [Using CLAUDE.md Files (blog)](https://claude.com/blog/using-claude-md-files)
+
+**Practitioner deep-dives:**
+- [Writing a Good CLAUDE.md (HumanLayer, Nov 2025)](https://www.humanlayer.dev/blog/writing-a-good-claude-md) — source of the "150-200 instructions" heuristic and the "pointers over code" guidance
+- [CLAUDE.md Best Practices (Arize, Nov 2025)](https://arize.com/blog/claude-md-best-practices-learned-from-optimizing-claude-code-with-prompt-learning/) — quantitative results from prompt learning
+- [CLAUDE.md best practices: from basic to adaptive (dev.to, Feb 2025)](https://dev.to/cleverhoods/claudemd-best-practices-from-basic-to-adaptive-9lm) — L0-L6 maturity model
