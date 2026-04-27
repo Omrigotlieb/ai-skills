@@ -1,3 +1,5 @@
+[< Back to Workflows](README.md)
+
 # Routines & Scheduled Tasks
 
 Automated routines that run on a schedule so your codebase stays healthy without manual effort. Claude Code supports three scheduling tiers; pick the one that fits your setup.
@@ -12,7 +14,7 @@ Automated routines that run on a schedule so your codebase stays healthy without
 
 Cloud Routines support three trigger types: **scheduled** (cron), **API** (HTTP POST), and **GitHub events** (PR opened, releases, etc.). A single routine can combine all three.
 
-> Plan caps: Pro 5/day, Max 15/day, Team/Enterprise 25/day. One-off runs and webhook/API triggers do not count.
+> Each plan has a daily cap on scheduled runs. One-off runs do not count toward the cap. Check your current limits at [claude.ai/settings/usage](https://claude.ai/settings/usage).
 
 ---
 
@@ -72,7 +74,7 @@ Do NOT open fix PRs automatically.
 ```
 
 **Trigger type:** Cloud Routine (scheduled)  
-**Connectors:** Logging service, Slack
+**Connectors:** Custom MCP integration for your logging service, Slack
 
 ---
 
@@ -135,7 +137,7 @@ include the error details and recent commit that likely caused it.
 ```
 
 **Trigger type:** Cloud Routine (API trigger)  
-**Connectors:** Monitoring service, Slack
+**Connectors:** Custom MCP integration for your monitoring service, Slack
 
 ---
 
@@ -157,7 +159,7 @@ Do NOT open PRs or revert commits automatically.
 ```
 
 **Trigger type:** Cloud Routine (API trigger)  
-**Connectors:** Monitoring service, GitHub, Slack
+**Connectors:** Custom MCP integration for your monitoring service, GitHub, Slack
 
 ---
 
@@ -197,9 +199,10 @@ Identify:
 - Branches already merged to main (safe to delete)
 - Unmerged branches with no commits in 30+ days
 
-For merged branches: delete them.
+Post a summary listing branches safe to delete and stale unmerged branches.
 For stale unmerged branches: open a GitHub issue tagging the branch author,
 asking whether the work should be continued or the branch deleted.
+Do NOT delete any branches automatically. Do NOT touch release or protected branches.
 ```
 
 **Trigger type:** Cloud Routine (scheduled) or Desktop Scheduled Task  
