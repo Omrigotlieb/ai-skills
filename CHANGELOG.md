@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- `workflows/routines.md` — comprehensive guide to daily, weekly, and event-triggered scheduled automations covering PR digests, security scans, error log analysis, deploy verification, dependency checks, stale branch cleanup, and more. Includes prompt templates, scheduling tier comparison, and best practices for writing effective routine prompts.
+- "Routines & Scheduled Tasks" entry in main README navigation and feature table
+- Routines link in workflows README quick navigation
+
 ---
 
 ## [1.6.0] - 2026-04-23

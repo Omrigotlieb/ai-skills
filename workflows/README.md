@@ -2,8 +2,11 @@
 
 Battle-tested workflows and automation patterns for Claude Code. These patterns come from Anthropic's internal usage and the community.
 
+> **New:** [Routines & Scheduled Tasks](routines.md) — daily, weekly, and event-triggered automations that keep your codebase healthy without manual effort.
+
 ## Quick Navigation
 
+- [Routines & Scheduled Tasks](routines.md) **NEW**
 - [Feature Development](#feature-development)
 - [Code Review](#code-review)
 - [Debugging](#debugging)
