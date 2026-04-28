@@ -9,14 +9,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
-- `routines/README.md` — new section covering Claude Code scheduled agents (routines) with 14 battle-tested routine prompts across daily, weekly, monthly, and one-time schedules
+- `routines/README.md` — new section covering Claude Code scheduled agents (routines) with starter routine prompts across daily, weekly, monthly, one-time, and event-driven schedules
   - Daily: standup digest, PR review reminder, flaky test monitor
-  - Weekly: dependency audit, dead code & TODO sweep, changelog draft, docs freshness check, performance baseline
+  - Weekly: dependency audit, dead code & TODO sweep, changelog draft, docs freshness check, performance baseline, stale branch cleanup
   - Monthly: security posture review, architecture drift check, feature flag cleanup
   - One-time: post-release soak check, migration verification
+  - Event-driven: PR auto-reviewer, alert triage, nightly bug fix
+- Scheduling surfaces comparison (cloud routines vs desktop vs /loop)
 - Composable daily schedule table showing how to combine routines into a full automation calendar
 - Routine prompt writing guide with anti-patterns and best practices
-- Community routine ideas table with 10 additional patterns
+- Community routine ideas table with 15 additional patterns from verified sources
 - Added routines to top-level README navigation bar and content tables
 
 ---

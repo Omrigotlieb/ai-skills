@@ -3,6 +3,22 @@
 Routines are scheduled agents that run autonomously on a cron schedule or at a specific time. They handle recurring maintenance, monitoring, and housekeeping tasks so you can focus on feature work.
 
 > **Feature:** `/schedule` command | **Docs:** [Routines Documentation](https://code.claude.com/docs/en/routines)
+>
+> Links last verified: 2026-04-28
+
+## Quick Navigation
+
+- [How Routines Work](#how-routines-work)
+- [Daily Routines](#daily-routines)
+- [Weekly Routines](#weekly-routines)
+- [Bi-Weekly / Monthly Routines](#bi-weekly--monthly-routines)
+- [One-Time Routines](#one-time-routines)
+- [Event-Driven Routines](#event-driven-routines-github-webhooks--api-triggers)
+- [Building Effective Routine Prompts](#building-effective-routine-prompts)
+- [Composing a Daily Schedule](#composing-a-daily-schedule)
+- [Community Routine Ideas](#community-routine-ideas)
+
+---
 
 ## Quick Start
 
@@ -25,15 +41,19 @@ Claude Code creates a remote agent that runs on the specified schedule, executes
 3. **The agent executes on schedule** — clones your repo, runs the prompt, takes action
 4. **You get notified** — via email, Slack, PR, or however the routine is configured
 
-### Key Properties
+### Scheduling Surfaces
 
-| Property | Description |
-|----------|-------------|
-| **Schedule** | Cron expression or one-time datetime |
-| **Prompt** | Instructions for the agent |
-| **Repository** | Git repo the agent operates on |
-| **Permissions** | What the agent can do (read, write, PR, push) |
-| **Notifications** | How results are delivered |
+Claude Code offers three scheduling surfaces, each with different tradeoffs:
+
+| Surface | Runs on | Machine required | Persistent | Local file access |
+|---------|---------|------------------|------------|-------------------|
+| **Cloud Routines** | Anthropic cloud | No | Yes | No (fresh clone) |
+| **Desktop Scheduled Tasks** | Your machine | Yes | Yes | Yes |
+| **`/loop`** | Your machine | Yes (open session) | No | Yes |
+
+Cloud routines support three trigger types: **schedule** (hourly/daily/weekly/custom cron), **API** (HTTP POST to per-routine endpoint), and **GitHub webhook** (PR opened, release published, etc.). A single routine can combine multiple triggers.
+
+**Usage limits:** Pro = 5 runs/day, Max = 15 runs/day, Team/Enterprise = 25 runs/day.
 
 ---
 
@@ -164,6 +184,48 @@ Title: "docs: changelog for week of [date]"
 
 ---
 
+#### Performance Baseline Comparison
+Track performance trends over time.
+
+**Schedule:** `0 6 * * 1` (Monday at 6am)
+
+```
+Run performance baseline checks:
+
+1. Execute the project's benchmark suite (if one exists)
+2. Compare results against the last recorded baseline
+3. Flag any metric that regressed > 10% from the previous week
+4. If no benchmark suite exists, analyze bundle size (for frontend) or
+   startup time (for backend) as proxy metrics
+5. Update the baseline file with current results
+
+If regressions are found, open an issue with before/after comparison.
+Title: "Performance regression detected [date]"
+```
+
+---
+
+#### Stale Branch Cleanup
+Remove branches that have been merged or abandoned.
+
+**Schedule:** `0 14 * * 4` (Thursday at 2pm)
+
+```
+Clean up stale branches:
+
+1. List all remote branches merged into main
+2. List branches with no commits in the last 30 days
+3. For merged branches: delete them (both local and remote)
+4. For abandoned branches (no commits in 60+ days): open an issue tagging
+   the last committer asking if it can be deleted
+5. Report how many branches were cleaned up
+
+Do NOT delete branches named "develop", "staging", or "release/*".
+Do NOT delete branches with open PRs.
+```
+
+---
+
 #### Documentation Freshness Check
 Prevent docs from rotting silently.
 
@@ -232,7 +294,7 @@ Title: "Architecture review [date]"
 #### Feature Flag Cleanup
 Remove stale feature flags that were fully rolled out.
 
-**Schedule:** `0 10 1 * *` (first of each month at 10am)
+**Schedule:** `0 10 2 * *` (2nd of each month at 10am)
 
 ```
 Audit feature flags in the codebase:
@@ -245,27 +307,6 @@ Audit feature flags in the codebase:
 4. If a flag has been fully disabled for > 30 days, flag it for deletion review
 
 Title PRs: "chore: remove fully-rolled-out flag [flag-name]"
-```
-
----
-
-#### Performance Baseline Comparison
-Track performance trends over time.
-
-**Schedule:** `0 6 * * 1` (Monday at 6am)
-
-```
-Run performance baseline checks:
-
-1. Execute the project's benchmark suite (if one exists)
-2. Compare results against the last recorded baseline
-3. Flag any metric that regressed > 10% from the previous week
-4. If no benchmark suite exists, analyze bundle size (for frontend) or
-   startup time (for backend) as proxy metrics
-5. Update the baseline file with current results
-
-If regressions are found, open an issue with before/after comparison.
-Title: "Performance regression detected [date]"
 ```
 
 ---
@@ -309,6 +350,67 @@ Verify the database migration completed correctly:
 
 Report results via email. Flag any discrepancies as critical.
 ```
+
+---
+
+### Event-Driven Routines (GitHub Webhooks & API Triggers)
+
+These fire on events rather than schedules. Configure via GitHub webhook triggers or API endpoints.
+
+#### PR Auto-Reviewer
+Automated code review on every new pull request.
+
+**Trigger:** GitHub event — `pull_request.opened`
+
+```
+A pull request was just opened on this repository. Review it carefully and post
+a comment on the PR with:
+
+1. A one-line summary of what the PR changes
+2. Any potential bugs, edge cases, or security concerns
+3. Suggestions for improvement (if any)
+4. A clear verdict: ready to merge, needs changes, or blocking issue
+
+Keep the comment focused and friendly. Use GitHub markdown for formatting.
+Do NOT approve or merge — only comment.
+```
+
+**Source:** [AyyazTech Tutorial](https://www.ayyaztech.com/blog/claude-code-routines-tutorial), [Builder.io Guide](https://www.builder.io/blog/claude-code-routines)
+
+---
+
+#### Alert Triage (Incident Response)
+Automated first-response to production alerts.
+
+**Trigger:** API — Datadog/PagerDuty/Sentry webhook to routine endpoint
+
+```
+An alert was triggered. Pull the stack trace from the alert body. Correlate it
+with recent deployments and commits. Identify the likely root cause. Open a
+draft PR with a proposed fix and link back to the alert. Post findings to
+#incidents on Slack.
+
+Create draft PRs only. Never merge. Never push to main.
+```
+
+**Source:** [Anthropic Blog](https://claude.com/blog/introducing-routines-in-claude-code)
+
+---
+
+#### Nightly Bug Fix
+Pull top bugs from the issue tracker and attempt fixes overnight.
+
+**Trigger:** Schedule — nightly at 2:00 AM
+
+```
+Pull the top bug from the issue tracker labeled "good-first-fix".
+Attempt a fix and open a draft PR.
+
+Create draft PRs only. Never merge. Never push to main.
+If unsure about a fix, leave a comment on the issue instead of committing code.
+```
+
+**Source:** [Anthropic Blog](https://claude.com/blog/introducing-routines-in-claude-code)
 
 ---
 
@@ -368,7 +470,7 @@ Every good routine prompt follows this pattern:
 
 ## Composing a Daily Schedule
 
-Here's a battle-tested daily schedule combining multiple routines:
+Here's a sample daily schedule combining multiple routines:
 
 | Time | Routine | Purpose |
 |------|---------|---------|
@@ -380,10 +482,11 @@ Here's a battle-tested daily schedule combining multiple routines:
 | **Monday 9 AM** | Dependency audit | Start the week with a clean bill of health |
 | **Tuesday 11 AM** | Docs freshness check | Catch documentation rot |
 | **Wednesday 10 AM** | Dead code & TODO sweep | Surface tech debt mid-week |
+| **Thursday 2 PM** | Stale branch cleanup | Remove merged/abandoned branches |
 | **Friday 2 PM** | Changelog draft | End the week with release notes ready |
 | **1st of month** | Security posture review | Monthly deep security scan |
 | **1st of month** | Architecture drift check | Monthly structure validation |
-| **1st of month** | Feature flag cleanup | Remove stale flags |
+| **2nd of month** | Feature flag cleanup | Remove stale flags |
 
 ### Starter Kit
 
@@ -411,6 +514,11 @@ Collected from GitHub discussions, Reddit r/ClaudeAI, and practitioner blogs:
 | Onboarding doc verification | Growing teams | Monthly |
 | Competitive feature tracking | Product teams | Weekly |
 | Release readiness checklist | Release managers | Before each release |
+| Multi-SDK port (sync changes across language SDKs) | Anthropic blog | On PR merge |
+| Data pipeline quality validation | MindStudio | Daily |
+| Database health check (connections, slow queries) | MindStudio | Every 15 min |
+| Memory consolidation (compress agent logs) | DEV Community | Daily 2:30 AM |
+| Weekly analytics / business performance report | Prompt Guide | Weekly Friday |
 
 ---
 
@@ -419,9 +527,21 @@ Collected from GitHub discussions, Reddit r/ClaudeAI, and practitioner blogs:
 ### Official
 - [Routines Documentation](https://code.claude.com/docs/en/routines)
 - [Scheduled Tasks Guide](https://code.claude.com/docs/en/scheduled-tasks)
+- [Desktop Scheduled Tasks](https://code.claude.com/docs/en/desktop-scheduled-tasks)
+- [GitHub Actions Integration](https://code.claude.com/docs/en/github-actions)
+- [Introducing Routines (Blog)](https://claude.com/blog/introducing-routines-in-claude-code)
 - [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
+
+### Tutorials & Guides
+- [AyyazTech — Routines Tutorial](https://www.ayyaztech.com/blog/claude-code-routines-tutorial)
+- [Builder.io — Claude Code Routines](https://www.builder.io/blog/claude-code-routines)
+- [MindStudio — Build Scheduled AI Agents](https://www.mindstudio.ai/blog/how-to-build-scheduled-ai-agents-claude-code)
+- [Nimbalyst — Practical Guide](https://nimbalyst.com/blog/claude-code-routines-practical-guide/)
+- [Verdent — /loop Command Guide](https://www.verdent.ai/guides/claude-code-loop-command)
 
 ### Community
 - [r/ClaudeAI](https://reddit.com/r/ClaudeAI) — Community discussions on automation
 - [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) — Curated tools and patterns
 - [claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows) — Workflow automation patterns
+- [anthropics/claude-code-security-review](https://github.com/anthropics/claude-code-security-review) — Security review GitHub Action
+- [Apiyi.com — 25 Code Review Prompts](https://help.apiyi.com/en/claude-code-code-review-prompts-collection-guide-en.html) — Specialized review prompt templates
