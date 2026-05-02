@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- New `routines/` section with 16 ready-to-use prompt templates for Claude Code Routines and scheduled agents: Daily Standup Brief, Dependency Audit, Security Scan, Docs Drift Detector, Code Health Scan, Test Coverage Monitor, Tech Debt Audit, PR Review Bot, Changelog Generator, Repo Health Check, CI Failure Analyst, Stale TODO Janitor, Performance Regression Detector, Feature Flag Cleanup, Nightly Bug Fixer, and Morning Briefing
+- Best practices section in routines covering prompt design, operational patterns, and platform limits
+- Cross-references to routines from the main README navigation, "Pick Your Path" table, "What You Get" table, and workflows page
+
 ---
 
 ## [1.6.0] - 2026-04-23

@@ -414,6 +414,12 @@ Prepare changes for shipping:
 
 ---
 
+## Scheduled & Recurring Workflows
+
+For workflows that run on a schedule or trigger — standup briefs, dependency audits, security scans, test coverage monitoring, and more — see [Routines & Scheduled Tasks](../routines/README.md).
+
+---
+
 ## Resources
 
 - [Official Common Workflows](https://code.claude.com/docs/en/common-workflows)
