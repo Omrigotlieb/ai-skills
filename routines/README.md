@@ -114,7 +114,7 @@ If no documentation drift is detected, post "Docs are up to date" and exit.
 Do not merge any PRs. Only push to claude/ branches.
 ```
 
-**Why it works:** Documentation rot is the #1 source of developer frustration. This routine catches it within a week of the causing change, when context is still fresh.
+**Why it works:** Stale documentation is a common source of developer frustration. This routine catches drift within a week of the causing change, when context is still fresh.
 
 ---
 
@@ -320,13 +320,13 @@ Post a summary: N total TODOs, N orphaned, N issues created.
 **Use case:** Catch performance regressions before they reach users.
 
 ```
-Run the project's test suite and performance benchmarks.
+Run the project's performance benchmarks and timed test suite.
 Compare results against the baseline in performance-baseline.json
 (create it if it doesn't exist).
-Flag any test that:
+Flag any benchmark or test that:
   - Increased execution time by more than 20%
-  - Reduced test coverage below the threshold
-  - Introduced new flaky behavior (passed then failed on retry)
+  - Increased memory usage by more than 25%
+  - Regressed throughput below the previous baseline
 
 If regressions are found, open a GitHub issue with specific benchmarks
 and the commits that likely caused the regression.
@@ -360,7 +360,7 @@ Do not merge the PR. Only push to a claude/ branch.
 
 ## Nightly Bug Fixer
 
-**Schedule:** Daily at 2:00 AM  
+**Schedule:** Daily at 2:00 AM UTC  
 **Connectors:** GitHub  
 **Use case:** Make progress on the bug backlog overnight.
 
