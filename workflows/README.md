@@ -2,6 +2,8 @@
 
 Battle-tested workflows and automation patterns for Claude Code. These patterns come from Anthropic's internal usage and the community.
 
+> **Looking for unattended automation?** See [Routines & Scheduled Tasks](../routines/README.md) for patterns that run on a schedule, respond to GitHub events, or execute via API triggers -- no keyboard required.
+
 ## Quick Navigation
 
 - [Feature Development](#feature-development)

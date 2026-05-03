@@ -39,6 +39,7 @@
 | Set up Claude Code on a new project | [CLAUDE.md templates](templates/README.md) |
 | Find useful skills by category | [Skills catalog](skills/README.md) |
 | Add external tools and integrations | [MCP server guides](mcp-servers/README.md) |
+| Automate tasks on a schedule or event | [Routines & scheduled tasks](routines/README.md) |
 | Improve day-to-day workflow | [Tips](tips/README.md) and [Workflows](workflows/README.md) |
 | Learn commands and shortcuts fast | [Cheatsheet](cheatsheet/README.md) |
 | Understand automation hooks | [Hooks guide](hooks/README.md) |
@@ -53,6 +54,7 @@
 | [Cheatsheet](cheatsheet/README.md) | Commands, shortcuts, config, and prompt reference |
 | [Tips](tips/README.md) | Practical habits and setup wins that improve daily usage |
 | [Hooks](hooks/README.md) | Lifecycle automation and safety patterns |
+| [Routines](routines/README.md) | Scheduled tasks, event-driven automation, and autonomous agents |
 | [Workflows](workflows/README.md) | Repeatable patterns for planning, shipping, debugging, and review |
 | [Prompts](prompts/README.md) | Reusable prompt structures for common engineering tasks |
 
