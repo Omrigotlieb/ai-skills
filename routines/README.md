@@ -31,7 +31,7 @@ Claude Code offers three levels of automation. Pick the one that matches your ne
 | Tier | Where It Runs | Trigger Types | Requires Machine On? |
 |------|--------------|---------------|---------------------|
 | **Cloud Routines** | Anthropic infrastructure | Cron, API (HTTP POST), GitHub events | No |
-| **Desktop Scheduled Tasks** | Local machine (Desktop app) | Cron | Yes (app must be open) |
+| **Desktop Scheduled Tasks** | Local machine (Desktop app) | Cron | Yes (machine on and app running) |
 | **Session `/loop`** | Current CLI session | Interval or self-paced | Yes (session must be active) |
 
 ### Cloud Routines
@@ -49,7 +49,7 @@ The most powerful tier. Created at `claude.ai/code/routines` or via `/schedule` 
 **Trigger types:**
 - **Scheduled** -- Cron expressions (e.g., `0 9 * * 1-5` for weekday mornings)
 - **API** -- HTTP POST endpoint; wire it to monitoring tools, CI/CD, or webhooks
-- **GitHub events** -- `pull_request.opened`, `issues.opened`, `push`, etc.
+- **GitHub events** -- `pull_request.opened`, `pull_request.closed`, `release.published`
 
 **Limits (per day):**
 - Pro: 5 | Max: 15 | Team/Enterprise: 25
@@ -57,7 +57,7 @@ The most powerful tier. Created at `claude.ai/code/routines` or via `/schedule` 
 
 ### Desktop Scheduled Tasks
 
-Run locally via the Claude Desktop app. Persistent across restarts but require the app to be open.
+Run locally via the Claude Desktop app. Tasks only fire while the desktop app is running and your computer is awake. Persistent across restarts -- missed tasks fire when the app re-opens.
 
 ### Session `/loop`
 
@@ -545,7 +545,8 @@ Each routine reads from and writes to shared state (files, issues, or database).
 ### Official
 
 - [Routines Documentation](https://code.claude.com/docs/en/routines) -- Setup, triggers, connectors, limits
-- [Scheduled Tasks Documentation](https://code.claude.com/docs/en/scheduled-tasks) -- Desktop-based scheduling
+- [Scheduled Tasks (/loop)](https://code.claude.com/docs/en/scheduled-tasks) -- Session-scoped scheduling
+- [Desktop Scheduled Tasks](https://code.claude.com/docs/en/desktop-scheduled-tasks) -- Machine-local recurring tasks
 - [claude-code-action](https://github.com/anthropics/claude-code-action) -- GitHub Action for PR review and issue automation
 - [claude-code-security-review](https://github.com/anthropics/claude-code-security-review) -- AI-powered SAST as a GitHub Action
 
@@ -557,7 +558,7 @@ Each routine reads from and writes to shared state (files, issues, or database).
 | [jshchnz/claude-code-scheduler](https://github.com/jshchnz/claude-code-scheduler) | OS-native scheduler with natural language scheduling |
 | [grandamenium/dream-skill](https://github.com/grandamenium/dream-skill) | Memory consolidation replicating auto-dream |
 | [wanshuiyin/Auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) | Autonomous research pipelines with cross-model review |
-| [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) | 232+ skills for Claude Code, Codex, Gemini CLI |
+| [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) | Large multi-platform skill library for Claude Code, Codex, and Gemini CLI |
 | [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills) | Curated directory with 78 SaaS integrations |
 
 ### Tutorials
