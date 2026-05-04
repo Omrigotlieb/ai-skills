@@ -53,7 +53,7 @@
 | [Cheatsheet](cheatsheet/README.md) | Commands, shortcuts, config, and prompt reference |
 | [Tips](tips/README.md) | Practical habits and setup wins that improve daily usage |
 | [Hooks](hooks/README.md) | Lifecycle automation and safety patterns |
-| [Workflows](workflows/README.md) | Repeatable patterns for planning, shipping, debugging, and review |
+| [Workflows](workflows/README.md) | Repeatable patterns for planning, shipping, debugging, review, and [routines](workflows/routines.md) |
 | [Prompts](prompts/README.md) | Reusable prompt structures for common engineering tasks |
 
 ## Contributing

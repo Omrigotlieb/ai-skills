@@ -93,6 +93,48 @@ Use this checklist before you install or recommend one:
 
 ---
 
+## Workflow & Agent Orchestration
+
+### [rohitg00/awesome-claude-code-toolkit](https://github.com/rohitg00/awesome-claude-code-toolkit)
+The most comprehensive single collection: 135 agents, 35 skills, 42 commands, 176+ plugins, 20 hooks, 15 rules, 7 templates, and 14 MCP configs.
+
+---
+
+### [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome-claude-skills)
+1000+ production-ready skills across Claude Code, Codex, Cursor, and Gemini CLI. Cross-agent compatible.
+
+---
+
+### [ComposioHQ/awesome-claude-plugins](https://github.com/ComposioHQ/awesome-claude-plugins)
+Curated plugins that extend Claude Code with custom commands, agents, hooks, and MCP servers.
+
+---
+
+### [shinpr/claude-code-workflows](https://github.com/shinpr/claude-code-workflows)
+Production-ready multi-agent pipeline: Analyze → Design → Plan → Implement → Verify. Each phase runs in a fresh agent context. Includes `/recipe-implement` and specialized agents (requirement-analyzer, technical-designer, work-planner, task-executor, quality-fixer).
+
+---
+
+### [barkain/claude-code-workflow-orchestration](https://github.com/barkain/claude-code-workflow-orchestration)
+Plugin for multi-step workflow orchestration with automatic task decomposition, parallel agent execution, and plan-mode integration.
+
+---
+
+### [Piebald-AI/claude-code-system-prompts](https://github.com/Piebald-AI/claude-code-system-prompts)
+All of Claude Code's internal system prompts extracted and versioned across 167+ releases. Includes sub-agent prompts for Plan, Explore, and Task modes. Essential reference for writing effective agent prompts.
+
+---
+
+### [shining319/claude-code-single-person-workflow](https://github.com/shining319/claude-code-single-person-workflow)
+Plugins for solo developers: docs, database design, product management, UI/UX, and solution architecture in one marketplace.
+
+---
+
+### [quemsah/awesome-claude-plugins](https://github.com/quemsah/awesome-claude-plugins)
+Automated adoption metrics for Claude Code plugins across GitHub repos using n8n workflows.
+
+---
+
 ## Tools For Skill Development
 
 ### [skill-creator](https://github.com/anthropics/skills)

@@ -342,6 +342,64 @@ Recommend one with justification.
 
 ---
 
+## Routine & Scheduled Agent Prompts
+
+Prompts designed for recurring automation via [routines](../workflows/routines.md). These run unattended — they must be specific about output, boundaries, and the "do nothing" case.
+
+→ See the [full Routines guide](../workflows/routines.md) for setup instructions and more examples.
+
+### Morning Digest
+```
+Review overnight activity:
+1. PRs merged since yesterday 5pm
+2. PRs awaiting review with CI status
+3. New issues opened overnight
+4. Failed CI runs on main
+
+Post digest to #eng-standup. If nothing happened, post "Quiet night — no updates."
+```
+
+### Nightly Triage
+```
+Scan unlabeled issues opened today:
+1. Apply labels (bug, enhancement, question, documentation)
+2. Assign to CODEOWNERS if a specific file is mentioned
+3. Comment on duplicates with a link
+
+Do not close any issues.
+```
+
+### Weekly Security Audit
+```
+Audit dependencies for vulnerabilities:
+1. Run the project's audit command
+2. If CVEs found, open a single fix PR (no major bumps)
+3. If clean, do nothing
+
+Post results to #security-alerts only if issues found.
+```
+
+### Changelog Draft
+```
+Generate changelog from merged PRs since last release tag:
+- Group by conventional commit type (feat/fix/perf/docs/other)
+- One-line summary per entry with PR link and author
+- Create a draft release — do not publish
+```
+
+### Multi-Agent Review
+```
+Review with a parallel agent team:
+1. Security reviewer — auth, injection, data exposure
+2. Performance reviewer — queries, caching, complexity
+3. Test reviewer — missing tests, edge cases
+
+Merge into a single report sorted by severity.
+Verdict: Ready to Merge | Needs Attention | Needs Work
+```
+
+---
+
 ## Anti-Patterns to Avoid
 
 ### Too Vague
@@ -383,3 +441,5 @@ Recommend one with justification.
 - [Claude Best Practices](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-4-best-practices)
 - [Anthropic Engineering Guide](https://www.anthropic.com/engineering/claude-code-best-practices)
 - [awesome-claude-prompts](https://github.com/langgptai/awesome-claude-prompts)
+- [Routines Prompt Guide — Linas Substack](https://linas.substack.com/p/claude-code-routines-guide)
+- [Agent Teams Use Cases and Prompts — claudefa.st](https://claudefa.st/blog/guide/agents/agent-teams-use-cases)

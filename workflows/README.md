@@ -4,6 +4,7 @@ Battle-tested workflows and automation patterns for Claude Code. These patterns 
 
 ## Quick Navigation
 
+- [Routines & Scheduled Agents](#routines--scheduled-agents) ← **New**
 - [Feature Development](#feature-development)
 - [Code Review](#code-review)
 - [Debugging](#debugging)
@@ -12,6 +13,28 @@ Battle-tested workflows and automation patterns for Claude Code. These patterns 
 - [Testing](#testing)
 - [Git Operations](#git-operations)
 - [Project Exploration](#project-exploration)
+- [Multi-Agent Patterns](#multi-agent-patterns) ← **New**
+
+---
+
+## Routines & Scheduled Agents
+
+Claude Code can run prompts automatically on a schedule, via API, or in response to GitHub events. See the **[full Routines guide](routines.md)** for setup instructions, ready-to-use prompts, and best practices.
+
+**Quick examples of what people schedule:**
+
+| Routine | Trigger | What it does |
+|---------|---------|-------------|
+| Morning standup prep | Daily 8:30am | Digest overnight PRs, issues, CI failures → Slack |
+| Nightly issue triage | Daily 11pm | Auto-label and assign new issues |
+| Weekly dependency audit | Monday 7am | Scan for CVEs, open fix PR |
+| Overnight PR review | Daily midnight | Leave inline review comments on open PRs |
+| Docs-drift detection | Friday 3pm | Flag stale docs after code changes |
+| Deploy verification | On release | Smoke-check health endpoints, report to Slack |
+
+**Three tiers:** `/loop` (session), Desktop scheduled task (local), Cloud routine (runs on Anthropic infra, laptop off).
+
+→ [Full guide with prompts and best practices](routines.md)
 
 ---
 
@@ -414,9 +437,70 @@ Prepare changes for shipping:
 
 ---
 
+## Multi-Agent Patterns
+
+Advanced patterns for orchestrating multiple agents on complex tasks.
+
+### Split-and-Merge Review
+
+Spawn specialized sub-agents in parallel, each focused on one review dimension, then merge results:
+
+```
+Review with a multi-agent team:
+1. Security reviewer — auth, injection, data exposure
+2. Performance reviewer — queries, caching, complexity
+3. Test reviewer — missing tests, edge cases, assertions
+
+Each returns severity-ranked findings with file:line references.
+Merge into a single report. Verdict: Ready / Needs Attention / Needs Work.
+```
+
+### Sequential Pipeline
+
+Each agent builds on the previous output:
+
+```
+1. Analyze → understand the request and existing code
+2. Design → propose architecture with file-level changes
+3. Plan → break design into ordered, testable tasks
+4. Implement → execute tasks with tests
+5. Verify → run full suite and self-review
+```
+
+### Headless Batch Processing
+
+For CI/CD integration:
+
+```bash
+claude -p "Review this PR diff for security issues. \
+  Output JSON: {issues: [{severity, file, line, description}]}" \
+  --output-format json
+```
+
+### Agent Teams
+
+Assign persistent roles across a project lifecycle:
+
+| Role | Responsibility |
+|------|---------------|
+| **Orchestrator** | Decomposes tasks, delegates, merges results |
+| **Implementer** | Writes code and tests |
+| **Reviewer** | Validates against spec and quality standards |
+| **Debugger** | Investigates failures, proposes fixes |
+
+---
+
 ## Resources
 
-- [Official Common Workflows](https://code.claude.com/docs/en/common-workflows)
-- [Anthropic Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
-- [claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows)
-- [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)
+### Official
+- [Common Workflows — Claude Code Docs](https://code.claude.com/docs/en/common-workflows)
+- [Best Practices — Anthropic Engineering](https://www.anthropic.com/engineering/claude-code-best-practices)
+- [Effective Context Engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- [Effective Harnesses for Long-Running Agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
+
+### Community
+- [claude-code-workflows — shinpr](https://github.com/shinpr/claude-code-workflows)
+- [awesome-claude-code — hesreallyhim](https://github.com/hesreallyhim/awesome-claude-code)
+- [awesome-claude-code-toolkit — rohitg00](https://github.com/rohitg00/awesome-claude-code-toolkit)
+- [9 Parallel Agents for Code Review — hamy.xyz](https://hamy.xyz/blog/2026-02_code-reviews-claude-subagents)
+- [5 Claude Code Workflow Patterns — MindStudio](https://www.mindstudio.ai/blog/claude-code-agentic-workflow-patterns)
