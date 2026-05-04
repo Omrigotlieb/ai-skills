@@ -31,6 +31,7 @@ Claude Code can run prompts automatically on a schedule, via API, or in response
 | Overnight PR review | Daily midnight | Leave inline review comments on open PRs |
 | Docs-drift detection | Friday 3pm | Flag stale docs after code changes |
 | Deploy verification | On release | Smoke-check health endpoints, report to Slack |
+| PR status monitor | `/loop 5m` | Watch CI, auto-fix failures, notify when ready |
 
 **Three tiers:** `/loop` (session), Desktop scheduled task (local), Cloud routine (runs on Anthropic infra, laptop off).
 
@@ -439,54 +440,16 @@ Prepare changes for shipping:
 
 ## Multi-Agent Patterns
 
-Advanced patterns for orchestrating multiple agents on complex tasks.
+Orchestrate multiple agents on complex tasks. Four core patterns:
 
-### Split-and-Merge Review
+| Pattern | How it works | Best for |
+|---------|-------------|----------|
+| **Split-and-Merge** | Parallel sub-agents (security, perf, tests), merged report | Code review |
+| **Sequential Pipeline** | Analyze → Design → Plan → Implement → Verify | Feature development |
+| **Headless Batch** | `claude -p` in CI/CD with JSON output | Automated gates |
+| **Agent Teams** | Persistent roles (orchestrator, implementer, reviewer, debugger) | Large projects |
 
-Spawn specialized sub-agents in parallel, each focused on one review dimension, then merge results:
-
-```
-Review with a multi-agent team:
-1. Security reviewer — auth, injection, data exposure
-2. Performance reviewer — queries, caching, complexity
-3. Test reviewer — missing tests, edge cases, assertions
-
-Each returns severity-ranked findings with file:line references.
-Merge into a single report. Verdict: Ready / Needs Attention / Needs Work.
-```
-
-### Sequential Pipeline
-
-Each agent builds on the previous output:
-
-```
-1. Analyze → understand the request and existing code
-2. Design → propose architecture with file-level changes
-3. Plan → break design into ordered, testable tasks
-4. Implement → execute tasks with tests
-5. Verify → run full suite and self-review
-```
-
-### Headless Batch Processing
-
-For CI/CD integration:
-
-```bash
-claude -p "Review this PR diff for security issues. \
-  Output JSON: {issues: [{severity, file, line, description}]}" \
-  --output-format json
-```
-
-### Agent Teams
-
-Assign persistent roles across a project lifecycle:
-
-| Role | Responsibility |
-|------|---------------|
-| **Orchestrator** | Decomposes tasks, delegates, merges results |
-| **Implementer** | Writes code and tests |
-| **Reviewer** | Validates against spec and quality standards |
-| **Debugger** | Investigates failures, proposes fixes |
+→ [Full patterns with copy-paste prompts](routines.md#multi-agent-routine-patterns)
 
 ---
 

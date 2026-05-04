@@ -14,6 +14,8 @@ Routines let Claude Code run prompts automatically — on a schedule, via API, o
 
 ### Usage Limits (Cloud Routines)
 
+> Limits are subject to change. Check [Anthropic's pricing page](https://www.anthropic.com/pricing) for current figures.
+
 | Plan | Runs per day |
 |------|-------------|
 | Pro | 5 |
@@ -169,7 +171,7 @@ Post-deploy smoke check for the release:
    - 🔴 Health check failed — [details]
 ```
 
-### PR Babysitting
+### PR Status Monitor
 
 **Trigger:** `/loop 5m` (session-scoped)
 
