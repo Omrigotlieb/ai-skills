@@ -8,6 +8,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- `routines/README.md` — new section covering scheduled agents and recurring automations: morning standup digests, PR code review, issue triage, PR babysitter, CI babysitter, dependency audits, documentation drift detection, tech debt scans, security sweeps, deploy verification, and support ticket digests
+- Community scheduling tools catalog (claude-code-scheduler, claudecron, claude-tasks, outworked)
+- Sample daily schedule combining all routine types
+- Prompt writing tips for effective routine design
+- Added Routines to main README navigation and "Pick Your Path" / "What You Get" tables
+
 ---
 
 ## [1.6.0] - 2026-04-23
