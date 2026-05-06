@@ -414,9 +414,18 @@ Prepare changes for shipping:
 
 ---
 
+## Automated Workflows with Routines
+
+The workflows on this page are interactive patterns you run manually. For **automated, scheduled workflows** that run without your intervention, see the [Routines guide](../routines/README.md).
+
+Routines cover daily briefings, PR review automation, backlog triage, deploy verification, and more -- with ready-to-use prompt templates.
+
+---
+
 ## Resources
 
 - [Official Common Workflows](https://code.claude.com/docs/en/common-workflows)
 - [Anthropic Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
+- [Routines & Scheduled Tasks](../routines/README.md) - Automated daily workflows
 - [claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows)
 - [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)
