@@ -16,7 +16,7 @@ Claude Code offers three scheduling layers, each with different tradeoffs:
 | **Desktop scheduled tasks** | Local machine | Yes | Local automation tied to your machine |
 | **`/loop`** (session-scoped) | Current session | No | Active monitoring during a work session |
 
-Routines are available on Pro, Max, Team, and Enterprise plans. Current limit: 15 runs/day/account.
+Routines are available on Pro, Max, Team, and Enterprise plans. Daily run limits vary by plan; check [claude.ai/settings/usage](https://claude.ai/settings/usage) for your account's remaining runs.
 
 ### Routine Anatomy
 
@@ -122,9 +122,7 @@ For each finding:
 Post a summary comment with pass/fail verdict and finding counts by severity.
 ```
 
-**How it scales:** Cloudflare runs up to 7 specialized sub-reviewers (security, performance, compliance) per merge request, each with domain-specific prompts.
-
-**Source:** [Cloudflare AI Code Review](https://blog.cloudflare.com/ai-code-review/)
+**See also:** For inspiration on scaling code review with multiple specialized agents, see [Cloudflare's custom multi-agent review architecture](https://blog.cloudflare.com/ai-code-review/) — they run up to 7 domain-specific sub-reviewers per merge request (security, performance, compliance, etc.), though their system is independent of Claude Code Routines.
 
 ---
 
@@ -156,7 +154,7 @@ Post a go/no-go verdict to #deploys with:
 
 Monitors your PR through CI and review, auto-fixing issues until it's green.
 
-**Invocation:** `/loop 5m /babysit-pr`
+**Invocation:** `/loop 5m` with the prompt below (or create a custom command at `.claude/commands/babysit-pr.md` and invoke with `/loop 5m /project:babysit-pr`)
 
 ```
 Check the status of my open PR:
@@ -261,7 +259,7 @@ If any docs are stale:
 - List which PRs caused the drift
 ```
 
-**Source:** [GitHub Agentic Workflows — Documentation](https://github.github.io/gh-aw/blog/2026-01-13-meet-the-workflows-documentation/)
+**Inspiration:** [GitHub Agentic Workflows — Documentation](https://github.github.io/gh-aw/blog/2026-01-13-meet-the-workflows-documentation/) (GitHub's own system, not Claude Code — adapted here as a routine prompt)
 
 ---
 
@@ -326,7 +324,7 @@ When you need more control than native routines provide:
 | **claude-code-scheduler** | JSON config in `.claude/schedules.json`, cron expressions, git worktree isolation | [jshchnz/claude-code-scheduler](https://github.com/jshchnz/claude-code-scheduler) |
 | **claudecron** | MCP server with cron, hook-event, and file-watch triggers; SQLite state | [phildougherty/claudecron](https://github.com/phildougherty/claudecron) |
 | **claude-tasks** | Go TUI with second-granularity cron, Discord/Slack webhooks | [kylemclaren/claude-tasks](https://github.com/kylemclaren/claude-tasks) |
-| **outworked** | Agent framework with built-in `create_trigger` scheduling | [outworked/outworked](https://github.com/outworked/outworked) |
+| **outworked** | Desktop app that manages teams of Claude agents with built-in scheduling via a Scheduler skill | [outworked/outworked](https://github.com/outworked/outworked) |
 
 ---
 
@@ -361,14 +359,12 @@ description: Describe what this routine does and when it triggers
 
 ### As a Native Routine
 
-Via CLI:
-```bash
-claude schedule create \
-  --name "morning-digest" \
-  --repo "owner/repo" \
-  --cron "45 8 * * 1-5" \
-  --prompt "Review open PRs and post digest to #standup"
+Via CLI (inside an active Claude Code session):
 ```
+/schedule morning-digest: Review open PRs and post digest to #standup, cron 45 8 * * 1-5
+```
+
+Management commands: `/schedule list`, `/schedule update`, `/schedule run`.
 
 Via web: [claude.ai/code/routines](https://claude.ai/code/routines) — configure prompt, repo, trigger, and connectors through the UI.
 
@@ -407,6 +403,7 @@ A complete developer automation schedule combining the routines above:
 
 - [Claude Code Routines Documentation](https://code.claude.com/docs/en/routines)
 - [Claude Code Scheduled Tasks](https://code.claude.com/docs/en/scheduled-tasks)
+- [Claude Code Desktop Scheduled Tasks](https://code.claude.com/docs/en/desktop-scheduled-tasks)
 - [Claude Code Routines: 5 Setups That Work While You Sleep](https://alirezarezvani.medium.com/claude-code-routines-5-setups-that-work-while-you-sleep-ee779b5e6924)
 - [Claude Code Routines: 8 Production Prompts](https://linas.substack.com/p/claude-code-routines-guide)
 - [Builder.io: Claude Code Routines Tutorial](https://www.builder.io/blog/claude-code-routines)
