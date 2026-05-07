@@ -14,13 +14,15 @@ Reviews pull requests for logic errors, security issues, and edge cases -- actin
 
 ## Setup
 
+Create via `/schedule` in Claude Code: `/schedule weekdays at 8am: review open PRs`
+
+Or create at `claude.ai/code/routines` with cron `0 8 * * 1-5` and the prompt below. For event-driven review, configure a GitHub trigger on `pull_request.opened` at `claude.ai/code/routines`.
+
 ### Single-Pass Review
 
-```bash
-claude schedule create \
-  --name "pr-review" \
-  --cron "0 8 * * 1-5" \
-  --prompt "$(cat <<'EOF'
+Use this prompt:
+
+```markdown
 Review open pull requests. Focus on issues that matter:
 
 ## Review Checklist
@@ -43,8 +45,6 @@ End with a summary comment:
 - **Verdict:** APPROVE / REQUEST CHANGES / COMMENT
 - **Risk areas:** [list any files or patterns that deserve extra human attention]
 - **Test coverage:** [note if new code paths lack tests]
-EOF
-)"
 ```
 
 ### Multi-Pass Review Council

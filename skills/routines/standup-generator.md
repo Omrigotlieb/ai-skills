@@ -14,13 +14,15 @@ Builds a standup update from git history and issue tracker activity so you never
 
 ## Setup
 
+Create via `/schedule` in Claude Code: `/schedule weekdays at 8:45am: standup generator`
+
+Or create at `claude.ai/code/routines` with cron `45 8 * * 1-5` and the prompt below.
+
 ### Basic
 
-```bash
-claude schedule create \
-  --name "standup-generator" \
-  --cron "45 8 * * 1-5" \
-  --prompt "$(cat <<'EOF'
+Use this prompt:
+
+```markdown
 Generate my standup update from yesterday's activity.
 
 ## Sources
@@ -35,17 +37,11 @@ Generate my standup update from yesterday's activity.
 
 Keep it under 100 words. Use past tense for yesterday, future tense for today.
 Group related commits into single accomplishments -- don't list every commit.
-EOF
-)"
 ```
 
 ### Full (With Slack and Calendar)
 
-```bash
-claude schedule create \
-  --name "standup-generator-full" \
-  --cron "45 8 * * 1-5" \
-  --prompt "$(cat <<'EOF'
+```markdown
 Generate my standup update from yesterday's activity.
 
 ## Sources
@@ -72,19 +68,13 @@ Generate my standup update from yesterday's activity.
 - If I committed to something in Slack, include it in Today
 - Keep under 100 words total
 - After Monday weekends, cover Friday-Monday as "Last week"
-EOF
-)"
 ```
 
 ### Monday Variant
 
 Automatically handles the Friday-Monday gap:
 
-```bash
-claude schedule create \
-  --name "standup-monday" \
-  --cron "45 8 * * 1" \
-  --prompt "$(cat <<'EOF'
+```markdown
 Generate my Monday standup. Cover activity from Friday through today.
 
 **Last week (Friday):** [what I shipped or reviewed]
@@ -92,8 +82,6 @@ Generate my Monday standup. Cover activity from Friday through today.
 **Blockers:** [anything from last week still unresolved]
 
 Keep under 120 words.
-EOF
-)"
 ```
 
 ## Delivery Options

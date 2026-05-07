@@ -14,13 +14,15 @@ Summarizes the day's work, captures decisions, and prepares tomorrow's prioritie
 
 ## Setup
 
+Create via `/schedule` in Claude Code: `/schedule weekdays at 5pm: end-of-day wrapup`
+
+Or create at `claude.ai/code/routines` with cron `0 17 * * 1-5` and the prompt below.
+
 ### Basic: Git-Based Summary
 
-```bash
-claude schedule create \
-  --name "eod-wrapup" \
-  --cron "0 17 * * 1-5" \
-  --prompt "$(cat <<'EOF'
+Use this prompt:
+
+```markdown
 Generate my end-of-day summary from today's activity.
 
 ## Sources
@@ -52,17 +54,11 @@ Generate my end-of-day summary from today's activity.
 - Collapse WIP/fixup commits into their parent feature
 - Focus on outcomes ("shipped rate limiting") not activity ("edited 4 files")
 - Keep under 200 words
-EOF
-)"
 ```
 
 ### Full: Multi-Source Summary
 
-```bash
-claude schedule create \
-  --name "eod-wrapup-full" \
-  --cron "0 17 * * 1-5" \
-  --prompt "$(cat <<'EOF'
+```markdown
 Generate a comprehensive end-of-day summary.
 
 ## Sources
@@ -99,8 +95,6 @@ Generate a comprehensive end-of-day summary.
 - Be honest about what did not get done
 - Surface commitments I made so I don't forget them
 - Keep under 300 words
-EOF
-)"
 ```
 
 ## Delivery Options
@@ -126,11 +120,7 @@ Create the file if it doesn't exist.
 
 Combine daily summaries into a weekly report every Friday:
 
-```bash
-claude schedule create \
-  --name "weekly-rollup" \
-  --cron "0 17 * * 5" \
-  --prompt "$(cat <<'EOF'
+```markdown
 Generate a weekly summary from this week's git and GitHub activity.
 
 ## Output
@@ -156,8 +146,6 @@ Generate a weekly summary from this week's git and GitHub activity.
 3. [...]
 
 Keep under 300 words. Focus on impact, not activity.
-EOF
-)"
 ```
 
 ## Customization

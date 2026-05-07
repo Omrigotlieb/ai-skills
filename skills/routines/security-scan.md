@@ -14,13 +14,15 @@ Automated security scanning that checks for dependency vulnerabilities, exposed 
 
 ## Setup
 
+Create via `/schedule` in Claude Code: `/schedule every Monday at 6am: security scan`
+
+Or create at `claude.ai/code/routines` with cron `0 6 * * 1` and the prompt below.
+
 ### Basic: Dependency + Secrets Scan
 
-```bash
-claude schedule create \
-  --name "security-scan" \
-  --cron "0 6 * * 1" \
-  --prompt "$(cat <<'EOF'
+Use this prompt:
+
+```markdown
 Run a weekly security scan on this repository.
 
 ## Checks
@@ -78,19 +80,13 @@ Run a weekly security scan on this repository.
 - For secrets found in history, recommend using git-filter-repo or BFG to clean history
 - Do not report findings on test fixtures or example files clearly marked as non-production
 - Check if a GitHub issue already exists before recommending one be created
-EOF
-)"
 ```
 
 ### Daily Security Watch (High-Security Projects)
 
 For projects handling sensitive data, run a lighter daily scan:
 
-```bash
-claude schedule create \
-  --name "daily-security-watch" \
-  --cron "0 6 * * 1-5" \
-  --prompt "$(cat <<'EOF'
+```markdown
 Quick daily security check. ONLY report if something needs human attention.
 
 1. Run npm audit --audit-level=high (or equivalent)
@@ -99,8 +95,6 @@ Quick daily security check. ONLY report if something needs human attention.
 
 If everything is clean, produce no output.
 If issues found, list them with severity and remediation.
-EOF
-)"
 ```
 
 ### Loop-Based Secrets Scanner

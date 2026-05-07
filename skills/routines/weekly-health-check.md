@@ -14,13 +14,15 @@ A comprehensive weekly audit that catches slow-burning issues before they become
 
 ## Setup
 
+Create via `/schedule` in Claude Code: `/schedule every Monday at 7am: weekly health check`
+
+Or create at `claude.ai/code/routines` with cron `0 7 * * 1` and the prompt below.
+
 ### Basic Health Check
 
-```bash
-claude schedule create \
-  --name "weekly-health-check" \
-  --cron "0 7 * * 1" \
-  --prompt "$(cat <<'EOF'
+Use this prompt:
+
+```markdown
 Run a weekly health check on this repository and produce a report.
 
 ## Checks
@@ -86,19 +88,13 @@ Scoring:
 | Build time | ... | ... | ... |
 | Vulnerabilities | ... | ... | ... |
 | Stale branches | ... | ... | ... |
-EOF
-)"
 ```
 
 ### Dependency-Focused Check
 
 For projects where dependency management is the primary concern:
 
-```bash
-claude schedule create \
-  --name "dependency-audit" \
-  --cron "0 7 * * 1" \
-  --prompt "$(cat <<'EOF'
+```markdown
 Run a thorough dependency audit.
 
 ## Checks
@@ -139,8 +135,6 @@ Run a thorough dependency audit.
 
 ### License Issues
 - [any compliance concerns]
-EOF
-)"
 ```
 
 ## Notification & Delivery

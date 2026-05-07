@@ -19,6 +19,7 @@ Claude Code offers three levels of automation, each suited to different use case
 | Runs on | Anthropic cloud | Your machine | Your machine |
 | Requires machine on | No | Yes | Yes |
 | Requires open session | No | No | Yes |
+| Persistent | Yes | Yes | Restored on --resume if unexpired |
 | Local file access | No (fresh clone) | Yes | Yes |
 | Min interval | 1 hour | 1 minute | 1 minute |
 | Permission prompts | No (autonomous) | Configurable | Inherits from session |
@@ -26,22 +27,22 @@ Claude Code offers three levels of automation, each suited to different use case
 ### Cloud Routines (unattended, reliable)
 
 ```bash
-# Create via CLI
+# Create conversationally via /schedule slash command inside Claude Code
 /schedule daily PR review at 9am
+/schedule every Monday at 7am run a health check on this repo
 
-# Or with explicit cron
-claude schedule create --name "morning-briefing" --cron "0 7 * * 1-5" --prompt "..."
-
-# Manage
+# Manage existing routines
 /schedule list
 /schedule run morning-briefing
 ```
+
+You can also create routines through the web UI at `claude.ai/code/routines` for full cron and trigger configuration.
 
 Routines run on Anthropic's infrastructure -- they work when your laptop is closed. Three trigger types: **scheduled** (cron), **API** (HTTP POST webhook), and **GitHub** (PR or release events).
 
 ### Desktop Scheduled Tasks (local, persistent)
 
-Tasks stored at `~/.claude/scheduled-tasks/<name>/SKILL.md`. Run on your machine with full local file access. Persist across app restarts.
+Tasks stored at `~/.claude/scheduled-tasks/<name>/SKILL.md`. Run on your machine with full local file access. Persist across app restarts, but only fire while the Desktop app is running and the machine is awake.
 
 ### Session /loop (quick polling)
 
@@ -52,7 +53,7 @@ Tasks stored at `~/.claude/scheduled-tasks/<name>/SKILL.md`. Run on your machine
 /loop 20m /babysit-pr 1234      # run a command repeatedly
 ```
 
-Auto-expires after 7 days. Max 50 concurrent tasks per session.
+Auto-expires after 7 days. Max 50 scheduled tasks per session.
 
 ### Custom Default Loop via loop.md
 
@@ -99,7 +100,7 @@ quiet, say so in one line.
 | Routine | Schedule | Description | Link |
 |---------|----------|-------------|------|
 | **Repository Health Check** | Monday 7 AM | Audits dependencies, stale PRs, branches, coverage, CI reliability | [View](weekly-health-check.md) |
-| **Security Scan** | Monday 7 AM | Scans for vulnerabilities, exposed secrets, dependency CVEs | [View](security-scan.md) |
+| **Security Scan** | Monday 6 AM | Scans for vulnerabilities, exposed secrets, dependency CVEs | [View](security-scan.md) |
 
 ---
 
@@ -163,7 +164,7 @@ Acceptance Criteria: [what success looks like]
 1. Pick one routine from the starter pack
 2. Copy the prompt template from its detail page
 3. Customize sources and output format for your project
-4. Set up the schedule: `claude schedule create --name "..." --cron "..." --prompt "..."`
+4. Set up the schedule: run `/schedule` in Claude Code and describe the routine conversationally
 5. Run it manually first to verify output quality
 6. Iterate on the prompt based on the first few runs
 7. Add the next routine once the first is stable

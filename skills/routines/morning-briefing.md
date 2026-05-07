@@ -14,13 +14,15 @@ Aggregates signals from your development tools into a single prioritized summary
 
 ## Setup
 
+Create via `/schedule` in Claude Code: `/schedule weekdays at 7am: morning briefing`
+
+Or create at `claude.ai/code/routines` with cron `0 7 * * 1-5` and the prompt below.
+
 ### Basic (GitHub-only)
 
-```bash
-claude schedule create \
-  --name "morning-briefing" \
-  --cron "0 7 * * 1-5" \
-  --prompt "$(cat <<'EOF'
+Use this prompt:
+
+```markdown
 Generate my morning briefing from GitHub activity in the last 24 hours.
 
 ## Check
@@ -40,19 +42,13 @@ Generate my morning briefing from GitHub activity in the last 24 hours.
 - [issue title] -- [priority estimate]
 
 If nothing needs action, say "All clear" and list today's open PR count.
-EOF
-)"
 ```
 
 ### Full (Multi-Source with MCP)
 
 Requires MCP servers for Gmail, Google Calendar, and Slack. Check the [MCP servers guide](../../mcp-servers/README.md) for available packages.
 
-```bash
-claude schedule create \
-  --name "morning-briefing-full" \
-  --cron "0 7 * * 1-5" \
-  --prompt "$(cat <<'EOF'
+```markdown
 Generate my morning briefing. Scan these sources for the last 24 hours:
 
 ## Sources
@@ -89,8 +85,6 @@ Generate my morning briefing. Scan these sources for the last 24 hours:
 - Skip anything purely informational
 - If a meeting has no clear agenda, flag it as "agenda needed"
 - Prioritize by: deadline proximity > blocking others > assigned to me
-EOF
-)"
 ```
 
 ## Customization
@@ -120,13 +114,11 @@ After generating the briefing, post it to my #daily-briefing Slack channel.
 
 ### Weekend On-Call Mode
 
-For on-call weekends, create a lighter version:
+For on-call weekends, create a lighter version via `/schedule weekends at 9am: oncall check`:
 
-```bash
-claude schedule create \
-  --name "weekend-oncall-check" \
-  --cron "0 9 * * 0,6" \
-  --prompt "Quick oncall check: any P0/P1 issues opened? Any alerts fired? Any PRs marked urgent? If all clear, say 'All clear' in one line."
+```markdown
+Quick oncall check: any P0/P1 issues opened? Any alerts fired?
+Any PRs marked urgent? If all clear, say "All clear" in one line.
 ```
 
 ## Iteration Guide

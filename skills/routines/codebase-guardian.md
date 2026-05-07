@@ -14,13 +14,15 @@ Monitors code quality, technical debt, and test coverage trends. Catches the slo
 
 ## Setup
 
+Create via `/schedule` in Claude Code: `/schedule weekdays at 8am: codebase quality check`
+
+Or create at `claude.ai/code/routines` with cron `0 8 * * 1-5` and the prompt below.
+
 ### Daily Quality Check
 
-```bash
-claude schedule create \
-  --name "codebase-guardian" \
-  --cron "0 8 * * 1-5" \
-  --prompt "$(cat <<'EOF'
+Use this prompt:
+
+```markdown
 Run a daily code quality check. ONLY report if something needs attention.
 
 ## Checks
@@ -69,8 +71,6 @@ Run a daily code quality check. ONLY report if something needs attention.
 - Coverage: [X%] ([up/down/stable])
 - TODO count: [N] ([up/down/stable])
 - Build warnings: [N] ([up/down/stable])
-EOF
-)"
 ```
 
 ### Loop-Based Variants
@@ -107,11 +107,7 @@ automatically fixed, summarize the error types and their locations.
 
 For a more thorough analysis, run a weekly version:
 
-```bash
-claude schedule create \
-  --name "codebase-guardian-weekly" \
-  --cron "0 8 * * 1" \
-  --prompt "$(cat <<'EOF'
+```markdown
 Run a deep code quality analysis for the past week.
 
 ## Checks (in addition to daily checks)
@@ -159,8 +155,6 @@ Scoring:
 | Build warnings | ... | ... | ... |
 | Avg function complexity | ... | ... | ... |
 | Files > 500 lines | ... | ... | ... |
-EOF
-)"
 ```
 
 ## Customization
