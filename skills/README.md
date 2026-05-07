@@ -186,6 +186,7 @@ Detailed guides for specific skill domains:
 | **Database** | 8 | SQL, ORM, migrations, optimization | [View](database/README.md) |
 | **Performance** | 7 | Profiling, caching, load testing, optimization | [View](performance/README.md) |
 | **AI/ML** | 8 | LLM integration, RAG, fine-tuning, ML pipelines | [View](ai-ml/README.md) |
+| **Routines** | 7 | Scheduled agents, daily briefings, PR review, health checks | [View](routines/README.md) |
 | **Community** | External | Pointers to upstream collections — see Resources | [View](community/README.md) |
 
 ---

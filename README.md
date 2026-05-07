@@ -41,6 +41,7 @@
 | Add external tools and integrations | [MCP server guides](mcp-servers/README.md) |
 | Improve day-to-day workflow | [Tips](tips/README.md) and [Workflows](workflows/README.md) |
 | Learn commands and shortcuts fast | [Cheatsheet](cheatsheet/README.md) |
+| Automate recurring tasks | [Routines & scheduled agents](skills/routines/README.md) |
 | Understand automation hooks | [Hooks guide](hooks/README.md) |
 
 ## What You Get
@@ -55,6 +56,7 @@
 | [Hooks](hooks/README.md) | Lifecycle automation and safety patterns |
 | [Workflows](workflows/README.md) | Repeatable patterns for planning, shipping, debugging, and review |
 | [Prompts](prompts/README.md) | Reusable prompt structures for common engineering tasks |
+| [Routines](skills/routines/README.md) | Scheduled agents, daily briefings, PR review, security scans |
 
 ## Contributing
 
