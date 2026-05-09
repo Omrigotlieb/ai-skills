@@ -148,6 +148,9 @@ Skills replace *procedures* (repeatable playbooks). CLAUDE.md is still the right
 ### Hooks can deadlock or timeout
 A hook that shells out to a slow script with no timeout will stall every tool call. Default timeout is 600 seconds — long. Set shorter timeouts explicitly for anything under production load, and use `async: true` for work that doesn't gate the decision.
 
+### Routines are a different axis
+Routines (April 2026) are not a fourth primitive in the skill/MCP/hook sense — they're an execution mode. A routine is a saved Claude Code configuration (prompt + repos + connectors) that runs on Anthropic's cloud on a schedule, API call, or GitHub event. Routines *use* skills, MCP connectors, and hooks during execution; they don't replace any of them. Think of routines as "unattended sessions" rather than a new building block. See the [Routines catalog](../routines/README.md) for production-ready prompts.
+
 ---
 
 ## Further reading

@@ -2,7 +2,7 @@
 
 Production-ready routine prompts and scheduling patterns for Claude Code. Routines run autonomously on Anthropic's cloud infrastructure — they keep working when your laptop is closed.
 
-> **Docs:** [Official Routines Reference](https://code.claude.com/docs/en/routines) | **Released:** April 2026
+> **Released:** April 2026 | **Docs:** [Official Routines Reference](https://code.claude.com/docs/en/routines) | Links last verified: 2026-05-09
 
 ## Quick Start
 
@@ -83,7 +83,7 @@ Post a triage summary to #engineering-triage in Slack:
 
 ---
 
-#### 3. Daily Dependency & Security Scan
+#### 3. Daily Security and Dependency Scan
 
 **Trigger:** Schedule — weekdays at 7am
 **Connectors:** Slack
@@ -354,7 +354,6 @@ Routines run autonomously with no human in the loop. The prompt must be **self-c
 | Docs drift | Monday 9am | Catch weekend merges early |
 | Stale branches | Friday 4pm | End-of-week cleanup |
 | Test health | Sunday 8pm | Monday morning readiness |
-| Dependency updates | Monday 7am | Weekly cadence, non-disruptive |
 
 ### Usage Limits
 
@@ -398,7 +397,7 @@ claude -p "Review src/ for TODO comments and list them" --output-format json
 
 **Day 3:** Enable [Documentation Drift Detection](#4-documentation-drift-detection) — prevents stale docs.
 
-**Day 4:** Configure [Daily Security Scan](#3-daily-dependency--security-scan) — automated vulnerability monitoring.
+**Day 4:** Configure [Daily Security Scan](#3-daily-security-and-dependency-scan) — automated vulnerability monitoring.
 
 **Day 5:** Add [Deploy Verification](#8-deploy-verification) — post-deploy confidence.
 
