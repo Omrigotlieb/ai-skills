@@ -5,7 +5,7 @@
 <h1 align="center">AI Skills Hub</h1>
 
 <p align="center">
-  A curated directory of Claude Code skills, MCP servers, and <code>CLAUDE.md</code> templates.
+  A curated directory of Claude Code skills, MCP servers, routines, and <code>CLAUDE.md</code> templates.
   <br />
   Every catalog page notes when its links were last verified. Broken local links fail CI.
 </p>
@@ -17,6 +17,7 @@
 <p align="center">
   <a href="skills/README.md">Skills</a> ·
   <a href="mcp-servers/README.md">MCP Servers</a> ·
+  <a href="routines/README.md">Routines</a> ·
   <a href="templates/README.md">Templates</a> ·
   <a href="cheatsheet/README.md">Cheatsheet</a> ·
   <a href="CONTRIBUTING.md">Contribute</a>
@@ -41,6 +42,7 @@
 | Add external tools and integrations | [MCP server guides](mcp-servers/README.md) |
 | Improve day-to-day workflow | [Tips](tips/README.md) and [Workflows](workflows/README.md) |
 | Learn commands and shortcuts fast | [Cheatsheet](cheatsheet/README.md) |
+| Automate recurring work unattended | [Routines & scheduling](routines/README.md) |
 | Understand automation hooks | [Hooks guide](hooks/README.md) |
 
 ## What You Get
@@ -52,6 +54,7 @@
 | [Templates](templates/README.md) | Copy-ready `CLAUDE.md` scaffolds for common stacks and project types |
 | [Cheatsheet](cheatsheet/README.md) | Commands, shortcuts, config, and prompt reference |
 | [Tips](tips/README.md) | Practical habits and setup wins that improve daily usage |
+| [Routines](routines/README.md) | Scheduled and event-driven automation with production-ready prompts |
 | [Hooks](hooks/README.md) | Lifecycle automation and safety patterns |
 | [Workflows](workflows/README.md) | Repeatable patterns for planning, shipping, debugging, and review |
 | [Prompts](prompts/README.md) | Reusable prompt structures for common engineering tasks |

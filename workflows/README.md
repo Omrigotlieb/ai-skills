@@ -414,9 +414,16 @@ Prepare changes for shipping:
 
 ---
 
+## Scheduled & Unattended Workflows
+
+For workflows that should run automatically on a schedule or in response to events (nightly triage, deploy verification, PR review bots), see the **[Routines guide](../routines/README.md)** — routines are the cloud-hosted counterpart to the interactive workflows on this page.
+
+---
+
 ## Resources
 
 - [Official Common Workflows](https://code.claude.com/docs/en/common-workflows)
 - [Anthropic Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
+- [Routines & Scheduled Automation](../routines/README.md)
 - [claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows)
 - [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)

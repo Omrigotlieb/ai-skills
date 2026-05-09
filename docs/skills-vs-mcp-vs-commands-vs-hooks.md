@@ -118,6 +118,7 @@ Match your intent to a primitive.
 | Give Claude a `/deploy` button | **Skill** with `disable-model-invocation: true` | User-only invocation; Claude can't deploy unilaterally |
 | Let Claude read Sentry issues while debugging | **MCP server** | External system access, tool-driven |
 | Let Claude post to Slack | **MCP server** | Same reason — external API call |
+| Run a nightly issue triage or weekly docs-drift check unattended | **Routine** | Scheduled/event-driven cloud automation; runs without your laptop |
 | **Absolutely prevent** `rm -rf` from running | **Hook** (`PreToolUse`) | Skills are advice; hooks are enforcement |
 | Run a linter after every file edit | **Hook** (`PostToolUse` on `Write\|Edit`) | Deterministic, fires every time |
 | Document a one-off migration procedure Claude should follow once | **Skill** (invoked once) | That's exactly what skills are for |
@@ -158,6 +159,7 @@ All links are to official Claude Code documentation. Links last verified 2026-04
 - [Hooks](https://code.claude.com/docs/en/hooks) — event types, matcher syntax, headless mode notes
 - [Plugins](https://code.claude.com/docs/en/plugins) — packaging skills, hooks, and MCP together
 - [Memory (CLAUDE.md)](https://code.claude.com/docs/en/memory) — when to use CLAUDE.md over a skill
+- [Routines](https://code.claude.com/docs/en/routines) — scheduled and event-driven cloud automation
 - [Agent Skills open standard](https://agentskills.io) — cross-tool skill specification
 
 ---
