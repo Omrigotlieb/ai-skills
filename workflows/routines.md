@@ -29,12 +29,12 @@ Production-ready routines, scheduled task patterns, and daily automation workflo
 | Feature | Cloud Routines | Desktop Tasks | `/loop` |
 |---------|---------------|---------------|---------|
 | Runs on | Anthropic cloud | Your machine | Your machine |
-| Machine required | No | Yes (app open) | Yes (session open) |
-| Survives restart | Yes | Yes | Only with `--resume` |
+| Machine required | No | Yes (app running, computer awake) | Yes (session open) |
+| Survives restart | Yes | Yes | Restored with `--resume`/`--continue` if within 7-day window |
 | Local file access | No (fresh clone) | Yes | Yes |
 | Min interval | 1 hour | 1 minute | 1 minute |
 | Triggers | Cron, API, GitHub events | Cron | Cron or dynamic |
-| Daily run caps | Pro: 5, Max: 15, Team: 25 | None | None |
+| Daily run caps | Per-plan caps apply ([check yours](https://claude.ai/code/routines)) | None | None |
 
 **Rule of thumb:** Cloud routines for unattended work. Desktop tasks for local file access. `/loop` for quick session polling.
 
@@ -282,7 +282,7 @@ quiet, say so in one line.
 | `0 0 * * 0` | Weekly on Sunday at midnight |
 | `0 9 1 * *` | First of each month at 9am |
 
-Tip: avoid scheduling on `:00` or `:30` — the scheduler adds jitter to those times. Use odd minutes like `3 9 * * *` for precise timing.
+Tip: for session-scoped `/loop` tasks, avoid scheduling on `:00` or `:30` — the scheduler adds jitter to those times. Use odd minutes like `3 9 * * *` for precise timing. Cloud routines have a separate stagger of a few minutes regardless of the chosen minute.
 
 ---
 
