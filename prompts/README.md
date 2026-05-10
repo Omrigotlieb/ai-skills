@@ -342,6 +342,63 @@ Recommend one with justification.
 
 ---
 
+## Routine & Scheduled Task Prompts
+
+Prompts designed for autonomous execution in [routines](../workflows/routines.md). These run without human interaction, so they must be self-contained.
+
+### The Goal-Output-Boundary Pattern
+Every routine prompt needs three parts:
+
+```
+# Goal — what to do and what data to read
+Scan PRs merged in the last 7 days for documentation drift.
+
+# Output — exact format and delivery target
+Open a PR with suggested documentation updates.
+Title format: "docs: update [area]"
+
+# Boundaries — what NOT to do
+Do not modify source code. Do not merge anything.
+Only update documentation files.
+```
+
+### Issue Triage (Nightly)
+```
+Read all GitHub issues opened in the last 24 hours.
+For each issue:
+1. Classify as bug, feature-request, question, or docs
+2. Apply the matching label
+3. Estimate priority (P0-P3) based on affected users/systems
+
+Post a triage summary to #engineering-triage on Slack.
+Do not close or comment on issues — label and assign only.
+```
+
+### Standup Prep (Weekday Mornings)
+```
+Prepare a standup digest covering the last 24 hours:
+- PRs merged to main (title, author, files changed)
+- PRs awaiting review (flag any older than 48 hours)
+- CI failures on main (link to failing run, breaking commit)
+
+Format as bullet points under: What shipped / Waiting for review / CI status
+```
+
+### Deploy Smoke Check (API-Triggered)
+```
+A production deploy just completed. Run verification:
+1. Check health endpoint returns 200
+2. Scan last 15 minutes of error logs for new patterns
+3. Compare error rates to pre-deploy baseline
+
+Post PASS or FAIL verdict to #deploys on Slack.
+If FAIL, tag @oncall and open a GitHub issue with error details.
+```
+
+See [Routines guide](../workflows/routines.md) for 8 complete production-ready prompts.
+
+---
+
 ## Anti-Patterns to Avoid
 
 ### Too Vague

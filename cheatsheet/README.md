@@ -68,6 +68,38 @@ claude --json              # JSON output mode
 
 ---
 
+## Routines & Scheduling
+
+```bash
+# Cloud routines (run on Anthropic infrastructure)
+/schedule daily PR review at 9am
+/schedule weekly on Monday, audit dependencies
+/schedule tomorrow at 3pm, clean up feature flags
+/schedule list                     # List all routines
+/schedule update                   # Edit a routine
+/schedule run                      # Trigger immediately
+
+# Session-scoped loops
+/loop 5m check the deploy          # Fixed interval
+/loop check CI and fix failures    # Dynamic interval (Claude picks)
+/loop                              # Built-in maintenance prompt
+/loop 20m /review-pr 1234          # Re-run a command
+
+# One-time reminders
+remind me at 3pm to push the release branch
+in 45 minutes, check whether tests passed
+```
+
+| Option | Runs on | Machine needed | Survives restart |
+|--------|---------|---------------|-----------------|
+| Cloud routine | Anthropic cloud | No | Yes |
+| Desktop task | Your machine | Yes (app open) | Yes |
+| `/loop` | Your machine | Yes (session open) | With `--resume` |
+
+See [Routines guide](../workflows/routines.md) for production-ready prompt templates.
+
+---
+
 ## File References
 
 ```

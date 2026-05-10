@@ -4,6 +4,7 @@ Battle-tested workflows and automation patterns for Claude Code. These patterns 
 
 ## Quick Navigation
 
+- [Routines & Scheduled Automation](routines.md) **(NEW)**
 - [Feature Development](#feature-development)
 - [Code Review](#code-review)
 - [Debugging](#debugging)
@@ -343,6 +344,18 @@ Analyze our dependencies:
 3. Which are unused?
 4. Suggest updates with breaking change warnings
 ```
+
+---
+
+## Routines & Scheduled Automation
+
+See the dedicated **[Routines & Scheduled Automation](routines.md)** guide for:
+
+- 8 production-ready routine prompts (issue triage, standup prep, PR review, deploy verification, docs drift, dependency audit, branch cleanup, inbox triage)
+- `/loop` patterns for CI monitoring, PR babysitting, and build watching
+- Cron expression reference and scheduling comparison table
+- Prompt design best practices (goal-output-boundary pattern)
+- Common pitfalls and trigger combinations
 
 ---
 

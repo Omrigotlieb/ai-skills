@@ -238,7 +238,27 @@ Token-efficient for monitoring.
 
 ## Pro Tips
 
-### 21. CLAUDE.md vs Skills vs Commands vs Plugins
+### 21. Routines for Daily Automation
+Set up cloud routines to run unattended on Anthropic's infrastructure:
+
+```bash
+# Nightly issue triage
+/schedule daily at 11pm, triage new issues — label, prioritize, post summary to Slack
+
+# Morning standup prep
+/schedule weekdays at 8:30am, prepare standup digest of merged PRs, open reviews, CI status
+
+# Weekly docs check
+/schedule weekly on Monday, scan merged PRs for documentation drift and open update PRs
+```
+
+Cloud routines survive when your laptop is closed. Desktop tasks need the app open. `/loop` needs the session open. Pick the right tier for the job.
+
+See [Routines guide](../workflows/routines.md) for 8 production-ready prompt templates.
+
+---
+
+### 22. CLAUDE.md vs Skills vs Commands vs Plugins
 Understanding when to use each:
 
 | Tool | Loaded | Invoked By | Best For |
@@ -250,7 +270,7 @@ Understanding when to use each:
 
 ---
 
-### 22. Audit Approved Commands
+### 23. Audit Approved Commands
 Use `cc-safe` CLI to scan `.claude/settings.json`:
 
 ```bash
@@ -261,7 +281,7 @@ Checks for dangerous patterns: `rm -rf`, `sudo`, `curl | sh`, etc.
 
 ---
 
-### 23. Test-Driven Development
+### 24. Test-Driven Development
 Write failing tests first, commit them, then implement:
 
 ```
@@ -273,7 +293,7 @@ Write failing tests first, commit them, then implement:
 
 ---
 
-### 24. Verify Output Multiple Ways
+### 25. Verify Output Multiple Ways
 Don't trust blindly:
 - Write tests
 - Use Git clients (GitHub Desktop)
@@ -282,7 +302,7 @@ Don't trust blindly:
 
 ---
 
-### 25. Choose Right Abstraction Level
+### 26. Choose Right Abstraction Level
 Balance between:
 - **Vibe coding** (high-level): "Make this work"
 - **Deep dive** (line-by-line): Review every change
@@ -291,7 +311,7 @@ Adjust based on project criticality.
 
 ---
 
-### 26. Simplify Overcomplicated Code
+### 27. Simplify Overcomplicated Code
 Question Claude's additions:
 - "Why did you add this?"
 - "Can this be simpler?"
@@ -303,7 +323,7 @@ Understand every change.
 
 ## Hidden Features
 
-### 27. Terminal Setup
+### 28. Terminal Setup
 Shift+Enter doesn't work for new lines by default.
 
 ```
@@ -314,19 +334,19 @@ Run once. Shift+Enter works forever after.
 
 ---
 
-### 28. File Drag & Drop
+### 29. File Drag & Drop
 - Normal drag: Opens in IDE
 - **Shift + drag**: References file in Claude
 
 ---
 
-### 29. Image Paste
+### 30. Image Paste
 - `Cmd+V` won't paste images
 - Use `Ctrl+V` instead (yes, even on Mac)
 
 ---
 
-### 30. Input Box Navigation
+### 31. Input Box Navigation
 - `Ctrl+A` / `Ctrl+E` - Line start/end
 - `Option+Left/Right` - Word navigation
 - `Ctrl+G` - Open external editor
@@ -334,7 +354,7 @@ Run once. Shift+Enter works forever after.
 
 ---
 
-### 31. Headless Mode
+### 32. Headless Mode
 ```bash
 claude -p "Review this code for security issues"
 ```
@@ -343,7 +363,7 @@ Unlocks automation: CI/CD integration, automated reviews, batch processing.
 
 ---
 
-### 32. Environment Variables (Undocumented)
+### 33. Environment Variables (Undocumented)
 ```bash
 CLAUDE_PARALLEL_TOOLS=true
 CLAUDE_THINKING_TIMEOUT=60
@@ -352,7 +372,7 @@ CLAUDE_DEBUG_MODE=true
 
 ---
 
-### 33. realpath for Absolute Paths
+### 34. realpath for Absolute Paths
 ```bash
 realpath ./relative/path
 # /absolute/path/to/file
