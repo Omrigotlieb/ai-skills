@@ -414,9 +414,16 @@ Prepare changes for shipping:
 
 ---
 
+## Cloud Automation
+
+For workflows that run unattended on a schedule, via API, or in response to GitHub events, see the **[Routines](../routines/README.md)** guide. Routines execute on Anthropic's cloud infrastructure and are ideal for recurring tasks like standup reports, issue triage, PR review, deploy verification, and changelog generation.
+
+---
+
 ## Resources
 
 - [Official Common Workflows](https://code.claude.com/docs/en/common-workflows)
 - [Anthropic Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
+- [Routines Documentation](https://code.claude.com/docs/en/routines) - Cloud-based automation
 - [claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows)
 - [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)
