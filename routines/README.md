@@ -15,7 +15,7 @@ A routine is a saved Claude Code configuration — a prompt, one or more reposit
 
 A single routine can combine triggers. A PR review routine can run nightly, trigger from a deploy script, and react to every new PR.
 
-**Plan limits:** Pro 5/day, Max 15/day, Team/Enterprise 25/day. One-off runs are exempt from daily caps.
+**Plan limits:** Routines have a daily run cap per account (varies by plan). Check your current allowance at [claude.ai/code/routines](https://claude.ai/code/routines). One-off runs are exempt from the daily cap.
 
 ---
 
@@ -32,6 +32,8 @@ Visit [claude.ai/code/routines](https://claude.ai/code/routines) and click **New
 /schedule update         # change one
 /schedule run            # trigger immediately
 ```
+
+> `/schedule` creates scheduled (time-based) routines only. To add API or GitHub event triggers, edit the routine at [claude.ai/code/routines](https://claude.ai/code/routines).
 
 ---
 
@@ -491,7 +493,7 @@ Run these alongside scheduled routines:
 ### Guides
 - [Official Routines Documentation](https://code.claude.com/docs/en/routines)
 - [Claude Code Routines: Practical Guide](https://nimbalyst.com/blog/claude-code-routines-practical-guide/)
-- [5 Production Workflows + MCP Setup](https://www.arcade.dev/blog/claude-code-routines-mcp-setup/)
+- [Introducing Routines in Claude Code](https://claude.com/blog/introducing-routines-in-claude-code)
 - [Claude Directory Routines Guide](https://www.claudedirectory.org/blog/claude-code-routines-guide)
 
 ### Related Features
