@@ -25,7 +25,8 @@ Automate recurring development workflows with Claude Code. Routines run prompts 
 | **Runs on** | Anthropic cloud | Your machine | Your machine |
 | **Machine must be on** | No | Yes | Yes |
 | **Open session required** | No | No | Yes |
-| **Survives restarts** | Yes | Yes | Restored on `--resume` |
+| **Survives restarts** | Yes | Yes | Restored on `--resume` if unexpired |
+| **Permission prompts** | No (runs autonomously) | Configurable per task | Inherits from session |
 | **Access to local files** | No (fresh clone) | Yes | Yes |
 | **MCP servers** | Connectors per task | Config files | Inherits session |
 | **Minimum interval** | 1 hour | 1 minute | 1 minute |
@@ -87,15 +88,9 @@ Press `Esc` to cancel the pending wakeup.
 
 Run locally on your machine, each firing a fresh session at the time and frequency you choose. Tasks persist across restarts.
 
-### Create via CLI
+### Create a Desktop task
 
-```bash
-# Interactive setup
-claude schedule create
-
-# Or use /schedule in a session
-/schedule
-```
+In the Desktop app, open **Routines** in the sidebar, click **New routine**, and choose **Local**. To create a cloud routine from a session, use `/schedule`.
 
 ### Task file structure
 
@@ -143,7 +138,7 @@ Triggers can be combined on a single routine.
 
 ```bash
 curl -X POST \
-  "https://api.anthropic.com/v1/claude_code/routines/{trigger_id}/fire" \
+  "https://api.anthropic.com/v1/claude_code/routines/{routine_id}/fire" \
   -H "Authorization: Bearer $TOKEN" \
   -H "anthropic-beta: experimental-cc-routine-2026-04-01" \
   -H "anthropic-version: 2023-06-01" \
@@ -395,6 +390,58 @@ Keep it concise. Format for pasting into a status update.
 
 ---
 
+### Security & Quality
+
+#### Nightly Security Scan
+
+**Trigger:** Schedule, daily at midnight
+
+```
+Run a security audit on this repository:
+
+1. Check dependencies for known vulnerabilities
+   (npm audit / pip audit / cargo audit as appropriate)
+2. Scan for hardcoded secrets, API keys, or credentials
+   in files changed in the past 24 hours
+3. Check for common OWASP patterns: SQL injection,
+   XSS, command injection in recent changes
+4. Review file permissions for overly permissive settings
+
+Report format:
+- CRITICAL: [count] issues requiring immediate action (list each)
+- WARNING: [count] issues to address this sprint (list each)
+- INFO: [count] informational findings
+
+If no issues found: "Security scan clean — no issues detected."
+Create a GitHub issue for any CRITICAL findings.
+Never auto-fix security issues. Report only.
+```
+
+#### Daily Activity Summary
+
+**Trigger:** Schedule, end of workday (5pm)
+
+```
+Generate a summary of today's development activity.
+
+1. List commits made today with one-line descriptions
+2. List PRs opened, reviewed, or merged today
+3. List issues created or closed today
+4. Calculate approximate lines changed
+
+Group by theme rather than chronological order.
+Include token usage if available (run npx ccusage --today).
+
+Format as a concise daily note suitable for:
+- Pasting into a standup message
+- Appending to a work log
+- Sharing in a status update
+
+Keep total output under 20 lines.
+```
+
+---
+
 ### Multi-Language & SDK Sync
 
 #### Library Port on Merge
@@ -463,6 +510,7 @@ Ready-to-use templates in the [examples/](examples/) directory:
 | [morning-brief.md](examples/morning-brief.md) | Morning development briefing across repos |
 | [issue-triage.md](examples/issue-triage.md) | Triage and label incoming GitHub issues |
 | [deploy-watch.md](examples/deploy-watch.md) | Watch a deployment and report status changes |
+| [security-scan.md](examples/security-scan.md) | Nightly dependency and code security audit |
 
 ---
 
@@ -499,6 +547,11 @@ Day-of-week: `0` or `7` = Sunday, `1` = Monday, ... `6` = Saturday.
 - [Schedule GitHub Issue Triage](https://startdebugging.net/2026/04/how-to-schedule-a-recurring-claude-code-task-that-triages-github-issues/)
 
 ### Community
+- [claude-code-routines](https://github.com/phillipatkins/claude-code-routines) - Ready-to-use routine templates (install via npx)
 - [claude-mcp-scheduler](https://github.com/tonybentley/claude-mcp-scheduler) - Cron scheduling with MCP servers
+- [dream-skill](https://github.com/grandamenium/dream-skill) - Nightly memory consolidation skill
+- [email-triage-plugin](https://github.com/ericporres/email-triage-plugin) - Three-tier email triage assistant
+- [today-in-claude-code](https://gist.github.com/chrismdp/29b3c5504504fe9ad2ff3310fa2a2a99) - Daily activity summary skill
 - [Daily Briefing with Claude Cowork](https://petrvojacek.cz/en/blog/claude-cowork-daily-briefing/)
-- [Routines for Solopreneurs](https://medium.com/@christianaistudio/your-business-runs-while-you-sleep-13-claude-routines-that-react-without-you-5ddb96da66f7)
+- [7 Routines That Save Hours](https://dev.to/muhammad_moeed/7-claude-code-routines-that-actually-save-me-hours-each-week-562l)
+- [Automating Daily Slack Briefings](https://medium.com/@yunjeongiya/automating-daily-slack-briefings-with-claude-code-scheduled-agents-b093e138cc4f)

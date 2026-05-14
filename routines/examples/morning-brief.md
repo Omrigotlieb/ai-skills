@@ -4,7 +4,7 @@
 
 ## Usage
 
-Use as a Desktop scheduled task at 8:30am weekdays, or copy to `.claude/loop.md` for manual runs.
+Copy to `.claude/loop.md` for on-demand runs with `/loop`. For recurring use, paste the template body into a Desktop scheduled task (Routines > New routine > Local) set to 8:30am weekdays.
 
 ## Template
 
