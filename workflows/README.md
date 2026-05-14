@@ -414,6 +414,17 @@ Prepare changes for shipping:
 
 ---
 
+## Automated Workflows
+
+For recurring and scheduled workflows, see the [Routines & Scheduled Tasks](../routines/README.md) guide, which covers:
+
+- **Session loops (`/loop`)**: Quick polling during active work
+- **Desktop scheduled tasks**: Local automation with file access
+- **Cloud routines**: Unattended automation on Anthropic infrastructure
+- **Ready-to-use templates**: PR shepherd, release guard, morning brief, issue triage
+
+---
+
 ## Resources
 
 - [Official Common Workflows](https://code.claude.com/docs/en/common-workflows)
