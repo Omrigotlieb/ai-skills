@@ -16,7 +16,7 @@ Routines (launched April 14, 2026 in research preview) let you define a prompt, 
 | **API** | HTTP POST to a per-routine endpoint | Deploy pipelines, alerts, on-demand |
 | **GitHub** | Repository events (PR opened, release published) | Code review, backports, triage |
 
-**Plan limits:** Pro = 5 runs/day, Max = 15, Team/Enterprise = 25. One-off runs are exempt from caps.
+**Daily run limits** vary by plan. Check your current cap at [claude.ai/settings/usage](https://claude.ai/settings/usage). One-off runs are exempt from caps.
 
 ---
 
@@ -42,13 +42,15 @@ Routines (launched April 14, 2026 in research preview) let you define a prompt, 
 
 ## Compare Scheduling Options
 
-| | Cloud Routines | Desktop Tasks | `/loop` |
+| | Cloud Routines | Desktop Scheduled Tasks | `/loop` |
 |---|---|---|---|
 | Runs on | Anthropic cloud | Your machine | Your machine |
 | Requires machine on | No | Yes | Yes |
 | Requires open session | No | No | Yes |
 | Persistent across restarts | Yes | Yes | Restored on `--resume` |
 | Access to local files | No (fresh clone) | Yes | Yes |
+| MCP servers | Connectors configured per task | Config files and connectors | Inherits from session |
+| Permission prompts | No (runs autonomously) | Configurable per task | Inherits from session |
 | Minimum interval | 1 hour | 1 minute | 1 minute |
 
 ---
@@ -319,6 +321,7 @@ Execute these steps immediately.
 #### 10. Competitor Pricing Monitor
 **Trigger:** Schedule (daily or weekly)
 **Value:** Detect pricing changes before sales discovers them in a deal.
+**Network access:** Requires "Full" or "Custom" (with competitor domains allowlisted) — the default "Trusted" environment blocks arbitrary domains.
 
 ```
 Check the pricing pages for the following competitors:
@@ -429,7 +432,7 @@ For tasks that need local file access or run within an active session.
 
 ### loop.md Templates
 
-Place in `.claude/loop.md` (project-level) or `~/.claude/loop.md` (user-level).
+Place in `.claude/loop.md` (project-level) or `~/.claude/loop.md` (user-level). The project-level file takes precedence when both exist. Content beyond 25,000 bytes is truncated. These templates omit the "Execute these steps immediately" closing used in cloud routines because `/loop` is interactive and does not need it.
 
 #### Release Branch Guardian
 ```markdown
@@ -448,11 +451,20 @@ Check all open PRs I authored. For each:
 Summarize status of all PRs in one paragraph.
 ```
 
-### One-Shot Reminders
-```bash
-# Natural language scheduling
+### In-Session Reminders
+
+Use natural language directly in a session. Claude schedules a single-fire task:
+
+```
 remind me at 3pm to push the release branch
 in 45 minutes, check whether the integration tests passed
+```
+
+### Cloud One-Off Runs
+
+Use `/schedule` for one-off runs on Anthropic cloud (fires once, then auto-disables):
+
+```bash
 /schedule tomorrow at 9am, summarize yesterday's merged PRs
 /schedule in 2 weeks, open a cleanup PR that removes the feature flag
 ```
