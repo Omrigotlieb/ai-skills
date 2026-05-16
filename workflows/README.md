@@ -12,6 +12,9 @@ Battle-tested workflows and automation patterns for Claude Code. These patterns 
 - [Testing](#testing)
 - [Git Operations](#git-operations)
 - [Project Exploration](#project-exploration)
+- [Scheduled Automation](#scheduled-automation)
+
+> For production-ready routine prompts and cloud scheduling, see the [Routines catalog](../routines/README.md).
 
 ---
 
@@ -414,9 +417,68 @@ Prepare changes for shipping:
 
 ---
 
+## Scheduled Automation
+
+Claude Code offers three tiers of scheduling, each suited to different needs.
+
+### In-Session: `/loop`
+
+Quick polling during an active session. Stops when you close the terminal.
+
+```bash
+# Fixed interval
+/loop 5m check if the deployment finished and tell me what happened
+
+# Dynamic interval (Claude picks the pace)
+/loop check whether CI passed and address any review comments
+
+# Built-in maintenance (tends PRs, CI, cleanup)
+/loop
+```
+
+**Customize the default** by creating `.claude/loop.md`:
+
+```markdown
+Check the release/next PR. If CI is red, diagnose and push a fix.
+If review comments arrived, address each one. If green and quiet,
+say so in one line.
+```
+
+### Desktop Scheduled Tasks
+
+Run locally on your machine with full local file access. Survives restarts.
+
+```bash
+# Create from CLI
+/schedule daily morning brief at 7am
+
+# One-shot
+/schedule tomorrow at 9am, summarize yesterday's merged PRs
+```
+
+### Cloud Routines
+
+Run on Anthropic infrastructure. No machine required. Best for team automation.
+
+```bash
+# Create from CLI
+/schedule daily PR review at 9am
+
+# Manage
+/schedule list
+/schedule update
+/schedule run
+```
+
+For the full catalog of production-ready routine prompts, see the [Routines catalog](../routines/README.md).
+
+---
+
 ## Resources
 
 - [Official Common Workflows](https://code.claude.com/docs/en/common-workflows)
 - [Anthropic Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
+- [Routines Documentation](https://code.claude.com/docs/en/routines)
+- [Scheduled Tasks Documentation](https://code.claude.com/docs/en/scheduled-tasks)
 - [claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows)
 - [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)

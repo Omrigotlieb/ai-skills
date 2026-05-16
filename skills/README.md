@@ -276,7 +276,13 @@ Step-by-step guidance for Claude...
 - [obra/superpowers](https://github.com/obra/superpowers) - Professional skills library
 - [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) - 125+ scientific skills
 - [awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) - Curated list
+- [awesome-claude-code-toolkit](https://github.com/rohitg00/awesome-claude-code-toolkit) - 135 agents, 35 skills, comprehensive toolkit
+- [awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) - 100+ specialized subagents
+- [claude-code-prompts](https://github.com/repowise-dev/claude-code-prompts) - Agent delegation and multi-agent coordination
 
 ### Tutorials
 - [Skills Explained](https://claude.com/blog/skills-explained) - Official comparison guide
 - [Writing Skills Blog](https://blog.fsck.com/2025/10/16/skills-for-claude/) - Practical guide
+
+### Related
+- [Routines catalog](../routines/README.md) - Production-ready scheduled agent prompts
