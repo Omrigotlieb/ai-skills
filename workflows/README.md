@@ -4,7 +4,7 @@ Battle-tested workflows and automation patterns for Claude Code. These patterns 
 
 ## Quick Navigation
 
-- [Routines & Scheduled Agents](routines/README.md) **(NEW)**
+- [Routines & Scheduled Agents](routines/README.md)
 - [Feature Development](#feature-development)
 - [Code Review](#code-review)
 - [Debugging](#debugging)

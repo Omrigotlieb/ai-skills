@@ -1,6 +1,6 @@
 # Claude Code Routines & Scheduled Agents
 
-Production-ready routine templates for Claude Code. These run autonomously on Anthropic's cloud infrastructure or locally via Desktop scheduled tasks.
+Production-ready routine templates for Claude Code. These run autonomously on Anthropic's cloud infrastructure and keep working when your laptop is closed.
 
 > Links last verified: 2026-05-17
 
@@ -14,6 +14,8 @@ A routine is a saved Claude Code configuration: a prompt, one or more repositori
 - **GitHub** — react to repository events (PRs, releases)
 
 **Create from CLI:** `/schedule daily PR review at 9am`
+
+**Quick-start:** See the [Daily Schedule Template](daily-schedule-template.md) for a ready-made routine timetable.
 
 ## Quick Navigation
 
@@ -552,6 +554,7 @@ Routine C (GitHub PR opened): Review the fix PR
 ## Resources
 
 - [Official Routines Documentation](https://code.claude.com/docs/en/routines)
+- [Desktop Scheduled Tasks](https://code.claude.com/docs/en/desktop-scheduled-tasks) (local alternative that runs on your machine)
 - [Introducing Routines (Blog)](https://claude.com/blog/introducing-routines-in-claude-code)
 - [claude-code-routines templates](https://github.com/phillipatkins/claude-code-routines)
 - [claude-routines-and-agents-pm-pack](https://github.com/aakashg/claude-routines-and-agents-pm-pack)

@@ -62,13 +62,9 @@ A recommended daily routine schedule for development teams. Copy and adapt to yo
 
 ## Budget Planning
 
-| Plan | Daily runs | Recommended allocation |
-|------|-----------|----------------------|
-| Pro | 5/day | 2 scheduled + 3 event-triggered |
-| Max | 15/day | 5 scheduled + 10 event-triggered |
-| Team | 25/day | 8 scheduled + 17 event-triggered |
+Daily run caps vary by plan and are visible at [claude.ai/settings/usage](https://claude.ai/settings/usage). One-off runs do not count against the daily cap.
 
-One-off runs don't count against the daily cap.
+**General guidance:** Start with 2-3 scheduled routines and leave headroom for event-triggered runs (PR reviews, deploy checks). Monitor usage for a week before adding more.
 
 ## Starter Kit: Minimum Viable Automation
 
