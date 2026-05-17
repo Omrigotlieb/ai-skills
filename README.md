@@ -40,6 +40,7 @@
 | Find useful skills by category | [Skills catalog](skills/README.md) |
 | Add external tools and integrations | [MCP server guides](mcp-servers/README.md) |
 | Improve day-to-day workflow | [Tips](tips/README.md) and [Workflows](workflows/README.md) |
+| Set up autonomous scheduled agents | [Routines](workflows/routines/README.md) |
 | Learn commands and shortcuts fast | [Cheatsheet](cheatsheet/README.md) |
 | Understand automation hooks | [Hooks guide](hooks/README.md) |
 
@@ -54,6 +55,7 @@
 | [Tips](tips/README.md) | Practical habits and setup wins that improve daily usage |
 | [Hooks](hooks/README.md) | Lifecycle automation and safety patterns |
 | [Workflows](workflows/README.md) | Repeatable patterns for planning, shipping, debugging, and review |
+| [Routines](workflows/routines/README.md) | Scheduled agents and automation templates that run autonomously |
 | [Prompts](prompts/README.md) | Reusable prompt structures for common engineering tasks |
 
 ## Contributing

@@ -4,6 +4,7 @@ Battle-tested workflows and automation patterns for Claude Code. These patterns 
 
 ## Quick Navigation
 
+- [Routines & Scheduled Agents](routines/README.md) **(NEW)**
 - [Feature Development](#feature-development)
 - [Code Review](#code-review)
 - [Debugging](#debugging)
@@ -414,9 +415,21 @@ Prepare changes for shipping:
 
 ---
 
+## Routines & Scheduled Agents
+
+For autonomous automation that runs on a schedule, API call, or GitHub event, see the dedicated **[Routines Guide](routines/README.md)**. It covers:
+
+- Production-ready routine prompts (standup, security, triage, deploy)
+- How to write effective autonomous prompts
+- Multi-agent coordination patterns
+- Common pitfalls and lessons from production
+
+---
+
 ## Resources
 
 - [Official Common Workflows](https://code.claude.com/docs/en/common-workflows)
 - [Anthropic Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices)
+- [Official Routines Documentation](https://code.claude.com/docs/en/routines)
 - [claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows)
 - [awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)
