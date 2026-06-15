@@ -1,6 +1,6 @@
 # Claude Code Skills Catalog
 
-A curated index of Claude Code skills. Most entries point to upstream collections — [anthropics/skills](https://github.com/anthropics/skills), [obra/superpowers](https://github.com/obra/superpowers), [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) — which we don't rehost. In-repo category pages (below) carry short descriptions and usage triggers for skills we've found worth highlighting.
+A curated index of Claude Code skills. Most entries point to upstream collections - [anthropics/skills](https://github.com/anthropics/skills), [obra/superpowers](https://github.com/obra/superpowers), [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) - which we don't rehost. In-repo category pages (below) carry short descriptions and usage triggers for skills we've found worth highlighting.
 
 Skills are model-invoked: Claude decides when to use one based on context. Unlike slash commands, which you trigger explicitly, skills fire automatically when their description matches the task at hand.
 
@@ -186,7 +186,7 @@ Detailed guides for specific skill domains:
 | **Database** | 8 | SQL, ORM, migrations, optimization | [View](database/README.md) |
 | **Performance** | 7 | Profiling, caching, load testing, optimization | [View](performance/README.md) |
 | **AI/ML** | 8 | LLM integration, RAG, fine-tuning, ML pipelines | [View](ai-ml/README.md) |
-| **Community** | External | Pointers to upstream collections — see Resources | [View](community/README.md) |
+| **Community** | External | Pointers to upstream collections - see Resources | [View](community/README.md) |
 
 ---
 
@@ -204,6 +204,7 @@ See [community/README.md](community/README.md) for more community-contributed sk
 | **web-asset-generator** | Favicons, app icons, social images | Community |
 | **ffuf-web-fuzzing** | Web fuzzing for pentesting | Community |
 | **prevent-confirmatory** | Prevents automatic agreeable responses | @brunoasm |
+| **[x-twitter-scraper](https://github.com/Xquik-dev/x-twitter-scraper/tree/master/skills/x-twitter-scraper)** | X/Twitter extraction and automation with REST API, MCP, webhooks, monitors, and posting workflows | [Xquik-dev](https://github.com/Xquik-dev) |
 
 ---
 
