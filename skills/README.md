@@ -199,6 +199,7 @@ See [community/README.md](community/README.md) for more community-contributed sk
 | Skill | Description | Author |
 |-------|-------------|--------|
 | **ios-simulator-skill** | iOS app building and testing automation | Community |
+| **x-research** | Read-only X/Twitter search, trends, profiles, posts, media, and replies via AgentBody API | [AgentBody](https://github.com/agentbody/skills) |
 | **playwright-skill** | General browser automation | Community |
 | **claude-d3js-skill** | D3.js data visualizations | Community |
 | **web-asset-generator** | Favicons, app icons, social images | Community |
